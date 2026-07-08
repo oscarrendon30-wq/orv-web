@@ -3,15 +3,17 @@
 import Image from "next/image";
 import { Check } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
   const specialties = [
-    "Branding y sistemas de identidad visual",
-    "Diseño editorial, diagramación y piezas impresas",
-    "Dirección de arte publicitaria",
-    "Diseño de empaques, etiquetas y packaging",
-    "Contenido y feeds estratégicos para redes",
-    "Diseño de interfaces web y presentaciones",
+    t("about.specialties.0"),
+    t("about.specialties.1"),
+    t("about.specialties.2"),
+    t("about.specialties.3"),
+    t("about.specialties.4"),
+    t("about.specialties.5"),
   ];
 
   return (
@@ -35,7 +37,7 @@ export default function About() {
               
               <div className="absolute bottom-6 text-center z-10">
                 <span className="font-sans text-[9px] font-bold uppercase tracking-[0.2em] text-[#0c2446]/50">
-                  Pereira, Colombia — Desde 1996
+                  {t("about.location")}
                 </span>
               </div>
             </div>
@@ -44,33 +46,33 @@ export default function About() {
           {/* Profile Details Side */}
           <div className="lg:col-span-7">
             <h2 className="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#00A3FF] mb-4">
-              Sobre Mí
+              {t("about.tagline")}
             </h2>
             <h3 className="font-sans text-4xl sm:text-5xl font-bold text-white leading-tight mb-8 tracking-tight">
-              Oscar Rendón Visual
+              {t("about.name")}
             </h3>
             
             <div className="space-y-6 font-sans text-zinc-400 text-base md:text-lg leading-relaxed mb-10">
               <p>
-                Soy diseñador gráfico senior en{" "}
-                <strong className="text-white font-bold">Pereira, Colombia</strong>
-                , con más de{" "}
-                <strong className="text-white font-bold">30 años de experiencia</strong>
-                , dedicado a estructurar y dar valor a la presencia visual de marcas, medios y empresas.
+                {t("about.p1_1")}{" "}
+                <strong className="text-white font-bold">{t("about.p1_bold1")}</strong>
+                {t("about.p1_2")}{" "}
+                <strong className="text-white font-bold">{t("about.p1_bold2")}</strong>
+                {t("about.p1_3")}
               </p>
               <p>
-                A lo largo de mi trayectoria, me he especializado en decodificar las necesidades de comunicación de mis clientes para transformarlas en piezas de diseño sofisticadas y funcionales. Mi enfoque combina la pulcritud editorial tradicional con la versatilidad y dinamismo que exigen los canales digitales modernos.
+                {t("about.p2")}
               </p>
               <p>
-                Ofrezco un servicio de diseño altamente personalizado bajo la modalidad de{" "}
-                <strong className="text-white font-bold">trabajo remoto</strong>
-                , lo que me permite colaborar estrechamente con marcas locales y empresas internacionales con flujos de entrega ágiles y profesionales.
+                {t("about.p3_1")}{" "}
+                <strong className="text-white font-bold">{t("about.p3_bold")}</strong>
+                {t("about.p3_2")}
               </p>
             </div>
 
             <div className="border-t border-white/10 pt-8">
               <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-[#00A3FF]/70 mb-5">
-                Especialidades de Práctica Técnica
+                {t("about.specialtiesTagline")}
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {specialties.map((spec) => (

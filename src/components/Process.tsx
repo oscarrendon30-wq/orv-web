@@ -2,33 +2,35 @@
 
 import { motion } from "framer-motion";
 import SectionSeparator from "@/components/ui/SectionSeparator";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Process() {
+  const { t } = useLanguage();
   const steps = [
     {
       num: "01",
-      name: "Diagnóstico",
-      desc: "Investigación inicial, análisis del sector de la marca y de los objetivos del cliente para trazar una estrategia visual clara.",
+      name: t("process.steps.step1.name"),
+      desc: t("process.steps.step1.desc"),
     },
     {
       num: "02",
-      name: "Conceptualización",
-      desc: "Desarrollo de las primeras ideas gráficas, selección tipográfica y exploración de paletas cromáticas alineadas al concepto.",
+      name: t("process.steps.step2.name"),
+      desc: t("process.steps.step2.desc"),
     },
     {
       num: "03",
-      name: "Diseño",
-      desc: "Ejecución técnica y detallada de las piezas gráficas, logotipos y maquetas de aplicaciones con precisión quirúrgica.",
+      name: t("process.steps.step3.name"),
+      desc: t("process.steps.step3.desc"),
     },
     {
       num: "04",
-      name: "Refinamiento",
-      desc: "Revisión colaborativa con el cliente para pulir detalles y ajustar las piezas hasta lograr la excelencia visual absoluta.",
+      name: t("process.steps.step4.name"),
+      desc: t("process.steps.step4.desc"),
     },
     {
       num: "05",
-      name: "Entrega Final",
-      desc: "Exportación y entrega de todos los archivos finales optimizados para producción impresa y canales de distribución digital.",
+      name: t("process.steps.step5.name"),
+      desc: t("process.steps.step5.desc"),
     },
   ];
 
@@ -39,13 +41,13 @@ export default function Process() {
         {/* Section Header */}
         <div className="max-w-2xl mb-16 md:mb-20">
           <h2 className="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#00A3FF] mb-4">
-            Metodología
+            {t("process.tagline")}
           </h2>
           <p className="font-sans text-4xl sm:text-5xl font-bold text-white leading-tight mb-6 tracking-tight">
-            Proceso de trabajo estructurado.
+            {t("process.title")}
           </p>
           <p className="font-sans text-zinc-400 text-base md:text-lg leading-relaxed">
-            Un flujo de trabajo riguroso y transparente diseñado para garantizar que cada entrega gráfica cumpla con los más altos estándares técnicos y estéticos.
+            {t("process.subtitle")}
           </p>
         </div>
 

@@ -2,8 +2,10 @@
 
 import { Instagram, Facebook, MessageSquare, ArrowUp, Zap } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const currentYear = 2026;
 
   const handleScrollTop = () => {
@@ -34,33 +36,26 @@ export default function Footer() {
               </h3>
             </div>
             <p className="font-sans text-[10px] md:text-xs text-[#00A3FF] font-bold uppercase tracking-[0.2em] mb-4">
-              Más que diseño, presencia visual.
+              {t("footer.tagline")}
             </p>
             <p className="font-sans text-sm text-zinc-400 leading-relaxed max-w-sm">
-              Diseño gráfico, branding, portafolios visuales y presencia digital para marcas que necesitan verse profesionales.
+              {t("footer.description")}
             </p>
           </div>
 
           {/* Centro: Navegación */}
           <div className="md:col-span-3 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="font-sans text-sm font-bold text-white mb-6 tracking-wide">
-              Navegación
+              {t("footer.navTitle")}
             </h4>
             <div className="flex flex-col gap-y-3">
-              {[
-                { label: "Inicio", id: "inicio" },
-                { label: "Servicios", id: "servicios" },
-                { label: "Portafolio", id: "portafolio" },
-                { label: "Proceso", id: "proceso" },
-                { label: "Sobre mí", id: "sobre-mi" },
-                { label: "Contacto", id: "contacto" },
-              ].map((item) => (
+              {([0, 1, 2, 3, 4, 5] as const).map((i) => (
                 <a
-                  key={item.label}
-                  href={`#${item.id}`}
+                  key={i}
+                  href={`#${t(`footer.navItems.${i}.id`)}`}
                   className="font-sans text-sm text-zinc-400 hover:text-[#00A3FF] transition-colors"
                 >
-                  {item.label}
+                  {t(`footer.navItems.${i}.label`)}
                 </a>
               ))}
             </div>
@@ -69,21 +64,21 @@ export default function Footer() {
           {/* Derecha: Redes y Contacto */}
           <div className="md:col-span-4 flex flex-col items-center md:items-start text-center md:text-left">
             <h4 className="font-sans text-sm font-bold text-white mb-6 tracking-wide">
-              Contacto rápido
+              {t("footer.contactTitle")}
             </h4>
             
             <div className="flex flex-col gap-4 mb-8">
               <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-zinc-400 hover:text-[#00A3FF] transition-colors group">
                 <MessageSquare className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="font-sans text-sm font-semibold">WhatsApp Directo</span>
+                <span className="font-sans text-sm font-semibold">{t("footer.whatsapp")}</span>
               </a>
               <a href="https://www.instagram.com/oscar_rendonvisual" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-zinc-400 hover:text-[#00A3FF] transition-colors group">
                 <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="font-sans text-sm font-semibold">Instagram Profesional</span>
+                <span className="font-sans text-sm font-semibold">{t("footer.instagram")}</span>
               </a>
               <a href="https://web.facebook.com/oscarrendondisenografico" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-zinc-400 hover:text-[#00A3FF] transition-colors group">
                 <Facebook className="w-5 h-5 group-hover:scale-110 transition-transform" />
-                <span className="font-sans text-sm font-semibold">Facebook Profesional</span>
+                <span className="font-sans text-sm font-semibold">{t("footer.facebook")}</span>
               </a>
             </div>
 
@@ -91,7 +86,7 @@ export default function Footer() {
               href="#contacto"
               className="inline-block w-full sm:w-auto text-center font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#00A3FF] hover:text-white border border-[#00A3FF] hover:bg-[#00A3FF] px-8 py-3.5 rounded-[12px] transition-all"
             >
-              Hablemos de tu proyecto
+              {t("footer.cta")}
             </a>
           </div>
 
@@ -100,13 +95,13 @@ export default function Footer() {
         {/* Bottom Bar: Legal */}
         <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="font-sans text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] text-zinc-500 text-center sm:text-left">
-            © {currentYear} Oscar Rendón Visual. Todos los derechos reservados.
+            {t("footer.rights").replace("{year}", currentYear.toString())}
           </p>
           
           <button
             onClick={handleScrollTop}
             className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0c2446] border border-white/10 text-zinc-400 hover:text-[#00A3FF] hover:border-[#00A3FF]/40 transition-colors"
-            aria-label="Volver arriba"
+            aria-label={t("footer.backToTop")}
           >
             <ArrowUp className="w-4 h-4" />
           </button>

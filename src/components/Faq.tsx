@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus, Minus } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface FaqItemProps {
   question: string;
@@ -47,31 +48,32 @@ function FaqItem({ question, answer, isOpen, onClick }: FaqItemProps) {
 
 export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const { t } = useLanguage();
 
   const faqs = [
     {
-      question: "¿Cómo se inicia un proyecto?",
-      answer: "Iniciamos con una sesión de diagnóstico (por llamada de WhatsApp o Google Meet) para entender tus objetivos, necesidades y presupuesto. A partir de allí, elaboro una propuesta de trabajo estructurada detallando los alcances, plazos de entrega y costos. Una vez aprobado y realizado el abono inicial, comenzamos la fase de conceptualización.",
+      question: t("faq.items.0.question"),
+      answer: t("faq.items.0.answer"),
     },
     {
-      question: "¿Trabajas de forma remota?",
-      answer: "Sí, el 100% de mis proyectos se gestionan de forma remota. Trabajo desde Pereira, Colombia, y colaboro sin inconvenientes con marcas y empresas de cualquier lugar del mundo a través de canales de comunicación digital fluidos y eficientes.",
+      question: t("faq.items.1.question"),
+      answer: t("faq.items.1.answer"),
     },
     {
-      question: "¿Qué tipo de archivos entregas?",
-      answer: "Entrego todos los archivos finales listos para su uso: archivos vectoriales originales en formato editable (Adobe Illustrator, EPS o PDF editable) para impresión a gran formato, y archivos listos para web/pantallas (PNG, JPG y archivos de diseño profesional si aplica para proyectos web). Todo ordenado y documentado.",
+      question: t("faq.items.2.question"),
+      answer: t("faq.items.2.answer"),
     },
     {
-      question: "¿Ofreces soporte después de la entrega?",
-      answer: "Sí, todos mis proyectos incluyen una ventana de soporte de 15 días posteriores a la entrega final para resolver dudas técnicas de imprenta, guiar al desarrollador en piezas web o ayudar con la implementación de archivos en redes sociales.",
+      question: t("faq.items.3.question"),
+      answer: t("faq.items.3.answer"),
     },
     {
-      question: "¿Diseñas piezas para impresión y redes sociales?",
-      answer: "Sí, diseño para ambos mundos. Cuento con una profunda experiencia técnica en diseño editorial para pre-prensa e imprenta, y al mismo tiempo estructuro y diseño feeds profesionales y campañas visuales adaptadas a las plataformas digitales e Instagram.",
+      question: t("faq.items.4.question"),
+      answer: t("faq.items.4.answer"),
     },
     {
-      question: "¿Puedo contratar una sola pieza o debe ser un paquete completo?",
-      answer: "Trabajo bajo ambas modalidades. Podemos desarrollar proyectos puntuales (por ejemplo, el diseño de una sola etiqueta o portada de libro) o estructurar un paquete completo de identidad visual corporativa que abarque branding, papelería, empaques y redes.",
+      question: t("faq.items.5.question"),
+      answer: t("faq.items.5.answer"),
     },
   ];
 
@@ -82,10 +84,10 @@ export default function Faq() {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#00A3FF] mb-4">
-            Preguntas Frecuentes
+            {t("faq.tagline")}
           </h2>
           <p className="font-sans text-4xl sm:text-5xl font-bold text-white tracking-tight">
-            Dudas comunes resueltas.
+            {t("faq.title")}
           </p>
         </div>
 

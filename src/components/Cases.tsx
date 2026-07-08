@@ -2,61 +2,63 @@
 
 import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Cases() {
+  const { t } = useLanguage();
   const caseStudies = [
     {
       id: "case-be-good",
       name: "Be Good",
-      category: "Branding & Packaging Comercial",
+      category: t("cases.items.beGood.category"),
       logo: "/images/portfolio/be-good-logo.jpg",
       image: "/images/portfolio/be-good/be-good-showcase.webp",
       details: [
         {
-          title: "Contexto",
-          content: <><span translate="no" className="notranslate">Be Good</span> es una marca de moda que promueve el consumo ético ('Moda con propósito'). El cliente necesitaba una identidad que combinara la sofisticación del diseño textil de autor con la honestidad del compromiso sostenible.</>,
+          title: t("cases.items.beGood.details.0.title"),
+          content: <><span translate="no" className="notranslate">Be Good</span> {t("cases.items.beGood.details.0.content").replace("Be Good ", "")}</>,
         },
         {
-          title: "Reto Visual",
-          content: "Transmitir la idea de vuelo, ligereza y sustentabilidad sin perder el peso premium de una marca de moda. El packaging debía sentirse duradero, sobrio y transformarse en una pieza de autopromoción por sí sola.",
+          title: t("cases.items.beGood.details.1.title"),
+          content: t("cases.items.beGood.details.1.content"),
         },
         {
-          title: "Solución Gráfica",
-          content: "Creación de un monograma 'BG' dorado flanqueado por alas detalladas y simétricas, combinado con un lema manuscrito que aporta calidez humana. Diseño de empaques (bolsas kraft) con impresión limpia y alto contraste.",
+          title: t("cases.items.beGood.details.2.title"),
+          content: t("cases.items.beGood.details.2.content"),
         },
         {
-          title: "Valor para la Marca",
-          content: "El empaque y la papelería física (marquillas y tarjetas) elevaron el valor percibido de las prendas, reforzando la lealtad de marca del consumidor final y creando un unboxing memorable para retail.",
+          title: t("cases.items.beGood.details.3.title"),
+          content: t("cases.items.beGood.details.3.content"),
         },
       ],
-      impacts: ["Aumento de Valor Percibido", "Empaque Ecológico Premium", "Reconocimiento de Marca"],
+      impacts: [t("cases.items.beGood.impacts.0"), t("cases.items.beGood.impacts.1"), t("cases.items.beGood.impacts.2")],
     },
     {
       id: "case-mei",
       name: "MEI Uñas & Spa",
-      category: "Identidad & Comunicación Digital",
+      category: t("cases.items.mei.category"),
       logo: "/images/portfolio/mei-logo.jpg",
       image: "/images/portfolio/mei/mei-portada-caso.webp",
       imagePosition: "object-[20%_center]",
       details: [
         {
-          title: "Contexto",
-          content: "MEI es un spa y salón de uñas boutique que buscaba posicionarse en un segmento de mercado premium, diferenciándose de las estéticas comunes mediante una experiencia visual lujosa y de extrema pulcritud.",
+          title: t("cases.items.mei.details.0.title"),
+          content: t("cases.items.mei.details.0.content"),
         },
         {
-          title: "Reto Visual",
-          content: "Comunicar elegancia y profesionalismo técnico sin caer en clichés del sector de belleza. Se necesitaba un logotipo sólido y una estructura de feed para Instagram que reflejara un orden visual milimétrico.",
+          title: t("cases.items.mei.details.1.title"),
+          content: t("cases.items.mei.details.1.content"),
         },
         {
-          title: "Solución Gráfica",
-          content: "Diseño de un logotipo con tipografía de alto contraste (serif) entrelazada con una flor de loto en oro y negro satinado. Para redes sociales, se desarrolló una grilla de publicaciones organizada por patrones cromáticos y texturas físicas.",
+          title: t("cases.items.mei.details.2.title"),
+          content: t("cases.items.mei.details.2.content"),
         },
         {
-          title: "Valor para la Marca",
-          content: "Consolidación de una identidad corporativa que transmite confianza inmediata. El feed unificado permitió incrementar la tasa de interacción y posicionar la marca como un referente de estética premium en la región.",
+          title: t("cases.items.mei.details.3.title"),
+          content: t("cases.items.mei.details.3.content"),
         },
       ],
-      impacts: ["Branding Coherente", "Estructura de Redes", "Estética Premium"],
+      impacts: [t("cases.items.mei.impacts.0"), t("cases.items.mei.impacts.1"), t("cases.items.mei.impacts.2")],
     },
   ];
 
@@ -70,13 +72,13 @@ export default function Cases() {
         {/* Header */}
         <div className="max-w-2xl mb-24">
           <h2 className="text-[#00A3FF] text-[11px] font-bold uppercase tracking-[0.15em] mb-4">
-            DETALLE DE PROYECTOS
+            {t("cases.tagline")}
           </h2>
           <h3 className="font-sans text-3xl sm:text-4xl lg:text-[44px] font-bold text-white leading-[1.1] tracking-tight mb-6">
-            Proyectos destacados.
+            {t("cases.title")}
           </h3>
           <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-light max-w-2xl">
-            Un desglose detallado de la estrategia gráfica, los retos visuales y el impacto comercial detrás de proyectos de diseño reales.
+            {t("cases.subtitle")}
           </p>
         </div>
 
@@ -148,7 +150,7 @@ export default function Cases() {
                 {/* Impacts Tags */}
                 <div className="mt-8 pt-8 border-t border-white/5">
                   <h4 className="text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-4">
-                    Impacto e Hitos del Proyecto
+                    {t("cases.impactsTagline")}
                   </h4>
                   <div className="flex flex-wrap gap-3">
                     {cs.impacts.map((imp) => (

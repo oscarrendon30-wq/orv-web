@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Service {
   id: string;
@@ -19,19 +20,18 @@ interface Service {
 export default function InteractiveServices() {
   const [selectedService, setSelectedService] = useState<string | null>(null);
   const [imageError, setImageError] = useState<boolean>(false);
+  const { t, language } = useLanguage();
 
   const services: Service[] = [
     {
       id: "branding",
-      title: "Branding e identidad visual",
-      shortDescription: "Creamos identidades sólidas, coherentes y memorables.",
-      detailDescription: "El branding va más allá de un logotipo. Diseñamos un sistema visual completo y consistente, incluyendo paleta cromática, manual de identidad, tipografía corporativa y aplicaciones comerciales que posicionan tu marca en un nivel premium de forma coherente en todos sus puntos de contacto.",
-      benefits: [
-        "Identidad visual coherente",
-        "Paleta cromática y estilo gráfico",
-        "Aplicaciones comerciales de marca"
-      ],
-      idealFor: "marcas que necesitan verse más sólidas, coherentes y profesionales.",
+      title: t("services.items.branding.title"),
+      shortDescription: t("services.items.branding.short"),
+      detailDescription: t("services.items.branding.detail"),
+      benefits: (language === "es" 
+        ? ["Identidad visual coherente", "Paleta cromática y estilo gráfico", "Aplicaciones comerciales de marca"]
+        : ["Coherent visual identity", "Color palette and graphic style", "Commercial brand applications"]),
+      idealFor: t("services.items.branding.ideal"),
       image: "/images/services/branding-identidad.webp",
       icon: (
         <svg className="w-10 h-10 md:w-12 md:h-12 text-[#00A3FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -42,15 +42,13 @@ export default function InteractiveServices() {
     },
     {
       id: "redes",
-      title: "Diseño para redes sociales",
-      shortDescription: "Contenido visual que conecta y genera impacto.",
-      detailDescription: "Desarrollamos feeds estructurados estratégicamente para plataformas clave como Instagram y LinkedIn. Diseñamos plantillas personalizadas, portadas destacadas y piezas promocionales que transmiten limpieza gráfica, autoridad visual y enganchan a tu audiencia ideal rápidamente.",
-      benefits: [
-        "Piezas para feed e historias",
-        "Línea visual para campañas",
-        "Contenido listo para publicar"
-      ],
-      idealFor: "negocios que necesitan publicar con orden, estilo y estrategia.",
+      title: t("services.items.redes.title"),
+      shortDescription: t("services.items.redes.short"),
+      detailDescription: t("services.items.redes.detail"),
+      benefits: (language === "es"
+        ? ["Piezas para feed e historias", "Línea visual para campañas", "Contenido listo para publicar"]
+        : ["Feed and stories content", "Visual line for campaigns", "Ready-to-publish content"]),
+      idealFor: t("services.items.redes.ideal"),
       image: "/images/services/redes-sociales.webp",
       icon: (
         <svg className="w-10 h-10 md:w-12 md:h-12 text-[#00A3FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -64,15 +62,13 @@ export default function InteractiveServices() {
     },
     {
       id: "editorial",
-      title: "Diseño editorial",
-      shortDescription: "Piezas editoriales con diseño que informa y emociona.",
-      detailDescription: "Diagramamos y maquetamos libros de autor, revistas comerciales, catálogos e informes de gestión. Cuidamos rigurosamente cada detalle de la mancha tipográfica, los márgenes, las retículas y la jerarquía de lectura para lograr un acabado impreso impecable y verdaderamente editorial.",
-      benefits: [
-        "Diagramación profesional",
-        "Jerarquía visual clara",
-        "Piezas listas para impresión o digital"
-      ],
-      idealFor: "empresas, medios o proyectos que necesitan organizar información con claridad y jerarquía visual.",
+      title: t("services.items.editorial.title"),
+      shortDescription: t("services.items.editorial.short"),
+      detailDescription: t("services.items.editorial.detail"),
+      benefits: (language === "es"
+        ? ["Diagramación profesional", "Jerarquía visual clara", "Piezas listas para impresión o digital"]
+        : ["Professional layout", "Clear visual hierarchy", "Print or digital ready pieces"]),
+      idealFor: t("services.items.editorial.ideal"),
       image: "/images/services/diseno-editorial.webp",
       icon: (
         <svg className="w-10 h-10 md:w-12 md:h-12 text-[#00A3FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -82,15 +78,13 @@ export default function InteractiveServices() {
     },
     {
       id: "presentaciones",
-      title: "Presentaciones corporativas",
-      shortDescription: "Presentaciones claras, profesionales y persuasivas.",
-      detailDescription: "Diseñamos láminas visuales corporativas para informes de gestión, pitches de ventas, propuestas comerciales y conferencias corporativas. Estructuramos la información densa de forma visualmente atractiva, digerible y altamente persuasiva para mantener la atención total del espectador.",
-      benefits: [
-        "Láminas claras y persuasivas",
-        "Diseño para informes y propuestas",
-        "Mejor lectura de información compleja"
-      ],
-      idealFor: "propuestas, reuniones y exposiciones donde la claridad visual puede marcar la diferencia.",
+      title: t("services.items.presentaciones.title"),
+      shortDescription: t("services.items.presentaciones.short"),
+      detailDescription: t("services.items.presentaciones.detail"),
+      benefits: (language === "es"
+        ? ["Láminas claras y persuasivas", "Diseño para informes y propuestas", "Mejor lectura de información compleja"]
+        : ["Clear and persuasive slides", "Design for reports and proposals", "Better reading of complex information"]),
+      idealFor: t("services.items.presentaciones.ideal"),
       image: "/images/services/presentaciones-corporativas.webp",
       icon: (
         <svg className="w-10 h-10 md:w-12 md:h-12 text-[#00A3FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -101,15 +95,13 @@ export default function InteractiveServices() {
     },
     {
       id: "web",
-      title: "Diseño web",
-      shortDescription: "Sitios web funcionales, elegantes y estratégicos.",
-      detailDescription: "Diseñamos interfaces web y landing pages minimalistas, rápidas y totalmente responsivas (UI/UX). Estructuramos el flujo del usuario para maximizar conversiones y facilitar la navegación, manteniendo una estética corporativa de alta recordación adaptada a todos los dispositivos.",
-      benefits: [
-        "Diseño moderno y funcional",
-        "Estructura clara de navegación",
-        "Presencia digital profesional"
-      ],
-      idealFor: "marcas que necesitan una presencia digital moderna, clara y confiable.",
+      title: t("services.items.web.title"),
+      shortDescription: t("services.items.web.short"),
+      detailDescription: t("services.items.web.detail"),
+      benefits: (language === "es"
+        ? ["Diseño moderno y funcional", "Estructura clara de navegación", "Presencia digital profesional"]
+        : ["Modern and functional design", "Clear navigation structure", "Professional digital presence"]),
+      idealFor: t("services.items.web.ideal"),
       image: "/images/services/diseno-web.webp",
       icon: (
         <svg className="w-10 h-10 md:w-12 md:h-12 text-[#00A3FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -120,15 +112,13 @@ export default function InteractiveServices() {
     },
     {
       id: "empaques",
-      title: "Empaques y piezas publicitarias",
-      shortDescription: "Diseño que destaca tu producto en cada detalle.",
-      detailDescription: "Diseñamos empaques comerciales, bolsas de retail, etiquetas de productos artesanales, marquillas textiles y stickers. Aseguramos que la presentación física del producto refuerce de forma memorable el valor percibido del unboxing y conecte emocionalmente con tu cliente final.",
-      benefits: [
-        "Diseño aplicado a producto",
-        "Etiquetas y piezas comerciales",
-        "Presentación visual más atractiva"
-      ],
-      idealFor: "productos que necesitan verse mejor presentados y generar mayor valor percibido.",
+      title: t("services.items.empaques.title"),
+      shortDescription: t("services.items.empaques.short"),
+      detailDescription: t("services.items.empaques.detail"),
+      benefits: (language === "es"
+        ? ["Diseño aplicado a producto", "Etiquetas y piezas comerciales", "Presentación visual más atractiva"]
+        : ["Product applied design", "Labels and commercial pieces", "More attractive visual presentation"]),
+      idealFor: t("services.items.empaques.ideal"),
       image: "/images/services/empaques-publicidad.webp",
       icon: (
         <svg className="w-10 h-10 md:w-12 md:h-12 text-[#00A3FF]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -171,13 +161,13 @@ export default function InteractiveServices() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-[10px] md:text-xs font-bold tracking-[0.2em] text-[#00A3FF] uppercase mb-3">
-            Servicios y Especialidades
+            {t("services.tagline")}
           </h2>
           <p className="font-sans text-3xl md:text-[42px] lg:text-[48px] font-bold text-zinc-900 tracking-tight leading-[1.1] mb-5">
-            ¿Qué necesita tu marca hoy?
+            {t("services.title")}
           </p>
           <p className="text-base md:text-lg text-zinc-600 max-w-2xl mx-auto font-normal">
-            Selecciona un servicio y te muestro cómo puedo ayudarte a construir una presencia visual estratégica, sólida y rentable.
+            {t("services.subtitle")}
           </p>
         </div>
 
@@ -226,7 +216,7 @@ export default function InteractiveServices() {
                 {/* Bottom CTA Indicator */}
                 <div className={`flex items-center justify-center gap-2 mt-auto pt-5 border-t transition-colors duration-500 ${isSelected ? 'border-[#00A3FF]/10' : 'border-zinc-100/60 group-hover:border-[#00A3FF]/10'}`}>
                   <span className={`text-[12px] font-semibold tracking-wider uppercase transition-all duration-300 ${isSelected ? "text-[#00A3FF]" : "text-zinc-400 group-hover:text-[#00A3FF]"}`}>
-                    Ver detalle
+                    {t("services.viewDetail")}
                   </span>
                   <ArrowRight
                     className={`w-3.5 h-3.5 transition-all duration-500 ${
@@ -285,7 +275,7 @@ export default function InteractiveServices() {
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00A3FF] to-cyan-400 opacity-80" />
                   
                   <h4 className="text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#00A3FF] mb-2 md:mb-3">
-                    Servicio Seleccionado
+                    {t("services.selectedService")}
                   </h4>
                   <h5 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-3 md:mb-4 font-sans leading-tight">
                     {activeService.title}
@@ -310,7 +300,7 @@ export default function InteractiveServices() {
                   {/* Ideal For Section */}
                   <div className="mb-6 md:mb-8 bg-blue-50/40 p-4 md:p-5 rounded-xl border border-[#00A3FF]/10 shadow-[0_2px_10px_-4px_rgba(0,163,255,0.05)]">
                     <span className="block text-[#00A3FF] font-bold uppercase tracking-[0.15em] text-[10px] md:text-xs mb-1.5">
-                      Ideal Para
+                      {t("services.idealFor")}
                     </span>
                     <p className="text-sm md:text-[15px] text-zinc-700 leading-relaxed font-medium">
                       {activeService.idealFor}
@@ -326,21 +316,21 @@ export default function InteractiveServices() {
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-zinc-900 text-white font-semibold text-sm hover:bg-[#00A3FF] transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
                       >
-                        Quiero este servicio
+                        {t("services.ctaPrimary")}
                         <ArrowRight className="w-4 h-4" />
                       </a>
                       <a 
                         href="#portafolio" 
                         className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
                       >
-                        Ver trabajos relacionados
+                        {t("services.ctaSecondary")}
                       </a>
                     </div>
                     
                     {/* Authority microcopy */}
                     <div className="w-full text-center sm:text-left">
                       <p className="text-[11px] text-zinc-400 font-medium tracking-wide">
-                        +30 años creando presencia visual para marcas, medios y empresas.
+                        {t("services.authority")}
                       </p>
                     </div>
                   </div>

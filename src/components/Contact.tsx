@@ -3,8 +3,10 @@
 import { useState } from "react";
 import { Send, MessageSquare, Instagram, Facebook, MapPin, Globe } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -41,13 +43,13 @@ export default function Contact() {
           <div className="lg:col-span-5 flex flex-col justify-between">
             <div>
               <h2 className="font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] text-[#00A3FF] mb-4">
-                Contacto
+                {t("contact.tagline")}
               </h2>
               <h3 className="font-sans text-4xl sm:text-5xl font-bold text-white leading-tight mb-6 tracking-tight">
-                Construyamos presencia visual.
+                {t("contact.title")}
               </h3>
               <p className="text-brand-text-secondary text-sm leading-relaxed mb-10">
-                ¿Tienes una marca en mente, un libro por publicar, etiquetas por desarrollar o redes por optimizar? Ponte en contacto y hablemos sobre cómo llevar tu visión gráfica al siguiente nivel.
+                {t("contact.subtitle")}
               </p>
             </div>
 
@@ -64,7 +66,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-                    WhatsApp Directo
+                    {t("contact.whatsapp")}
                   </h4>
                   <p className="font-sans text-sm font-bold text-white group-hover:text-[#00A3FF] transition-colors">
                     +57 300 438 2654
@@ -83,7 +85,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-                    Instagram Profesional
+                    {t("contact.instagram")}
                   </h4>
                   <p className="font-sans text-sm font-bold text-white group-hover:text-[#00A3FF] transition-colors">
                     @oscar_rendonvisual
@@ -102,7 +104,7 @@ export default function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-                    Facebook Profesional
+                    {t("contact.facebook")}
                   </h4>
                   <p className="font-sans text-sm font-bold text-white group-hover:text-[#00A3FF] transition-colors">
                     Oscar Rendón Visual
@@ -116,10 +118,10 @@ export default function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-                    Ubicación Física
+                    {t("contact.location")}
                   </h4>
                   <p className="font-sans text-sm font-bold text-white">
-                    Pereira, Colombia
+                    {t("contact.locationValue")}
                   </p>
                 </div>
               </div>
@@ -130,10 +132,10 @@ export default function Contact() {
                 </div>
                 <div className="space-y-1">
                   <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
-                    Disponibilidad
+                    {t("contact.availability")}
                   </h4>
                   <p className="font-sans text-sm font-bold text-white">
-                    Trabajo remoto global
+                    {t("contact.availabilityValue")}
                   </p>
                 </div>
               </div>
@@ -145,33 +147,33 @@ export default function Contact() {
             <div className="bg-[#0c2446]/30 p-8 sm:p-12 rounded-[24px] border border-[#00A3FF]/10 shadow-[0_20px_50px_-10px_rgba(0,0,0,0.3)] backdrop-blur-sm relative overflow-hidden">
               <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-[#00A3FF] opacity-[0.02] blur-[80px] rounded-full translate-x-1/3 -translate-y-1/3 pointer-events-none" />
               <h3 className="font-sans text-2xl font-bold text-white mb-8 relative z-10 tracking-tight">
-                Enviar mensaje directo
+                {t("contact.formTitle")}
               </h3>
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
-                      Nombre
+                      {t("contact.formName")}
                     </label>
                     <input
                       type="text"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Tu nombre completo"
+                      placeholder={t("contact.formNamePlaceholder")}
                       className="w-full bg-[#F8FAFC] border border-transparent focus:border-[#00A3FF]/50 focus:bg-white focus:outline-none p-3.5 text-sm font-sans text-zinc-900 rounded-[12px] transition-colors shadow-inner placeholder:text-zinc-400"
                     />
                   </div>
                   <div className="space-y-2">
                     <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
-                      Correo Electrónico
+                      {t("contact.formEmail")}
                     </label>
                     <input
                       type="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="ejemplo@correo.com"
+                      placeholder={t("contact.formEmailPlaceholder")}
                       className="w-full bg-[#F8FAFC] border border-transparent focus:border-[#00A3FF]/50 focus:bg-white focus:outline-none p-3.5 text-sm font-sans text-zinc-900 rounded-[12px] transition-colors shadow-inner placeholder:text-zinc-400"
                     />
                   </div>
@@ -179,31 +181,31 @@ export default function Contact() {
 
                 <div className="space-y-2">
                   <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
-                    Tipo de Proyecto
+                    {t("contact.formProjectType")}
                   </label>
                   <select
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                     className="w-full bg-[#F8FAFC] border border-transparent focus:border-[#00A3FF]/50 focus:bg-white focus:outline-none p-3.5 text-sm font-sans text-zinc-900 rounded-[12px] transition-colors shadow-inner"
                   >
-                    <option value="branding" className="bg-white text-zinc-900">Branding e Identidad Visual</option>
-                    <option value="editorial" className="bg-white text-zinc-900">Diseño Editorial</option>
-                    <option value="packaging" className="bg-white text-zinc-900">Empaques y Etiquetas</option>
-                    <option value="social-media" className="bg-white text-zinc-900">Redes Sociales</option>
-                    <option value="web-presentations" className="bg-white text-zinc-900">Diseño Web / Presentaciones</option>
+                    <option value="branding" className="bg-white text-zinc-900">{t("contact.formProjectTypeOptions.branding")}</option>
+                    <option value="editorial" className="bg-white text-zinc-900">{t("contact.formProjectTypeOptions.editorial")}</option>
+                    <option value="packaging" className="bg-white text-zinc-900">{t("contact.formProjectTypeOptions.packaging")}</option>
+                    <option value="social-media" className="bg-white text-zinc-900">{t("contact.formProjectTypeOptions.socialMedia")}</option>
+                    <option value="web-presentations" className="bg-white text-zinc-900">{t("contact.formProjectTypeOptions.webPresentations")}</option>
                   </select>
                 </div>
 
                 <div className="space-y-2">
                   <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
-                    Detalles del Proyecto
+                    {t("contact.formDetails")}
                   </label>
                   <textarea
                     required
                     rows={5}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Describe de forma general tus necesidades de diseño visual..."
+                    placeholder={t("contact.formDetailsPlaceholder")}
                     className="w-full bg-[#F8FAFC] border border-transparent focus:border-[#00A3FF]/50 focus:bg-white focus:outline-none p-3.5 text-sm font-sans text-zinc-900 rounded-[12px] transition-colors shadow-inner resize-none placeholder:text-zinc-400"
                   />
                 </div>
@@ -214,10 +216,10 @@ export default function Contact() {
                   className="w-full inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#0c2446] text-white font-sans font-bold text-xs sm:text-sm uppercase tracking-[0.15em] hover:bg-[#00A3FF] hover:text-white transition-all duration-500 shadow-[0_10px_30px_rgba(12,36,70,0.15)] hover:shadow-[0_15px_40px_rgba(0,163,255,0.3)] disabled:opacity-50 mt-4"
                 >
                   {isSubmitting ? (
-                    <span>Enviando...</span>
+                    <span>{t("contact.formSubmitting")}</span>
                   ) : (
                     <>
-                      <span>Enviar solicitud</span>
+                      <span>{t("contact.formSubmit")}</span>
                       <Send className="w-4 h-4" />
                     </>
                   )}
@@ -225,7 +227,7 @@ export default function Contact() {
 
                 {submitSuccess && (
                   <div className="p-4 bg-emerald-950/20 border border-emerald-800 text-emerald-400 text-xs font-semibold rounded-sm text-center">
-                    ¡Mensaje simulado enviado con éxito! Nos comunicaremos contigo a la brevedad.
+                    {t("contact.formSuccess")}
                   </div>
                 )}
               </form>

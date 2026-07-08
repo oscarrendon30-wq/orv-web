@@ -2,25 +2,27 @@
 
 import { motion } from "framer-motion";
 import { Award, Globe, MapPin, Zap } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Authority() {
+  const { t } = useLanguage();
   const stats = [
     {
-      value: "30+",
-      label: "AÑOS DE TRAYECTORIA",
-      description: "Experiencia en diseño gráfico, medios impresos, identidad visual y comunicación comercial.",
+      value: t("authority.stats.0.value"),
+      label: t("authority.stats.0.label"),
+      description: t("authority.stats.0.description"),
       icon: Award,
     },
     {
-      value: "Remoto",
-      label: "TRABAJO FLEXIBLE",
-      description: "Disponible para proyectos locales, nacionales e internacionales con flujos digitales claros.",
+      value: t("authority.stats.1.value"),
+      label: t("authority.stats.1.label"),
+      description: t("authority.stats.1.description"),
       icon: Globe,
     },
     {
-      value: "Senior",
-      label: "CRITERIO PROFESIONAL",
-      description: "Dirección visual con enfoque estratégico, editorial y comercial.",
+      value: t("authority.stats.2.value"),
+      label: t("authority.stats.2.label"),
+      description: t("authority.stats.2.description"),
       icon: Zap,
     },
   ];
@@ -66,17 +68,17 @@ export default function Authority() {
           {/* Statement */}
           <div className="lg:col-span-4 flex flex-col justify-center">
             <h2 className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#00A3FF] uppercase mb-4">
-              Trayectoria Profesional
+              {t("authority.tagline")}
             </h2>
             <p className="font-sans text-3xl md:text-4xl lg:text-[42px] text-white font-bold leading-[1.15] tracking-tight mb-8">
-              Diseño visual estratégico para marcas, medios y empresas.
+              {t("authority.title")}
             </p>
             <p className="text-zinc-300 text-base md:text-[17px] leading-relaxed mb-10 max-w-xl font-light">
-              Desde Pereira, Colombia, combino diseño de autor, criterio editorial y visión comercial para construir piezas visuales claras, profesionales y listas para conectar con diferentes audiencias.
+              {t("authority.subtitle")}
             </p>
             <div className="inline-flex items-center gap-3 text-zinc-400 text-[13px] sm:text-[14px] border-t border-white/10 pt-8 mt-2">
               <MapPin className="w-4 h-4 text-[#00A3FF]" />
-              <span className="font-medium">Basado en Pereira, Colombia — Conectado al mundo.</span>
+              <span className="font-medium">{t("authority.location")}</span>
             </div>
           </div>
 

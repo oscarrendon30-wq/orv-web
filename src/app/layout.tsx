@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import FloatingAssistant from "@/components/FloatingAssistant";
+import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -56,8 +57,10 @@ export default function RootLayout({
       className={`${outfit.variable} ${playfair.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-brand-deep text-brand-text-primary selection:bg-brand-gold/20 selection:text-brand-text-primary">
-        {children}
-        <FloatingAssistant />
+        <LanguageProvider>
+          {children}
+          <FloatingAssistant />
+        </LanguageProvider>
       </body>
     </html>
   );

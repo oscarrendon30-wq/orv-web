@@ -3,10 +3,12 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,12 +19,12 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Inicio", href: "#inicio" },
-    { name: "Servicios", href: "#servicios" },
-    { name: "Portafolio", href: "#portafolio" },
-    { name: "Proceso", href: "#proceso" },
-    { name: "Sobre mí", href: "#sobre-mi" },
-    { name: "Contacto", href: "#contacto" },
+    { name: t("header.inicio"), href: "#inicio" },
+    { name: t("header.servicios"), href: "#servicios" },
+    { name: t("header.portafolio"), href: "#portafolio" },
+    { name: t("header.proceso"), href: "#proceso" },
+    { name: t("header.sobreMi"), href: "#sobre-mi" },
+    { name: t("header.contacto"), href: "#contacto" },
   ];
 
   const whatsappUrl = "https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20dise%C3%B1o%20gr%C3%A1fico.";
@@ -54,7 +56,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-9">
           {navLinks.map((link) => {
-            const isActive = link.name === "Inicio";
+            const isActive = link.name === t("header.inicio");
             return (
               <a
                 key={link.name}
@@ -73,8 +75,21 @@ export default function Header() {
 
         {/* Desktop CTA & Social Icons Block */}
         <div className="hidden md:flex items-center gap-6">
-          {/* Social Icons */}
+          {/* Social Icons & Language Toggle */}
           <div className="flex items-center gap-4">
+            
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 hover:text-brand-royal transition-colors"
+              aria-label="Toggle language"
+            >
+              <span className={language === 'es' ? "text-[#0a2540]" : ""}>ES</span>
+              <span className="mx-1.5 opacity-30">/</span>
+              <span className={language === 'en' ? "text-[#0a2540]" : ""}>EN</span>
+            </button>
+            
+            <div className="w-[1px] h-4 bg-zinc-200 mx-1" />
+
             <a
               href="https://www.instagram.com/oscar_rendonvisual"
               target="_blank"
@@ -110,7 +125,7 @@ export default function Header() {
             >
               <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.513 2.262 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.638 1.982 14.19 1.94 11.97 1.94c-5.438 0-9.863 4.373-9.868 9.802-.001 1.77.463 3.5 1.34 5.016l-.997 3.634 3.737-.968zm11.388-7.75c-.247-.124-1.461-.72-1.685-.8-.225-.081-.388-.124-.55.125-.162.249-.625.8-.767.962-.14.161-.281.18-.528.057-.247-.125-1.044-.385-1.988-1.229-.735-.656-1.232-1.47-1.378-1.72-.146-.249-.015-.384.109-.507.112-.111.247-.29.37-.435.125-.145.166-.248.248-.415.083-.166.042-.311-.02-.435-.062-.125-.55-1.326-.75-1.81-.197-.474-.396-.411-.55-.419-.143-.008-.307-.01-.472-.01-.166 0-.436.062-.664.311-.228.249-.873.851-.873 2.075 0 1.224.891 2.406.99 2.571.1.166 1.752 2.674 4.244 3.75.593.256 1.056.409 1.417.524.597.19 1.14.163 1.57.099.479-.071 1.462-.597 1.666-1.173.204-.576.204-1.07.142-1.173-.061-.102-.224-.165-.471-.29z" />
             </svg>
-            Hablemos por WhatsApp
+            {t("header.hablemos")}
           </a>
         </div>
 
@@ -141,29 +156,43 @@ export default function Header() {
               {link.name}
             </a>
           ))}
-          {/* Mobile Social Icons */}
-          <div className="flex items-center gap-6 py-2 border-b border-zinc-100 pb-4">
-            <a
-              href="https://www.instagram.com/oscar_rendonvisual"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="text-[#0a2540] hover:text-brand-royal transition-colors"
-              aria-label="Instagram"
+          
+          {/* Mobile Social Icons & Language Toggle */}
+          <div className="flex items-center justify-between py-2 border-b border-zinc-100 pb-4">
+            
+            <button 
+              onClick={toggleLanguage}
+              className="flex items-center text-xs font-bold tracking-[0.2em] uppercase text-zinc-400"
             >
-              <Instagram className="w-6 h-6" />
-            </a>
-            <a
-              href={facebookUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsOpen(false)}
-              className="text-[#0a2540] hover:text-brand-royal transition-colors"
-              aria-label="Facebook"
-            >
-              <Facebook className="w-6 h-6" />
-            </a>
+              <span className={language === 'es' ? "text-[#0a2540]" : ""}>ES</span>
+              <span className="mx-2 opacity-30">/</span>
+              <span className={language === 'en' ? "text-[#0a2540]" : ""}>EN</span>
+            </button>
+
+            <div className="flex items-center gap-6">
+              <a
+                href="https://www.instagram.com/oscar_rendonvisual"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="text-[#0a2540] hover:text-brand-royal transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-6 h-6" />
+              </a>
+              <a
+                href={facebookUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="text-[#0a2540] hover:text-brand-royal transition-colors"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-6 h-6" />
+              </a>
+            </div>
           </div>
+          
           <a
             href={whatsappUrl}
             target="_blank"
@@ -171,7 +200,7 @@ export default function Header() {
             onClick={() => setIsOpen(false)}
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0a2540] text-white text-base font-bold tracking-wider uppercase hover:bg-brand-royal transition-all mt-2"
           >
-            Hablemos por WhatsApp
+            {t("header.hablemos")}
           </a>
         </div>
       </div>

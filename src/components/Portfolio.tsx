@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import { ExternalLink, Tag } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Project {
   id: string;
@@ -25,13 +26,14 @@ interface Project {
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("todos");
+  const { t } = useLanguage();
 
   const categories = [
-    { id: "todos", name: "Todos los proyectos" },
-    { id: "branding", name: "Branding e Identidad" },
-    { id: "editorial", name: "Diseño Editorial" },
-    { id: "empaques", name: "Empaques y Etiquetas" },
-    { id: "redes", name: "Redes y Digital" },
+    { id: "todos", name: t("portfolio.categories.todos") },
+    { id: "branding", name: t("portfolio.categories.branding") },
+    { id: "editorial", name: t("portfolio.categories.editorial") },
+    { id: "empaques", name: t("portfolio.categories.empaques") },
+    { id: "redes", name: t("portfolio.categories.redes") },
   ];
 
   // The 6 main projects
@@ -40,10 +42,10 @@ export default function Portfolio() {
       id: "be-good",
       name: "Be Good",
       category: "empaques",
-      tags: [<span translate="no" className="notranslate" key="branding">Branding</span>, "Moda", "Empaques"],
-      type: "Marca de moda sostenible",
-      status: "En construcción",
-      description: "Desarrollo de identidad visual, aplicaciones de marca, empaques y piezas físicas para una marca de moda con propósito.",
+      tags: [<span translate="no" className="notranslate" key="branding">Branding</span>, t("portfolio.projects.beGood.tags.0"), t("portfolio.projects.beGood.tags.1")],
+      type: t("portfolio.projects.beGood.type"),
+      status: t("portfolio.status.enConstruccion"),
+      description: t("portfolio.projects.beGood.desc"),
       image: "/images/portfolio/be-good/be-good-showcase.webp",
       logo: "/images/portfolio/be-good-logo.jpg",
       accent: "from-brand-gold/15 to-transparent",
@@ -53,9 +55,9 @@ export default function Portfolio() {
       id: "monreve",
       name: "Monreve Solutions",
       category: "branding",
-      tags: ["Identidad corporativa", "Servicios", "Piezas comerciales", "Página web"],
-      type: "Servicios eco-friendly",
-      description: "Estructura visual corporativa para una marca de servicios eco-friendly con presencia comercial internacional.",
+      tags: [t("portfolio.projects.monreve.tags.0"), t("portfolio.projects.monreve.tags.1"), t("portfolio.projects.monreve.tags.2"), t("portfolio.projects.monreve.tags.3")],
+      type: t("portfolio.projects.monreve.type"),
+      description: t("portfolio.projects.monreve.desc"),
       image: "/images/portfolio/monreve/monreve-showcase-v2.webp",
       secondaryImage: "/images/portfolio/monreve-uniforme.png",
       accent: "from-emerald-950/10 to-transparent",
@@ -65,9 +67,9 @@ export default function Portfolio() {
       id: "mei",
       name: "MEI Uñas & Spa",
       category: "redes",
-      tags: ["Redes sociales", "Identidad visual", "Piezas comerciales"],
-      type: "Marca de belleza & spa",
-      description: "Identidad visual, comunicación para redes y piezas comerciales para una marca de belleza con estética sofisticada.",
+      tags: [t("portfolio.projects.mei.tags.0"), t("portfolio.projects.mei.tags.1"), t("portfolio.projects.mei.tags.2")],
+      type: t("portfolio.projects.mei.type"),
+      description: t("portfolio.projects.mei.desc"),
       image: "/images/portfolio/mei/mei-portada-caso.webp",
       imageFit: "object-cover object-center",
       logo: "/images/portfolio/mei-logo.jpg",
@@ -78,9 +80,9 @@ export default function Portfolio() {
       id: "dental-techniques",
       name: "Dental Techniques",
       category: "branding",
-      tags: ["Branding", "Diseño web", "Papelería comercial"],
-      type: "Odontología & Salud",
-      description: "Desarrollo de logo, tarjeta, página web y lista de precios para una marca del sector odontológico.",
+      tags: [t("portfolio.projects.dental.tags.0"), t("portfolio.projects.dental.tags.1"), t("portfolio.projects.dental.tags.2")],
+      type: t("portfolio.projects.dental.type"),
+      description: t("portfolio.projects.dental.desc"),
       image: "/images/portfolio/dentaltechniques/dental-techniques-card.webp",
       accent: "from-blue-900/10 to-transparent",
       href: "/portfolio/dental-techniques",
@@ -89,9 +91,9 @@ export default function Portfolio() {
       id: "ancla-salud",
       name: "Ancla Salud",
       category: "branding",
-      tags: ["Branding", "Comunicación visual", "Piezas comerciales"],
-      type: "Salud & Bienestar",
-      description: "Desarrollo de identidad visual y piezas de comunicación para una marca del sector salud y bienestar.",
+      tags: [t("portfolio.projects.ancla.tags.0"), t("portfolio.projects.ancla.tags.1"), t("portfolio.projects.ancla.tags.2")],
+      type: t("portfolio.projects.ancla.type"),
+      description: t("portfolio.projects.ancla.desc"),
       image: "/images/portfolio/ancla-salud/ancla-salud-card.webp",
       accent: "from-blue-900/10 to-transparent",
       href: "/portfolio/ancla-salud",
@@ -100,9 +102,9 @@ export default function Portfolio() {
       id: "compitnda",
       name: "CompuTienda",
       category: "branding",
-      tags: ["Branding", "Comunicación visual", "Piezas comerciales"],
-      type: "Tecnología & Retail",
-      description: "Desarrollo de identidad visual, piezas comerciales y aplicaciones gráficas para una marca de tecnología y retail.",
+      tags: [t("portfolio.projects.computienda.tags.0"), t("portfolio.projects.computienda.tags.1"), t("portfolio.projects.computienda.tags.2")],
+      type: t("portfolio.projects.computienda.type"),
+      description: t("portfolio.projects.computienda.desc"),
       image: "/images/portfolio/computienda/compu-tienda_card.webp",
       accent: "from-brand-blue/10 to-transparent",
       href: "/portfolio/computienda",
@@ -184,13 +186,13 @@ export default function Portfolio() {
         <div className="flex flex-col mb-12 lg:mb-16">
           <div className="max-w-3xl mb-8">
             <h2 className="text-[10px] sm:text-xs font-bold tracking-[0.2em] text-[#00A3FF] uppercase mb-4">
-              Proyectos Destacados
+              {t("portfolio.tagline")}
             </h2>
             <h3 className="font-sans text-3xl sm:text-4xl lg:text-[44px] font-bold text-white leading-[1.1] tracking-tight mb-6">
-              Portafolio de proyectos.
+              {t("portfolio.title")}
             </h3>
             <p className="text-zinc-400 text-base md:text-lg leading-relaxed font-light max-w-2xl">
-              Proyectos reales donde la estrategia visual, el diseño y la experiencia se convierten en presencia de marca.
+              {t("portfolio.subtitle")}
             </p>
           </div>
           {/* Filters */}
@@ -277,7 +279,7 @@ export default function Portfolio() {
                   {/* CTA Ver Proyecto */}
                   <div className="mt-auto pt-6 border-t border-white/10 flex items-center justify-between group-hover:border-white/20 transition-colors relative z-10 pointer-events-none">
                     <span className="text-[11px] font-bold uppercase tracking-[0.15em] text-[#00A3FF] group-hover:text-white transition-colors duration-300 relative inline-block">
-                      Ver proyecto
+                      {t("portfolio.viewProject")}
                       <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-white transition-all duration-500 ease-out group-hover:w-full"></span>
                     </span>
                     <ExternalLink className="w-4 h-4 text-[#00A3FF] group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:text-white transition-all duration-300" />
@@ -291,7 +293,7 @@ export default function Portfolio() {
         {/* Secondary CTA (Full Portfolio) */}
         <div className="mt-8 flex justify-center relative z-10">
           <button className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-[1.5px] border-white/20 bg-white/5 backdrop-blur-sm text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.15em] hover:bg-white hover:text-[#050B14] transition-all duration-300">
-            Ver portafolio completo
+            {t("portfolio.viewAll")}
           </button>
         </div>
       </div>
@@ -321,10 +323,10 @@ export default function Portfolio() {
 
             {/* Content */}
             <h4 className="font-sans text-2xl md:text-3xl lg:text-4xl text-[#0c2446] font-bold mb-4 md:mb-5 max-w-2xl leading-[1.2] tracking-tight relative z-10">
-              ¿Quieres que tu marca también se vea así de profesional?
+              {t("portfolio.cta.title")}
             </h4>
             <p className="font-sans text-[#4a6b8c] font-light text-base md:text-lg max-w-xl mb-8 md:mb-10 relative z-10">
-              Construyamos una presencia visual clara, coherente y lista para vender.
+              {t("portfolio.cta.subtitle")}
             </p>
             <a
               href="https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20dise%C3%B1o%20gr%C3%A1fico."
@@ -332,7 +334,7 @@ export default function Portfolio() {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#0c2446] text-white font-sans font-bold text-xs sm:text-sm uppercase tracking-[0.15em] hover:bg-[#00A3FF] hover:text-white transition-all duration-500 shadow-[0_10px_30px_rgba(12,36,70,0.15)] hover:shadow-[0_15px_40px_rgba(0,163,255,0.3)] relative z-10"
             >
-              Hablemos de tu proyecto
+              {t("portfolio.cta.btn")}
             </a>
           </div>
         </div>

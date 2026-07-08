@@ -5,8 +5,10 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { X, MessageCircle, ChevronRight, Briefcase, Paintbrush, Monitor, LayoutTemplate, Package, Sparkles } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function FloatingAssistant() {
+  const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const phoneNumber = "573004382654";
@@ -24,29 +26,29 @@ export default function FloatingAssistant() {
 
   const options = [
     {
-      label: "Logo o identidad visual",
+      label: t("assistant.options.0.label"),
       icon: Paintbrush,
-      message: "Hola Oscar, vi tu portafolio y quiero cotizar un logo o identidad visual para mi marca."
+      message: t("assistant.options.0.message")
     },
     {
-      label: "Diseños para redes sociales",
+      label: t("assistant.options.1.label"),
       icon: LayoutTemplate,
-      message: "Hola Oscar, vi tu portafolio y quiero cotizar diseños para redes sociales."
+      message: t("assistant.options.1.message")
     },
     {
-      label: "Página web",
+      label: t("assistant.options.2.label"),
       icon: Monitor,
-      message: "Hola Oscar, vi tu portafolio y quiero cotizar una página web para mi marca."
+      message: t("assistant.options.2.message")
     },
     {
-      label: "Presentación corporativa",
+      label: t("assistant.options.3.label"),
       icon: Briefcase,
-      message: "Hola Oscar, vi tu portafolio y quiero cotizar una presentación corporativa."
+      message: t("assistant.options.3.message")
     },
     {
-      label: "Empaques o etiquetas",
+      label: t("assistant.options.4.label"),
       icon: Package,
-      message: "Hola Oscar, vi tu portafolio y quiero cotizar diseño de empaques o etiquetas."
+      message: t("assistant.options.4.message")
     }
   ];
 
@@ -71,7 +73,7 @@ export default function FloatingAssistant() {
               <button 
                 onClick={closePanel}
                 className="absolute top-4 right-4 text-white/50 hover:text-white transition-colors p-1"
-                aria-label="Cerrar asistente"
+                aria-label={t("assistant.ariaClose")}
               >
                 <X className="w-5 h-5" />
               </button>
@@ -80,17 +82,17 @@ export default function FloatingAssistant() {
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 bg-white shadow-lg shrink-0">
                    <Image 
                      src="/images/home/oscar-avatar-assistant.png" 
-                     alt="Oscar Rendón" 
+                     alt={t("assistant.altAvatar")} 
                      fill 
                      className="object-cover object-[center_top] scale-[1.65] translate-y-[15%]" 
                    />
                 </div>
                 <div>
                   <h3 className="font-sans font-bold text-white text-lg tracking-tight leading-none mb-1.5">
-                    Hola, soy Oscar.
+                    {t("assistant.greeting")}
                   </h3>
                   <p className="font-sans text-[#00A3FF] text-[11px] font-bold uppercase tracking-[0.15em] flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" /> Diseñador Senior
+                    <Sparkles className="w-3 h-3" /> {t("assistant.role")}
                   </p>
                 </div>
               </div>
@@ -99,7 +101,7 @@ export default function FloatingAssistant() {
             {/* Content & Options */}
             <div className="p-5">
               <p className="font-sans text-[#071B33]/80 text-sm leading-relaxed mb-5 font-light">
-                Cuéntame qué necesitas diseñar y te llevo directo a WhatsApp.
+                {t("assistant.prompt")}
               </p>
               
               <div className="flex flex-col gap-2">
@@ -130,14 +132,14 @@ export default function FloatingAssistant() {
             {/* General WA Link Footer */}
             <div className="p-4 bg-[#F8FAFC] border-t border-[#071B33]/5">
               <Link
-                href={getWaLink("Hola Oscar, vi tu portafolio y quiero hablar contigo sobre un proyecto de diseño.")}
+                href={getWaLink(t("assistant.directMessage"))}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closePanel}
                 className="w-full flex items-center justify-center gap-2 bg-[#0c2446] hover:bg-[#00A3FF] text-white font-sans text-xs font-bold uppercase tracking-[0.1em] py-3.5 rounded-full transition-colors shadow-lg hover:shadow-[#00A3FF]/30"
               >
                 <MessageCircle className="w-4 h-4" />
-                Hablar directamente
+                {t("assistant.directButton")}
               </Link>
             </div>
           </motion.div>
@@ -157,7 +159,7 @@ export default function FloatingAssistant() {
               className="absolute right-full top-1/2 -translate-y-1/2 mr-4 hidden md:flex items-center"
             >
               <div className="bg-white text-[#0c2446] font-sans text-sm font-bold px-4 py-2 rounded-2xl shadow-[0_10px_25px_-5px_rgba(12,36,70,0.15)] whitespace-nowrap border border-[#071B33]/5 pointer-events-none relative">
-                ¿Te ayudo?
+                {t("assistant.helperText")}
                 {/* Tail arrow */}
                 <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-white rotate-45 border-t border-r border-[#071B33]/5" />
               </div>
@@ -167,7 +169,7 @@ export default function FloatingAssistant() {
 
         <button
           onClick={togglePanel}
-          aria-label="Abrir asistente de contacto"
+          aria-label={t("assistant.ariaOpen")}
           className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-white rounded-full shadow-[0_15px_30px_-10px_rgba(12,36,70,0.4)] border-[3px] border-white overflow-hidden hover:scale-105 transition-transform duration-300 z-10"
         >
           {isOpen ? (
@@ -175,7 +177,7 @@ export default function FloatingAssistant() {
           ) : (
             <Image 
               src="/images/home/oscar-avatar-assistant.png" 
-              alt="Avatar Oscar Rendón" 
+              alt={t("assistant.altAvatar")} 
               fill 
               className="object-cover object-[center_top] scale-[1.65] translate-y-[15%]" 
             />
