@@ -2,37 +2,52 @@
 
 import { motion } from "framer-motion";
 import { Layers, Share2, BookOpen, Presentation, Laptop, Package, ArrowUpRight } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Services() {
+  const { language } = useLanguage();
+
   const services = [
     {
-      title: "Branding e identidad visual",
-      description: "Creación de logotipos, manuales de marca, tipografías y paletas de colores que transmiten solidez, profesionalismo y valor de mercado.",
+      title: language === 'es' ? "Branding e identidad visual" : "Branding and visual identity",
+      description: language === 'es' 
+        ? "Creación de logotipos, manuales de marca, tipografías y paletas de colores que transmiten solidez, profesionalismo y valor de mercado."
+        : "Creation of logos, brand manuals, typography, and color palettes that convey solidity, professionalism, and market value.",
       icon: Layers,
     },
     {
-      title: "Diseño para redes sociales",
-      description: "Piezas visuales atractivas, coherentes y estructuradas estratégicamente para destacar la presencia de tu marca en Instagram y LinkedIn.",
+      title: language === 'es' ? "Diseño para redes sociales" : "Social media design",
+      description: language === 'es'
+        ? "Piezas visuales atractivas, coherentes y estructuradas estratégicamente para destacar la presencia de tu marca en Instagram y LinkedIn."
+        : "Attractive, coherent, and strategically structured visual pieces to highlight your brand's presence on Instagram and LinkedIn.",
       icon: Share2,
     },
     {
-      title: "Diseño editorial",
-      description: "Diagramación de libros, revistas, catálogos, folletos y memorias corporativas con un alto sentido de jerarquía, lectura y estética editorial.",
+      title: language === 'es' ? "Diseño editorial" : "Editorial design",
+      description: language === 'es'
+        ? "Diagramación de libros, revistas, catálogos, folletos y memorias corporativas con un alto sentido de jerarquía, lectura y estética editorial."
+        : "Layout of books, magazines, catalogs, brochures, and corporate reports with a high sense of hierarchy, readability, and editorial aesthetics.",
       icon: BookOpen,
     },
     {
-      title: "Presentaciones corporativas",
-      description: "Diseño de diapositivas e impacto visual para presentaciones de negocios, informes de gestión, lanzamientos y ponencias ejecutivas de alto nivel.",
+      title: language === 'es' ? "Presentaciones corporativas" : "Corporate presentations",
+      description: language === 'es'
+        ? "Diseño de diapositivas e impacto visual para presentaciones de negocios, informes de gestión, lanzamientos y ponencias ejecutivas de alto nivel."
+        : "Slide design and visual impact for business presentations, management reports, launches, and high-level executive speeches.",
       icon: Presentation,
     },
     {
-      title: "Diseño web",
-      description: "Estructuración y diseño de interfaces web modernas y minimalistas (UI/UX) que conectan tu marca con tus clientes de forma fluida y premium.",
+      title: language === 'es' ? "Diseño web" : "Web design",
+      description: language === 'es'
+        ? "Estructuración y diseño de interfaces web modernas y minimalistas (UI/UX) que conectan tu marca con tus clientes de forma fluida y premium."
+        : "Structure and design of modern and minimalist web interfaces (UI/UX) that connect your brand with your clients in a fluid and premium way.",
       icon: Laptop,
     },
     {
-      title: "Empaques, etiquetas y piezas publicitarias",
-      description: "Diseño de packaging comercial, etiquetas de producto, marquillas, banners, cartelería y papelería corporativa de alta recordación y calidad.",
+      title: language === 'es' ? "Empaques, etiquetas y piezas publicitarias" : "Packaging, labels and advertising",
+      description: language === 'es'
+        ? "Diseño de packaging comercial, etiquetas de producto, marquillas, banners, cartelería y papelería corporativa de alta recordación y calidad."
+        : "Commercial packaging design, product labels, tags, banners, signage, and corporate stationery of high recall and quality.",
       icon: Package,
     },
   ];

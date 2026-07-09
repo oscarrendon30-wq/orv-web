@@ -131,8 +131,113 @@ export default function InteractiveServices() {
 
   const activeService = services.find((s) => s.id === selectedService);
 
+  const renderDetailPanel = (service: Service) => (
+    <div className="bg-white border border-zinc-200/60 rounded-2xl shadow-[0_12px_40px_-12px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col md:flex-row group hover:border-[#00A3FF]/20 transition-colors duration-500">
+      
+      {/* Left Column: Conceptual Image with Premium Framing */}
+      <div className="w-full md:w-5/12 lg:w-1/2 relative bg-gradient-to-br from-[#f8f9fa] to-blue-50/40 border-b md:border-b-0 md:border-r border-zinc-100 min-h-[260px] md:min-h-[440px] flex items-center justify-center p-6 md:p-8 lg:p-12">
+        
+        {/* Elegant Fallback (Visible behind image or if image fails) */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-100 z-0">
+          <div className="text-[#00A3FF]/5 transform scale-[3] md:scale-[5] transition-transform duration-700 group-hover:scale-[3.2] md:group-hover:scale-[5.2]">
+            {service.icon}
+          </div>
+        </div>
+        
+        {/* Main Service Image (Rounded floating frame) */}
+        <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_15px_35px_-10px_rgba(0,0,0,0.1)] border border-white/80 bg-white aspect-[4/3] md:aspect-auto flex items-center justify-center z-10 group-hover:shadow-[0_20px_40px_-15px_rgba(0,163,255,0.15)] transition-shadow duration-700">
+            {!imageError ? (
+              <Image 
+                src={service.image} 
+                alt={service.title} 
+                fill 
+                sizes="(max-w-768px) 100vw, 50vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="w-full h-full bg-gradient-to-br from-zinc-50 to-zinc-100 flex flex-col items-center justify-center p-6 text-center">
+                <div className="text-[#00A3FF] mb-3 md:mb-4 opacity-50 transform scale-125">
+                  {service.icon}
+                </div>
+                <span className="text-zinc-400 font-bold text-xs md:text-sm px-2 md:px-4 uppercase tracking-[0.1em]">{service.title}</span>
+              </div>
+            )}
+        </div>
+      </div>
+
+      {/* Right Column: Editorial Details */}
+      <div className="w-full md:w-7/12 lg:w-1/2 p-8 md:p-10 lg:p-12 flex flex-col justify-center relative">
+        {/* Subtle accent line at top */}
+        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00A3FF] to-cyan-400 opacity-80" />
+        
+        <h4 className="text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#00A3FF] mb-2 md:mb-3">
+          {t("services.selectedService")}
+        </h4>
+        <h5 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-3 md:mb-4 font-sans leading-tight">
+          {service.title}
+        </h5>
+        
+        <p className="text-sm md:text-base text-zinc-600 leading-[1.6] font-normal mb-5 md:mb-6">
+          {service.detailDescription}
+        </p>
+
+        {/* Benefits List */}
+        <div className="mb-5 md:mb-6">
+          <ul className="space-y-2.5">
+            {service.benefits.map((benefit, i) => (
+              <li key={i} className="flex items-start gap-3 text-sm text-zinc-700">
+                <CheckCircle2 className="w-5 h-5 text-[#00A3FF] shrink-0" />
+                <span className="leading-relaxed font-medium">{benefit}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Ideal For Section */}
+        <div className="mb-6 md:mb-8 bg-blue-50/40 p-4 md:p-5 rounded-xl border border-[#00A3FF]/10 shadow-[0_2px_10px_-4px_rgba(0,163,255,0.05)]">
+          <span className="block text-[#00A3FF] font-bold uppercase tracking-[0.15em] text-[10px] md:text-xs mb-1.5">
+            {t("services.idealFor")}
+          </span>
+          <p className="text-sm md:text-[15px] text-zinc-700 leading-relaxed font-medium">
+            {service.idealFor}
+          </p>
+        </div>
+
+        {/* CTA & Authority */}
+        <div className="mt-auto pt-4 md:pt-5 border-t border-zinc-100 flex flex-col items-start">
+          <div className="flex flex-col sm:flex-row items-center gap-4 mb-4 w-full sm:w-auto">
+            <a
+              href={`https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20${encodeURIComponent(service.title)}.`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-zinc-900 text-white font-semibold text-sm hover:bg-[#00A3FF] transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
+            >
+              {t("services.ctaPrimary")}
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a 
+              href="#portafolio" 
+              className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
+            >
+              {t("services.ctaSecondary")}
+            </a>
+          </div>
+          
+          {/* Authority microcopy */}
+          <div className="w-full text-center sm:text-left">
+            <p className="text-[11px] text-zinc-400 font-medium tracking-wide">
+              {t("services.authority")}
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  );
+
   return (
-    <section id="servicios" className="scroll-mt-28 pt-8 md:pt-10 pb-16 bg-[#f8f9fa] relative">
+    <section id="servicios" className="scroll-mt-28 py-24 md:py-32 bg-[#f8f9fa] relative">
       <SectionSeparator className="absolute top-0" />
       
       {/* Background soft layout grids */}
@@ -172,12 +277,12 @@ export default function InteractiveServices() {
         </div>
 
         {/* Services Grid (Interactive Tabs) */}
-        <div className="grid grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-3 md:gap-4 lg:gap-5">
           {services.map((service) => {
             const isSelected = selectedService === service.id;
             return (
+              <div key={service.id} className="contents">
               <div
-                key={service.id}
                 onClick={() => {
                   setSelectedService(isSelected ? null : service.id);
                   setImageError(false);
@@ -227,116 +332,24 @@ export default function InteractiveServices() {
                   />
                 </div>
               </div>
+              {/* Mobile Inline Detail Panel */}
+              <div className={`sm:hidden transition-all duration-500 ease-in-out origin-top ${isSelected ? 'opacity-100 max-h-[1500px] mt-4 mb-4' : 'opacity-0 max-h-0 mt-0 mb-0 overflow-hidden'}`}>
+                {isSelected && (
+                  <div className="w-full animate-fadeInUp">
+                    {renderDetailPanel(service)}
+                  </div>
+                )}
+              </div>
+              </div>
             );
           })}
         </div>
 
         {/* Dynamic Detail Area - Premium Editorial Panel */}
-        <div className={`transition-all duration-500 ease-in-out origin-top ${selectedService ? 'opacity-100 max-h-[1500px] mt-8 md:mt-10' : 'opacity-0 max-h-0 mt-0 overflow-hidden'}`}>
+        <div className={`hidden sm:block transition-all duration-500 ease-in-out origin-top ${selectedService ? 'opacity-100 max-h-[1500px] mt-8 md:mt-10' : 'opacity-0 max-h-0 mt-0 overflow-hidden'}`}>
           {activeService && (
             <div className="max-w-5xl mx-auto animate-fadeInUp">
-              <div className="bg-white border border-zinc-200/60 rounded-2xl shadow-[0_12px_40px_-12px_rgba(0,0,0,0.08)] overflow-hidden flex flex-col md:flex-row group hover:border-[#00A3FF]/20 transition-colors duration-500">
-                
-                {/* Left Column: Conceptual Image with Premium Framing */}
-                <div className="w-full md:w-5/12 lg:w-1/2 relative bg-gradient-to-br from-[#f8f9fa] to-blue-50/40 border-b md:border-b-0 md:border-r border-zinc-100 min-h-[260px] md:min-h-[440px] flex items-center justify-center p-6 md:p-8 lg:p-12">
-                  
-                  {/* Elegant Fallback (Visible behind image or if image fails) */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-100 z-0">
-                    <div className="text-[#00A3FF]/5 transform scale-[3] md:scale-[5] transition-transform duration-700 group-hover:scale-[3.2] md:group-hover:scale-[5.2]">
-                      {activeService.icon}
-                    </div>
-                  </div>
-                  
-                  {/* Main Service Image (Rounded floating frame) */}
-                  <div className="relative w-full h-full rounded-2xl overflow-hidden shadow-[0_15px_35px_-10px_rgba(0,0,0,0.1)] border border-white/80 bg-white aspect-[4/3] md:aspect-auto flex items-center justify-center z-10 group-hover:shadow-[0_20px_40px_-15px_rgba(0,163,255,0.15)] transition-shadow duration-700">
-                      {!imageError ? (
-                        <Image 
-                          src={activeService.image} 
-                          alt={activeService.title} 
-                          fill 
-                          sizes="(max-w-768px) 100vw, 50vw"
-                          className="object-cover transition-transform duration-700 group-hover:scale-105"
-                          onError={() => setImageError(true)}
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-gradient-to-br from-zinc-50 to-zinc-100 flex flex-col items-center justify-center p-6 text-center">
-                          <div className="text-[#00A3FF] mb-3 md:mb-4 opacity-50 transform scale-125">
-                            {activeService.icon}
-                          </div>
-                          <span className="text-zinc-400 font-bold text-xs md:text-sm px-2 md:px-4 uppercase tracking-[0.1em]">{activeService.title}</span>
-                        </div>
-                      )}
-                  </div>
-                </div>
-
-                {/* Right Column: Editorial Details */}
-                <div className="w-full md:w-7/12 lg:w-1/2 p-8 md:p-10 lg:p-12 flex flex-col justify-center relative">
-                  {/* Subtle accent line at top */}
-                  <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#00A3FF] to-cyan-400 opacity-80" />
-                  
-                  <h4 className="text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#00A3FF] mb-2 md:mb-3">
-                    {t("services.selectedService")}
-                  </h4>
-                  <h5 className="text-2xl md:text-3xl font-bold text-zinc-900 mb-3 md:mb-4 font-sans leading-tight">
-                    {activeService.title}
-                  </h5>
-                  
-                  <p className="text-sm md:text-base text-zinc-600 leading-[1.6] font-normal mb-5 md:mb-6">
-                    {activeService.detailDescription}
-                  </p>
-
-                  {/* Benefits List */}
-                  <div className="mb-5 md:mb-6">
-                    <ul className="space-y-2.5">
-                      {activeService.benefits.map((benefit, i) => (
-                        <li key={i} className="flex items-start gap-3 text-sm text-zinc-700">
-                          <CheckCircle2 className="w-5 h-5 text-[#00A3FF] shrink-0" />
-                          <span className="leading-relaxed font-medium">{benefit}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Ideal For Section */}
-                  <div className="mb-6 md:mb-8 bg-blue-50/40 p-4 md:p-5 rounded-xl border border-[#00A3FF]/10 shadow-[0_2px_10px_-4px_rgba(0,163,255,0.05)]">
-                    <span className="block text-[#00A3FF] font-bold uppercase tracking-[0.15em] text-[10px] md:text-xs mb-1.5">
-                      {t("services.idealFor")}
-                    </span>
-                    <p className="text-sm md:text-[15px] text-zinc-700 leading-relaxed font-medium">
-                      {activeService.idealFor}
-                    </p>
-                  </div>
-
-                  {/* CTA & Authority */}
-                  <div className="mt-auto pt-4 md:pt-5 border-t border-zinc-100 flex flex-col items-start">
-                    <div className="flex flex-col sm:flex-row items-center gap-4 mb-4 w-full sm:w-auto">
-                      <a
-                        href={`https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20${encodeURIComponent(activeService.title)}.`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-zinc-900 text-white font-semibold text-sm hover:bg-[#00A3FF] transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
-                      >
-                        {t("services.ctaPrimary")}
-                        <ArrowRight className="w-4 h-4" />
-                      </a>
-                      <a 
-                        href="#portafolio" 
-                        className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
-                      >
-                        {t("services.ctaSecondary")}
-                      </a>
-                    </div>
-                    
-                    {/* Authority microcopy */}
-                    <div className="w-full text-center sm:text-left">
-                      <p className="text-[11px] text-zinc-400 font-medium tracking-wide">
-                        {t("services.authority")}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
+              {renderDetailPanel(activeService)}
             </div>
           )}
         </div>

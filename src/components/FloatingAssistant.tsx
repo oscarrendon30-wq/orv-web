@@ -55,7 +55,7 @@ export default function FloatingAssistant() {
   if (!isMounted) return null;
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-8 md:right-8 z-[100] flex flex-col items-end">
+    <div className="fixed bottom-4 right-4 md:bottom-8 md:right-8 z-[100] flex flex-col items-end">
       {/* Floating Panel */}
       <AnimatePresence>
         {isOpen && (
@@ -170,10 +170,10 @@ export default function FloatingAssistant() {
         <button
           onClick={togglePanel}
           aria-label={t("assistant.ariaOpen")}
-          className="relative flex items-center justify-center w-14 h-14 md:w-16 md:h-16 bg-white rounded-full shadow-[0_15px_30px_-10px_rgba(12,36,70,0.4)] border-[3px] border-white overflow-hidden hover:scale-105 transition-transform duration-300 z-10"
+          className="relative flex items-center justify-center w-11 h-11 md:w-16 md:h-16 bg-white rounded-full shadow-[0_15px_30px_-10px_rgba(12,36,70,0.4)] border-[2.5px] md:border-[3px] border-white overflow-hidden hover:scale-105 transition-transform duration-300 z-10"
         >
           {isOpen ? (
-            <X className="w-6 h-6 text-[#0c2446]" />
+            <X className="w-5 h-5 md:w-6 md:h-6 text-[#0c2446]" />
           ) : (
             <Image 
               src="/images/home/oscar-avatar-assistant.png" 

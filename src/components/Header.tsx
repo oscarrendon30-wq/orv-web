@@ -8,7 +8,7 @@ import { useLanguage } from "@/context/LanguageContext";
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const { language, toggleLanguage, t } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,17 +77,21 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-6">
           {/* Social Icons & Language Toggle */}
           <div className="flex items-center gap-4">
-            
-            <button 
-              onClick={toggleLanguage}
-              className="flex items-center text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400 hover:text-brand-royal transition-colors"
-              aria-label="Toggle language"
-            >
-              <span className={language === 'es' ? "text-[#0a2540]" : ""}>ES</span>
+            <div className="flex items-center text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400" aria-label="Toggle language">
+              <button 
+                onClick={() => setLanguage("es")}
+                className={`hover:text-brand-royal transition-colors ${language === 'es' ? "text-[#0a2540]" : ""}`}
+              >
+                ES
+              </button>
               <span className="mx-1.5 opacity-30">/</span>
-              <span className={language === 'en' ? "text-[#0a2540]" : ""}>EN</span>
-            </button>
-            
+              <button 
+                onClick={() => setLanguage("en")}
+                className={`hover:text-brand-royal transition-colors ${language === 'en' ? "text-[#0a2540]" : ""}`}
+              >
+                EN
+              </button>
+            </div>
             <div className="w-[1px] h-4 bg-zinc-200 mx-1" />
 
             <a
@@ -141,7 +145,7 @@ export default function Header() {
 
       {/* Mobile Navigation Dropdown */}
       <div
-        className={`md:hidden fixed inset-x-0 top-[85px] bottom-0 z-40 bg-white/98 backdrop-blur-lg border-t border-zinc-100 transition-transform duration-300 ease-in-out ${
+        className={`md:hidden absolute inset-x-0 top-full h-[100vh] z-[100] bg-white border-t border-zinc-100 transition-transform duration-300 ease-in-out overflow-y-auto ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -158,16 +162,23 @@ export default function Header() {
           ))}
           
           {/* Mobile Social Icons & Language Toggle */}
-          <div className="flex items-center justify-between py-2 border-b border-zinc-100 pb-4">
-            
-            <button 
-              onClick={toggleLanguage}
-              className="flex items-center text-xs font-bold tracking-[0.2em] uppercase text-zinc-400"
-            >
-              <span className={language === 'es' ? "text-[#0a2540]" : ""}>ES</span>
-              <span className="mx-2 opacity-30">/</span>
-              <span className={language === 'en' ? "text-[#0a2540]" : ""}>EN</span>
-            </button>
+          <div className="flex flex-col gap-2 py-2 border-b border-zinc-100 pb-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">
+                <button 
+                  onClick={() => setLanguage("es")}
+                  className={language === 'es' ? "text-[#0a2540]" : ""}
+                >
+                  ES
+                </button>
+                <span className="mx-2 opacity-30">/</span>
+                <button 
+                  onClick={() => setLanguage("en")}
+                  className={language === 'en' ? "text-[#0a2540]" : ""}
+                >
+                  EN
+                </button>
+              </div>
 
             <div className="flex items-center gap-6">
               <a
@@ -190,6 +201,7 @@ export default function Header() {
               >
                 <Facebook className="w-6 h-6" />
               </a>
+            </div>
             </div>
           </div>
           

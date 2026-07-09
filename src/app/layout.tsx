@@ -54,9 +54,9 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${outfit.variable} ${playfair.variable} h-full antialiased`}
+      className={`${outfit.variable} ${playfair.variable} h-full antialiased overflow-x-hidden`}
     >
-      <body className="min-h-full flex flex-col bg-brand-deep text-brand-text-primary selection:bg-brand-gold/20 selection:text-brand-text-primary">
+      <body className="min-h-full flex flex-col bg-brand-deep text-brand-text-primary selection:bg-brand-gold/20 selection:text-brand-text-primary overflow-x-hidden">
         <LanguageProvider>
           {children}
           <FloatingAssistant />

@@ -2,23 +2,23 @@ export const en = {
   header: {
     inicio: "Home",
     servicios: "Services",
-    portafolio: "Portfolio",
+    portafolio: "Projects",
     proceso: "Process",
     sobreMi: "About me",
     contacto: "Contact",
-    hablemos: "Let's talk",
+    hablemos: "LET'S TALK",
   },
   hero: {
     tagline: "Oscar Rendón Visual",
-    title1: "Senior Graphic Design",
+    title1: "Senior graphic designer",
     title2: " for brands that need",
     title3: " a professional visual presence.",
-    subtitle: "30 years creating identity, editorial pieces, branding, social media, presentations, and visual solutions for companies, media, and entrepreneurs.",
-    badgeRole: "Senior Graphic Designer",
+    subtitle: "30 years creating corporate identity, editorial pieces, branding, social media presence, presentations, and visual solutions for companies, media outlets, and entrepreneurs.",
+    badgeRole: "Senior graphic designer",
     badgeLocation: "Pereira, Colombia",
     badgeExperience: "30 years of experience",
-    ctaPrimary: "View Portfolio",
-    ctaSecondary: "Chat on WhatsApp",
+    ctaPrimary: "VIEW PROJECTS",
+    ctaSecondary: "CHAT ON WHATSAPP",
   },
   services: {
     tagline: "Services and Specialties",
@@ -77,10 +77,10 @@ export const en = {
   },
   portfolio: {
     tagline: "Featured Projects",
-    title: "Project Portfolio.",
+    title: "Featured Projects.",
     subtitle: "Real projects where visual strategy, design, and experience become brand presence.",
     viewProject: "View project",
-    viewAll: "View full portfolio",
+    viewAll: "All Projects",
     categories: {
       todos: "All projects",
       branding: "Branding & Identity",
@@ -95,6 +95,22 @@ export const en = {
       title: "Do you want your brand to look this professional too?",
       subtitle: "Let's build a clear, coherent visual presence that's ready to sell.",
       btn: "Let's talk about your project"
+    },
+    projectLayout: {
+      back_to_projects: "Back to Projects",
+      project: "Project",
+      developed_by: "Developed by",
+      technical_sheet: "Technical Sheet",
+      project_summary: "Project Summary",
+      the_result: "The Result",
+      project_result: "Project Result",
+      similar_project: "Do you have a similar project?",
+      lets_talk_desc: "Let's talk and build a visual presence together that elevates your brand.",
+      lets_talk_btn: "Let's talk about your brand"
+    },
+    nav: {
+      back_to_portfolio: "Back to Projects",
+      next_project: "Next project"
     },
     projects: {
       beGood: {
@@ -126,6 +142,11 @@ export const en = {
         type: "Technology & Retail",
         desc: "Visual identity development, commercial pieces, and graphic applications for a technology and retail brand.",
         tags: ["Branding", "Visual communication", "Commercial pieces"]
+      },
+      editorial: {
+        type: "Publications, magazines, newspapers and print pieces",
+        desc: "Experience in editorial layout, cover design, regional newspapers, magazines, commemorative books, and printed pieces for commercial brands.",
+        tags: ["Layout", "Covers", "Publications"]
       }
     }
   },
@@ -204,8 +225,8 @@ export const en = {
         answer: "Yes, I design for both worlds. I have deep technical experience in editorial design for pre-press and printing, and at the same time I structure and design professional feeds and visual campaigns adapted to digital platforms and Instagram."
       },
       {
-        question: "Can I hire a single piece or must it be a full package?",
-        answer: "I work under both modalities. We can develop specific projects (for example, the design of a single label or book cover) or structure a complete corporate visual identity package that covers branding, stationery, packaging, and social media."
+        question: "Can I hire a single design or a fixed design package?",
+        answer: "Yes. You can hire a single piece, a complete project, or a fixed package based on the number of designs you need. If your brand requires recurring visual content, we can define monthly packages or packages by number of pieces, with a fee agreed in advance to better organize your budget."
       }
     ]
   },
@@ -321,7 +342,7 @@ export const en = {
     navItems: [
       { label: "Home", id: "inicio" },
       { label: "Services", id: "servicios" },
-      { label: "Portfolio", id: "portafolio" },
+      { label: "Projects", id: "portafolio" },
       { label: "Process", id: "proceso" },
       { label: "About Me", id: "sobre-mi" },
       { label: "Contact", id: "contacto" },
@@ -341,26 +362,26 @@ export const en = {
     options: [
       {
         label: "Logo or visual identity",
-        message: "Hi Oscar, I saw your portfolio and I want to request a quote for a logo or visual identity for my brand."
+        message: "Hi Oscar, I saw your projects and I want to request a quote for a logo or visual identity for my brand."
       },
       {
         label: "Social media designs",
-        message: "Hi Oscar, I saw your portfolio and I want to request a quote for social media designs."
+        message: "Hi Oscar, I saw your projects and I want to request a quote for social media designs."
       },
       {
         label: "Website",
-        message: "Hi Oscar, I saw your portfolio and I want to request a quote for a website for my brand."
+        message: "Hi Oscar, I saw your projects and I want to request a quote for a website for my brand."
       },
       {
         label: "Corporate presentation",
-        message: "Hi Oscar, I saw your portfolio and I want to request a quote for a corporate presentation."
+        message: "Hi Oscar, I saw your projects and I want to request a quote for a corporate presentation."
       },
       {
         label: "Packaging or labels",
-        message: "Hi Oscar, I saw your portfolio and I want to request a quote for packaging or label design."
+        message: "Hi Oscar, I saw your projects and I want to request a quote for packaging or label design."
       }
     ],
-    directMessage: "Hi Oscar, I saw your portfolio and I want to talk to you about a design project.",
+    directMessage: "Hi Oscar, I saw your projects and I want to talk to you about a design project.",
     directButton: "Talk directly",
     helperText: "Need help?",
     ariaClose: "Close assistant",

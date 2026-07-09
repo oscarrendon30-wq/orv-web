@@ -6,7 +6,7 @@ import { User, MapPin, Star, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const whatsappUrl = "https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20dise%C3%B1o%20gr%C3%A1fico.";
 
   return (
@@ -27,14 +27,14 @@ export default function Hero() {
         </svg>
 
         {/* Photographic Bleed (Sangrado a la derecha) */}
-        <div className="absolute top-0 right-0 w-full h-[60vh] lg:h-full lg:w-[65vw] z-10 translate-y-8 lg:translate-y-12">
+        <div className="absolute top-0 right-0 w-full h-[60vh] md:h-[65vh] lg:h-full lg:w-[65vw] z-10 translate-y-16 lg:translate-y-12">
           <Image
             src="/images/home/hero-oscar-rendon-home.webp"
             alt="Oscar Rendón - Diseñador Gráfico Senior"
             fill
             sizes="(max-w-1024px) 100vw, 65vw"
             priority
-            className="object-cover object-[center_top] lg:object-[right_top] [mask-image:linear-gradient(to_top,transparent_0%,black_30%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_35%)]"
+            className="object-cover object-[60%_top] lg:object-[right_top] [mask-image:linear-gradient(to_top,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_35%)]"
           />
         </div>
         
@@ -43,7 +43,7 @@ export default function Hero() {
       </div>
 
       {/* Main Container Container (Text Content) */}
-      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center pt-[55vh] pb-12 lg:pt-12 lg:pb-0 pointer-events-none">
+      <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center pt-[60vh] pb-40 md:pb-16 lg:pt-12 lg:pb-0 pointer-events-none">
         
         {/* LEFT COLUMN: Text and branding */}
         <div className="w-full lg:w-[55%] flex flex-col justify-center text-left pointer-events-auto lg:pr-8">
@@ -62,7 +62,11 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-white text-4xl sm:text-5xl md:text-[42px] xl:text-[50px] font-bold leading-[1.15] tracking-tight mb-10 max-w-[500px]"
+            className={`text-white font-bold tracking-tight mb-8 md:mb-10 max-w-[500px] ${
+              language === 'en' 
+                ? 'text-[32px] leading-[1.2] sm:text-[40px] md:text-[42px] xl:text-[50px]' 
+                : 'text-4xl leading-[1.15] sm:text-5xl md:text-[42px] xl:text-[50px]'
+            }`}
           >
             {t("hero.title1")}<br className="hidden lg:block" /> {t("hero.title2")}<br className="hidden lg:block" /> <span className="text-[#00A3FF]">{t("hero.title3")}</span>
           </motion.h1>
@@ -111,7 +115,7 @@ export default function Hero() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full bg-brand-royal text-white font-bold text-[15px] hover:bg-[#00A3FF] transition-all duration-300 shadow-lg hover:shadow-brand-royal/20 group uppercase tracking-wide"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full bg-brand-royal text-white font-bold text-[14px] md:text-[15px] hover:bg-[#00A3FF] transition-all duration-300 shadow-lg hover:shadow-brand-royal/20 group uppercase tracking-wide"
             >
               {/* WhatsApp Icon */}
               <svg
@@ -125,7 +129,7 @@ export default function Hero() {
             </a>
             <a
               href="#portafolio"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-10 py-5 rounded-full border border-white/30 text-white font-bold text-[15px] hover:bg-white/5 hover:border-white transition-all duration-300 group uppercase tracking-wide"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full border border-white/30 text-white font-bold text-[14px] md:text-[15px] hover:bg-white/5 hover:border-white transition-all duration-300 group uppercase tracking-wide"
             >
               {t("hero.ctaPrimary")}
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />

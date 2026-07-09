@@ -1,8 +1,63 @@
+"use client";
+
 import Image from "next/image";
+import ZoomableImage from "@/components/ui/ZoomableImage";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import ProjectNavigation from "@/components/ProjectNavigation";
+
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function AnclaSaludPortfolioPage() {
+  const { t, language, setLanguage } = useLanguage();
+
+  const content = {
+    eyebrow: {
+      es: "SALUD & BIENESTAR",
+      en: "HEALTH & WELLNESS"
+    },
+    desc: {
+      es: "Desarrollo de identidad visual, piezas comerciales y presencia web para una marca enfocada en autocuidado, bienestar y productos naturales.",
+      en: "Development of visual identity, commercial pieces, and web presence for a brand focused on self-care, wellness, and natural products."
+    },
+    tags: {
+      es: ["Branding", "Comunicación visual", "Piezas comerciales", "Diseño web", "Salud & bienestar"],
+      en: ["Branding", "Visual Communication", "Commercial Pieces", "Web Design", "Health & Wellness"]
+    },
+    sheet: {
+      client: { es: "Ancla Salud", en: "Ancla Salud" },
+      category: { es: "Salud & Bienestar", en: "Health & Wellness" },
+      services: { es: "Branding, piezas comerciales y web", en: "Branding, commercial pieces, and web" },
+      focus: { es: "Autocuidado, bienestar y productos naturales", en: "Self-care, wellness, and natural products" },
+      year: { es: "2026", en: "2026" }
+    },
+    summary: {
+      es: "Desarrollo de identidad visual y comunicación para Ancla Salud, enfocándonos en proyectar bienestar, autocuidado y la esencia natural de sus productos mediante un sistema visual coherente e inspirador.",
+      en: "Development of visual identity and communication for Ancla Salud, focusing on projecting wellness, self-care, and the natural essence of their products through a coherent and inspiring visual system."
+    },
+    devTitle: { es: "Piezas desarrolladas", en: "Developed Pieces" },
+    blocks: [
+      {
+        title: { es: "Identidad y Enfoque Visual", en: "Identity and Visual Focus" },
+        desc: { es: "Creación del logotipo y universo visual orientado a transmitir salud, tranquilidad y la riqueza de los ingredientes naturales, logrando una identidad memorable y armónica.", en: "Creation of the logo and visual universe oriented to convey health, tranquility, and the richness of natural ingredients, achieving a memorable and harmonious identity." }
+      },
+      {
+        title: { es: "Piezas comerciales", en: "Commercial pieces" },
+        desc: { es: "Desarrollo de piezas de soporte y presentación de productos diseñadas para mantener la coherencia gráfica y captar la esencia natural de Ancla Salud.", en: "Development of support pieces and product presentations designed to maintain graphic coherence and capture the natural essence of Ancla Salud." }
+      },
+      {
+        title: { es: "Sitio web / presencia digital", en: "Website / digital presence" },
+        desc: { es: "Aplicación de la identidad visual en la interfaz principal del sitio web, consolidando una presencia digital clara, confiable y alineada con la marca.", en: "Application of visual identity on the main website interface, consolidating a clear, reliable digital presence aligned with the brand." }
+      }
+    ],
+    websiteBtn: { es: "Ver sitio web: anclasalud.com.co", en: "View website: anclasalud.com.co" },
+    resultTitle: { es: "Identidad coherente y natural", en: "Coherent and natural identity" },
+    result: {
+      es: "El resultado es una marca de salud y bienestar altamente confiable, con un sistema de comunicación visual que promueve el autocuidado a través de piezas armónicas y un canal digital claro para sus clientes.",
+      en: "The result is a highly reliable health and wellness brand, with a visual communication system that promotes self-care through harmonious pieces and a clear digital channel for its clients."
+    }
+  };
+
   return (
     <main className="min-h-screen relative bg-[#F8FAFC] text-[#071B33] overflow-hidden pt-16 md:pt-[72px] pb-0">
       {/* Light Theme ORV Watermark Background */}
@@ -35,45 +90,61 @@ export default function AnclaSaludPortfolioPage() {
             className="inline-flex items-center gap-2 text-[#071B33]/50 hover:text-[#071B33] transition-colors font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase"
           >
             <ArrowLeft className="w-4 h-4" />
-            Volver al portafolio
+            {t("portfolio.projectLayout.back_to_projects")}
           </Link>
-          <div className="flex items-center gap-4 opacity-100">
+          <div className="flex flex-wrap items-center gap-4 opacity-100">
+            {/* Language Switcher */}
+            <div className="flex items-center gap-2 mr-2 md:mr-6">
+              <button
+                onClick={() => setLanguage("es")}
+                className={`font-sans text-[10px] md:text-xs font-bold tracking-widest transition-colors ${language === "es" ? "text-[#00A3FF]" : "text-[#071B33]/40 hover:text-[#071B33]"}`}
+              >
+                ES
+              </button>
+              <span className="text-[#071B33]/20 text-[10px] md:text-xs">/</span>
+              <button
+                onClick={() => setLanguage("en")}
+                className={`font-sans text-[10px] md:text-xs font-bold tracking-widest transition-colors ${language === "en" ? "text-[#00A3FF]" : "text-[#071B33]/40 hover:text-[#071B33]"}`}
+              >
+                EN
+              </button>
+            </div>
             <div className="w-8 h-[1px] bg-[#071B33]/20 hidden md:block" />
             <span className="font-sans text-[#071B33] text-[10px] md:text-xs tracking-[0.2em] uppercase font-bold flex items-center gap-3">
-              Oscar Rendón Visual <span className="text-[#071B33]/20">/</span> <span className="text-[#071B33] bg-[#EAF1F8] px-3 py-1.5 rounded-full">Proyecto</span>
+              Oscar Rendón Visual <span className="text-[#071B33]/20">/</span> <span className="text-[#071B33] bg-[#EAF1F8] px-3 py-1.5 rounded-full">{t("portfolio.projectLayout.project")}</span>
             </span>
           </div>
         </div>
       </div>
 
       {/* Hero Full Width Background */}
-      <div className="relative w-full mb-20 md:mb-24 flex flex-col lg:justify-center overflow-hidden bg-[#0a1e3f] min-h-[90vh] lg:min-h-[clamp(520px,58vh,640px)]">
+      <div className="relative w-full mb-16 md:mb-24 flex flex-col lg:justify-center overflow-hidden bg-[#0a1e3f] min-h-[75vh] md:min-h-[80vh] lg:min-h-[clamp(520px,58vh,640px)]">
         <div className="absolute inset-0 z-0">
-          <div className="absolute top-0 right-0 w-full h-[60vh] lg:h-full lg:w-[65vw] z-10 flex items-center justify-center p-8 lg:p-0">
-             <Image
+          <div className="absolute top-0 right-0 w-full h-[65vh] md:h-[70vh] lg:h-full lg:w-[65vw] z-10 flex items-center justify-center p-0 lg:p-0">
+             <ZoomableImage
                 src="/images/portfolio/ancla-salud/ancla-salud-hero.webp"
                 alt="Proyecto Ancla Salud"
                 fill
-                className="object-cover object-[60%_center] lg:object-[60%_center] [mask-image:linear-gradient(to_top,transparent_0%,black_40%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_20%)] opacity-85"
+                className="object-cover object-[60%_center] lg:object-[60%_center] [mask-image:linear-gradient(to_top,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_15%)] opacity-85"
                 priority
              />
           </div>
         </div>
 
-        <div className="relative z-20 w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center pt-[55vh] pb-16 lg:py-[clamp(70px,8vh,100px)] pointer-events-none mt-auto lg:mt-0">
+        <div className="relative z-20 w-full max-w-6xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center pt-[55vh] pb-12 lg:py-[clamp(70px,8vh,100px)] pointer-events-none mt-auto lg:mt-0">
           <div className="w-full lg:w-[55%] flex flex-col justify-start relative z-30 pointer-events-auto lg:pr-8">
-            <p className="text-[#00A3FF] font-sans text-[10px] md:text-xs font-bold uppercase tracking-[0.25em] mb-6">
-              SALUD & BIENESTAR
+            <p className="inline-block text-[#00A3FF] bg-[#061B33]/60 md:bg-transparent backdrop-blur-md md:backdrop-blur-none px-4 py-1.5 md:px-0 md:py-0 rounded-full font-sans text-[10.5px] md:text-xs font-bold uppercase tracking-[0.25em] mb-6 border border-white/10 md:border-transparent shadow-lg md:shadow-none">
+              {content.eyebrow[language]}
             </p>
             <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-md">
               Ancla Salud
             </h1>
             <p className="font-sans text-zinc-300 font-light text-lg md:text-xl leading-relaxed mb-12 max-w-lg">
-              Desarrollo de identidad visual, piezas comerciales y presencia web para una marca enfocada en autocuidado, bienestar y productos naturales.
+              {content.desc[language]}
             </p>
             
             <div className="flex flex-wrap gap-2 md:gap-3 mb-14">
-              {["Branding", "Comunicación visual", "Piezas comerciales", "Diseño web", "Salud & bienestar"].map((chip, idx) => (
+              {content.tags[language].map((chip, idx) => (
                 <span 
                   key={idx} 
                   className="font-sans text-[11px] md:text-sm font-semibold text-[#0a1e3f] bg-[#EAF1F8] px-4 md:px-6 py-2 md:py-2.5 rounded-full tracking-wide shadow-sm hover:bg-white transition-all"
@@ -86,7 +157,7 @@ export default function AnclaSaludPortfolioPage() {
             <div className="inline-flex items-center gap-4 self-start mt-auto">
               <div className="w-12 h-[1px] bg-white/20" />
               <span className="font-sans text-[10px] md:text-xs text-zinc-400 uppercase tracking-[0.2em] font-semibold leading-relaxed">
-                Desarrollado por <br />
+                {t("portfolio.projectLayout.developed_by")} <br />
                 <span className="text-white font-bold">Oscar Rendón Visual</span>
               </span>
             </div>
@@ -95,24 +166,24 @@ export default function AnclaSaludPortfolioPage() {
       </div>
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 md:px-12">
-        {/* Ficha Técnica y Resumen */}
+        {/* {t("portfolio.projectLayout.technical_sheet")} y Resumen */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 mb-12 md:mb-16 lg:mb-20 items-start">
-          {/* Ficha Técnica */}
+          {/* {t("portfolio.projectLayout.technical_sheet")} */}
           <div className="lg:col-span-4 order-2 lg:order-1">
             <div className="p-7 md:p-8 rounded-[24px] bg-[#0a1e3f] border border-white/5 shadow-[0_20px_60px_-15px_rgba(10,30,63,0.3)] relative overflow-hidden group hover:border-white/10 hover:shadow-[0_20px_60px_-15px_rgba(10,30,63,0.4)] transition-all duration-500">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#00A3FF] opacity-5 blur-[50px] rounded-full group-hover:opacity-10 transition-opacity duration-500" />
               <h3 className="font-sans text-xl font-bold text-white mb-8 flex items-center gap-3">
                 <div className="w-2 h-2 rounded-full bg-[#00A3FF]" />
-                Ficha Técnica
+                {t("portfolio.projectLayout.technical_sheet")}
               </h3>
               
               <div className="space-y-6">
                 {[
-                  { label: "CLIENTE", value: "Ancla Salud" },
-                  { label: "CATEGORÍA", value: "Salud & Bienestar" },
-                  { label: "SERVICIOS", value: "Branding, piezas comerciales y web" },
-                  { label: "ENFOQUE", value: "Autocuidado, bienestar y productos naturales" },
-                  { label: "AÑO", value: "2026" },
+                  { label: "CLIENTE", value: content.sheet.client[language] },
+                  { label: "CATEGORÍA", value: content.sheet.category[language] },
+                  { label: "SERVICIOS", value: content.sheet.services[language] },
+                  { label: "ENFOQUE", value: content.sheet.focus[language] },
+                  { label: "AÑO", value: content.sheet.year[language] },
                 ].map((item, idx) => (
                   <div key={idx} className="flex flex-col gap-1 border-b border-white/5 pb-4 last:border-0 last:pb-0">
                     <span className="font-sans text-[10px] md:text-[11px] text-[#00A3FF] uppercase tracking-[0.2em] font-bold">
@@ -130,12 +201,12 @@ export default function AnclaSaludPortfolioPage() {
           {/* Resumen del Proyecto */}
           <div className="lg:col-span-8 order-1 lg:order-2 flex flex-col justify-start lg:pt-6">
             <h2 className="font-sans text-4xl md:text-5xl lg:text-6xl font-bold text-[#071B33] mb-10 leading-tight tracking-tight">
-              Resumen del proyecto
+              {t("portfolio.projectLayout.project_summary")}
             </h2>
             <div className="font-sans text-[#071B33]/90 font-light text-lg md:text-xl leading-[1.9] max-w-3xl relative pl-0 md:pl-8">
               <div className="absolute left-0 top-2 bottom-2 w-[2px] bg-[#071B33]/10 hidden md:block" />
               <p>
-                Desarrollo de identidad visual y comunicación para Ancla Salud, enfocándonos en proyectar bienestar, autocuidado y la esencia natural de sus productos mediante un sistema visual coherente e inspirador.
+                {content.summary[language]}
               </p>
             </div>
           </div>
@@ -144,7 +215,7 @@ export default function AnclaSaludPortfolioPage() {
         {/* Desarrollo del Proyecto */}
         <div className="mb-12 md:mb-16">
           <h2 className="font-sans text-4xl md:text-5xl font-bold text-[#0a1e3f] mb-12 text-center tracking-tight">
-            Piezas desarrolladas
+            {content.devTitle[language]}
           </h2>
           <div className="relative w-full max-w-5xl mx-auto">
             
@@ -154,15 +225,15 @@ export default function AnclaSaludPortfolioPage() {
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-[#00A3FF]/15 group-hover:bg-[#00A3FF] group-hover:h-[80%] transition-all duration-700 ease-out rounded-r-full hidden lg:block" />
 
                 <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-[#F8FAFC] border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2">
-                  <Image src="/images/portfolio/ancla-salud/ancla-salud-logo.webp" alt="Logo e Identidad Visual" fill className="object-contain p-4 md:p-8 group-hover:scale-105 transition-transform duration-700 ease-out opacity-100" />
+                  <ZoomableImage src="/images/portfolio/ancla-salud/ancla-salud-logo.webp" alt="Logo e Identidad Visual" fill className="object-contain p-4 md:p-8 group-hover:scale-105 transition-transform duration-700 ease-out opacity-100" />
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 lg:px-8 py-6 lg:py-8">
                   <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
                     <span className="w-6 h-[1px] bg-[#00A3FF]/40 hidden lg:block" /> 01
                   </span>
-                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">Identidad y Enfoque Visual</h3>
+                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">{content.blocks[0].title[language]}</h3>
                   <p className="font-sans text-[#071B33]/70 font-light text-base md:text-lg leading-[1.8]">
-                    Creación del logotipo y universo visual orientado a transmitir salud, tranquilidad y la riqueza de los ingredientes naturales, logrando una identidad memorable y armónica.
+                    {content.blocks[0].desc[language]}
                   </p>
                 </div>
               </div>
@@ -177,13 +248,13 @@ export default function AnclaSaludPortfolioPage() {
                   <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
                     <span className="w-6 h-[1px] bg-[#00A3FF]/40 hidden lg:block" /> 02
                   </span>
-                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">Piezas comerciales</h3>
+                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">{content.blocks[1].title[language]}</h3>
                   <p className="font-sans text-[#071B33]/70 font-light text-base md:text-lg leading-[1.8]">
-                    Desarrollo de piezas de soporte y presentación de productos diseñadas para mantener la coherencia gráfica y captar la esencia natural de Ancla Salud.
+                    {content.blocks[1].desc[language]}
                   </p>
                 </div>
                 <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-white border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2 order-1 lg:order-2">
-                  <Image src="/images/portfolio/ancla-salud/ancla-salud-portafolio.webp" alt="Piezas Comerciales Ancla Salud" fill className="object-cover p-0 md:p-0 group-hover:scale-105 transition-transform duration-700 ease-out" />
+                  <ZoomableImage src="/images/portfolio/ancla-salud/ancla-salud-portafolio.webp" alt="Piezas Comerciales Ancla Salud" fill className="object-cover p-0 md:p-0 group-hover:scale-105 transition-transform duration-700 ease-out" />
                 </div>
               </div>
             </div>
@@ -194,15 +265,15 @@ export default function AnclaSaludPortfolioPage() {
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-[#00A3FF]/15 group-hover:bg-[#00A3FF] group-hover:h-[80%] transition-all duration-700 ease-out rounded-r-full hidden lg:block" />
 
                 <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-[#F8FAFC] border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2">
-                  <Image src="/images/portfolio/ancla-salud/ancla-salud-web.webp" alt="Desarrollo Web Ancla Salud" fill className="object-cover p-0 md:p-0 group-hover:scale-105 transition-transform duration-700 ease-out opacity-90" />
+                  <ZoomableImage src="/images/portfolio/ancla-salud/ancla-salud-web.webp" alt="Desarrollo Web Ancla Salud" fill className="object-cover p-0 md:p-0 group-hover:scale-105 transition-transform duration-700 ease-out opacity-90" />
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 lg:px-8 py-6 lg:py-8">
                   <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
                     <span className="w-6 h-[1px] bg-[#00A3FF]/40 hidden lg:block" /> 03
                   </span>
-                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">Sitio web / presencia digital</h3>
+                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">{content.blocks[2].title[language]}</h3>
                   <p className="font-sans text-[#071B33]/70 font-light text-base md:text-lg leading-[1.8] mb-6">
-                    Aplicación de la identidad visual en la interfaz principal del sitio web, consolidando una presencia digital clara, confiable y alineada con la marca.
+                    {content.blocks[2].desc[language]}
                   </p>
                   <a 
                     href="https://anclasalud.com.co/" 
@@ -210,7 +281,7 @@ export default function AnclaSaludPortfolioPage() {
                     rel="noopener noreferrer"
                     className="inline-flex flex-wrap items-center justify-center gap-2 self-start font-sans text-[11px] sm:text-xs md:text-sm font-bold tracking-wide text-[#00A3FF] bg-[#00A3FF]/10 hover:bg-[#00A3FF] hover:text-white px-4 sm:px-5 py-2.5 rounded-[20px] sm:rounded-full transition-colors duration-300 group text-center"
                   >
-                    Ver sitio web: anclasalud.com.co
+                    {content.websiteBtn[language]}
                     <ExternalLink className="w-4 h-4 flex-shrink-0 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </a>
                 </div>
@@ -232,14 +303,14 @@ export default function AnclaSaludPortfolioPage() {
         <div className="max-w-4xl mx-auto px-6 md:px-12 text-center flex flex-col items-center">
           <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-6 flex items-center gap-4">
             <span className="w-8 h-[1px] bg-[#00A3FF]/40 hidden md:block" />
-            El Resultado
+            {t("portfolio.projectLayout.the_result")}
             <span className="w-8 h-[1px] bg-[#00A3FF]/40 hidden md:block" />
           </span>
           <h2 className="font-sans text-3xl md:text-4xl lg:text-5xl font-bold text-[#0a1e3f] mb-8 tracking-tight leading-tight">
-            Identidad coherente y natural
+            {content.resultTitle[language]}
           </h2>
           <p className="font-sans text-[#071B33]/70 text-lg md:text-xl leading-[1.8] font-light max-w-3xl">
-            El resultado es una marca de salud y bienestar altamente confiable, con un sistema de comunicación visual que promueve el autocuidado a través de piezas armónicas y un canal digital claro para sus clientes.
+            {content.result[language]}
           </p>
         </div>
       </div>
@@ -250,28 +321,20 @@ export default function AnclaSaludPortfolioPage() {
 
         <div className="max-w-4xl mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center text-center">
           <h3 className="font-sans text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
-            ¿Tienes un proyecto similar?
+            {t("portfolio.projectLayout.similar_project")}
           </h3>
           <p className="font-sans text-zinc-400 text-base md:text-lg mb-10 max-w-lg">
-            Hablemos y construyamos juntos una presencia visual que eleve tu marca.
+            {t("portfolio.projectLayout.lets_talk_desc")}
           </p>
           <Link
             href="#contacto"
             className="inline-flex items-center justify-center bg-white text-[#0a1e3f] font-sans font-bold text-sm uppercase tracking-[0.15em] px-10 py-4 rounded-full hover:bg-[#00A3FF] hover:text-white transition-colors duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_10px_30px_rgba(0,163,255,0.3)] mb-12 md:mb-16"
           >
-            Hablemos de tu marca
+            {t("portfolio.projectLayout.lets_talk_btn")}
           </Link>
 
           {/* Navegación del Portafolio */}
-          <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-8 pt-8 border-t border-white/10">
-            <Link
-              href="/#portafolio"
-              className="inline-flex items-center gap-3 text-white/50 hover:text-white transition-colors font-sans text-xs font-bold tracking-[0.2em] uppercase group"
-            >
-              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-              Volver al portafolio
-            </Link>
-          </div>
+          <ProjectNavigation currentProject="ancla-salud" />
         </div>
       </div>
     </main>

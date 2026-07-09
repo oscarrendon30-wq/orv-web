@@ -2,23 +2,23 @@ export const es = {
   header: {
     inicio: "Inicio",
     servicios: "Servicios",
-    portafolio: "Portafolio",
+    portafolio: "Proyectos",
     proceso: "Proceso",
     sobreMi: "Sobre mí",
     contacto: "Contacto",
-    hablemos: "Hablemos",
+    hablemos: "HABLEMOS",
   },
   hero: {
     tagline: "Oscar Rendón Visual",
     title1: "Diseño gráfico senior",
     title2: " para marcas que necesitan",
     title3: " presencia visual profesional.",
-    subtitle: "30 años creando identidad, piezas editoriales, branding, redes, presentaciones y soluciones visuales para empresas, medios y emprendedores.",
-    badgeRole: "Diseñador gráfico senior",
+    subtitle: "30 años creando identidad corporativa, artículos editoriales, marcas, presencia en redes sociales, presentaciones y soluciones visuales para empresas, medios de comunicación y emprendedores.",
+    badgeRole: "Diseñador gráfico sénior",
     badgeLocation: "Pereira, Colombia",
     badgeExperience: "30 años de experiencia",
-    ctaPrimary: "Ver portafolio",
-    ctaSecondary: "Hablar por WhatsApp",
+    ctaPrimary: "VER PROYECTOS",
+    ctaSecondary: "CHATEA EN WHATSAPP",
   },
   services: {
     tagline: "Servicios y Especialidades",
@@ -77,10 +77,10 @@ export const es = {
   },
   portfolio: {
     tagline: "Proyectos Destacados",
-    title: "Portafolio de proyectos.",
+    title: "Proyectos destacados.",
     subtitle: "Proyectos reales donde la estrategia visual, el diseño y la experiencia se convierten en presencia de marca.",
     viewProject: "Ver proyecto",
-    viewAll: "Ver portafolio completo",
+    viewAll: "Todos los proyectos",
     categories: {
       todos: "Todos los proyectos",
       branding: "Branding e Identidad",
@@ -95,6 +95,22 @@ export const es = {
       title: "¿Quieres que tu marca también se vea así de profesional?",
       subtitle: "Construyamos una presencia visual clara, coherente y lista para vender.",
       btn: "Hablemos de tu proyecto"
+    },
+    projectLayout: {
+      back_to_projects: "Volver a proyectos",
+      project: "Proyecto",
+      developed_by: "Desarrollado por",
+      technical_sheet: "Ficha Técnica",
+      project_summary: "Resumen del proyecto",
+      the_result: "El Resultado",
+      project_result: "Resultado del proyecto",
+      similar_project: "¿Tienes un proyecto similar?",
+      lets_talk_desc: "Hablemos y construyamos juntos una presencia visual que eleve tu marca.",
+      lets_talk_btn: "Hablemos de tu marca"
+    },
+    nav: {
+      back_to_portfolio: "Volver a proyectos",
+      next_project: "Siguiente proyecto"
     },
     projects: {
       beGood: {
@@ -126,6 +142,11 @@ export const es = {
         type: "Tecnología & Retail",
         desc: "Desarrollo de identidad visual, piezas comerciales y aplicaciones gráficas para una marca de tecnología y retail.",
         tags: ["Branding", "Comunicación visual", "Piezas comerciales"]
+      },
+      editorial: {
+        type: "Publicaciones, revistas, periódicos y piezas impresas",
+        desc: "Experiencia en diagramación editorial, diseño de portadas, periódicos regionales, revistas, libros conmemorativos y piezas impresas para marcas comerciales.",
+        tags: ["Diagramación", "Portadas", "Publicaciones"]
       }
     }
   },
@@ -204,8 +225,8 @@ export const es = {
         answer: "Sí, diseño para ambos mundos. Cuento con una profunda experiencia técnica en diseño editorial para pre-prensa e imprenta, y al mismo tiempo estructuro y diseño feeds profesionales y campañas visuales adaptadas a las plataformas digitales e Instagram."
       },
       {
-        question: "¿Puedo contratar una sola pieza o debe ser un paquete completo?",
-        answer: "Trabajo bajo ambas modalidades. Podemos desarrollar proyectos puntuales (por ejemplo, el diseño de una sola etiqueta o portada de libro) o estructurar un paquete completo de identidad visual corporativa que abarque branding, papelería, empaques y redes."
+        question: "¿Puedo contratar una sola pieza o un paquete fijo de diseños?",
+        answer: "Sí. Puedes contratar una pieza puntual, un proyecto completo o un paquete fijo según la cantidad de diseños que necesites. Si tu marca requiere piezas de forma recurrente, podemos definir paquetes mensuales o por número de piezas, con un valor previamente acordado para organizar mejor el presupuesto."
       }
     ]
   },
@@ -321,7 +342,7 @@ export const es = {
     navItems: [
       { label: "Inicio", id: "inicio" },
       { label: "Servicios", id: "servicios" },
-      { label: "Portafolio", id: "portafolio" },
+      { label: "Proyectos", id: "portafolio" },
       { label: "Proceso", id: "proceso" },
       { label: "Sobre mí", id: "sobre-mi" },
       { label: "Contacto", id: "contacto" },
@@ -341,26 +362,26 @@ export const es = {
     options: [
       {
         label: "Logo o identidad visual",
-        message: "Hola Oscar, vi tu portafolio y quiero cotizar un logo o identidad visual para mi marca."
+        message: "Hola Oscar, vi tus proyectos y quiero cotizar un logo o identidad visual para mi marca."
       },
       {
         label: "Diseños para redes sociales",
-        message: "Hola Oscar, vi tu portafolio y quiero cotizar diseños para redes sociales."
+        message: "Hola Oscar, vi tus proyectos y quiero cotizar diseños para redes sociales."
       },
       {
         label: "Página web",
-        message: "Hola Oscar, vi tu portafolio y quiero cotizar una página web para mi marca."
+        message: "Hola Oscar, vi tus proyectos y quiero cotizar una página web para mi marca."
       },
       {
         label: "Presentación corporativa",
-        message: "Hola Oscar, vi tu portafolio y quiero cotizar una presentación corporativa."
+        message: "Hola Oscar, vi tus proyectos y quiero cotizar una presentación corporativa."
       },
       {
         label: "Empaques o etiquetas",
-        message: "Hola Oscar, vi tu portafolio y quiero cotizar diseño de empaques o etiquetas."
+        message: "Hola Oscar, vi tus proyectos y quiero cotizar diseño de empaques o etiquetas."
       }
     ],
-    directMessage: "Hola Oscar, vi tu portafolio y quiero hablar contigo sobre un proyecto de diseño.",
+    directMessage: "Hola Oscar, vi tus proyectos y quiero hablar contigo sobre un proyecto de diseño.",
     directButton: "Hablar directamente",
     helperText: "¿Te ayudo?",
     ariaClose: "Cerrar asistente",

@@ -33,7 +33,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const toggleLanguage = () => {
-    setLanguage((prev) => (prev === "es" ? "en" : "es"));
+    setLanguage(language === "es" ? "en" : "es");
   };
 
   // Helper to get nested properties by string path (e.g. "hero.title")

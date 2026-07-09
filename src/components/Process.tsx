@@ -35,7 +35,7 @@ export default function Process() {
   ];
 
   return (
-    <section id="proceso" className="scroll-mt-28 pt-16 md:pt-24 pb-16 md:pb-24 bg-gradient-to-b from-[#071B33] to-[#050B14] relative">
+    <section id="proceso" className="scroll-mt-28 py-24 md:py-32 bg-gradient-to-b from-[#071B33] to-[#050B14] relative">
       <SectionSeparator className="absolute top-0" />
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}

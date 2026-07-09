@@ -26,7 +26,7 @@ interface Project {
 
 export default function Portfolio() {
   const [activeFilter, setActiveFilter] = useState("todos");
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const categories = [
     { id: "todos", name: t("portfolio.categories.todos") },
@@ -99,7 +99,7 @@ export default function Portfolio() {
       href: "/portfolio/ancla-salud",
     },
     {
-      id: "compitnda",
+      id: "computienda",
       name: "CompuTienda",
       category: "branding",
       tags: [t("portfolio.projects.computienda.tags.0"), t("portfolio.projects.computienda.tags.1"), t("portfolio.projects.computienda.tags.2")],
@@ -109,59 +109,85 @@ export default function Portfolio() {
       accent: "from-brand-blue/10 to-transparent",
       href: "/portfolio/computienda",
     },
+    {
+      id: "editorial",
+      name: language === "en" ? "Editorial Design & Publications" : "Diseño Editorial & Publicaciones",
+      category: "editorial",
+      tags: [t("portfolio.projects.editorial.tags.0"), t("portfolio.projects.editorial.tags.1"), t("portfolio.projects.editorial.tags.2")],
+      type: t("portfolio.projects.editorial.type"),
+      description: t("portfolio.projects.editorial.desc"),
+      image: "/images/portfolio/editorial/card.webp",
+      imageFit: "object-cover object-top",
+      accent: "from-amber-900/10 to-transparent",
+      href: "/portfolio/editorial",
+    },
   ];
 
   // Supporting items to show expertise in packaging and editorial
   const supportingItems = [
     {
-      title: "Diseño Editorial & Publicidad",
+      title: language === 'es' ? "Diseño Editorial & Publicidad" : "Editorial Design & Advertising",
       items: [
         {
-          name: "Portada Libro Herederos",
-          category: "Diseño de Portada",
-          image: "/images/portfolio/portada-herederos.jpg",
-          desc: "Diagramación y retoque de portada para publicación editorial.",
+          name: language === 'es' ? "Portada Libro Herederos" : "Herederos Book Cover",
+          category: language === 'es' ? "Diseño de Portada" : "Cover Design",
+          image: "/images/portfolio/editorial/herederos-pasion-portada.webp",
+          desc: language === 'es' 
+            ? "Diagramación y retoque de portada para publicación editorial."
+            : "Layout and retouching of cover for editorial publication.",
         },
         {
-          name: "Historia Tierra Mía",
-          category: "Diseño Editorial",
+          name: language === 'es' ? "Historia Tierra Mía" : "Tierra Mía Story",
+          category: language === 'es' ? "Diseño Editorial" : "Editorial Design",
           image: "/images/portfolio/tierra-mia-historia.png",
-          desc: "Maquetación de páginas y narrativa corporativa de marca.",
+          desc: language === 'es'
+            ? "Maquetación de páginas y narrativa corporativa de marca."
+            : "Page layout and corporate brand narrative.",
         },
         {
-          name: "Menú y Precios Dental",
-          category: "Pieza Publicitaria",
+          name: language === 'es' ? "Menú y Precios Dental" : "Dental Menu & Pricing",
+          category: language === 'es' ? "Pieza Publicitaria" : "Advertising Piece",
           image: "/images/portfolio/lista-precios-dental.jpg",
-          desc: "Estructuración de información comercial compleja para clínica dental.",
+          desc: language === 'es'
+            ? "Estructuración de información comercial compleja para clínica dental."
+            : "Structuring of complex commercial information for a dental clinic.",
         },
         {
-          name: "Computienda Agenda",
-          category: "Branding Editorial",
+          name: language === 'es' ? "Computienda Agenda" : "Computienda Planner",
+          category: language === 'es' ? "Branding Editorial" : "Editorial Branding",
           image: "/images/portfolio/computienda-agenda.jpg",
-          desc: "Diseño de merchandising y agendas corporativas de marca.",
+          desc: language === 'es'
+            ? "Diseño de merchandising y agendas corporativas de marca."
+            : "Design of merchandising and corporate brand planners.",
         },
         {
-          name: "Fachada Computienda",
-          category: "Señalética & Exterior",
+          name: language === 'es' ? "Fachada Computienda" : "Computienda Facade",
+          category: language === 'es' ? "Señalética & Exterior" : "Signage & Exterior",
           image: "/images/portfolio/computienda-fachada.jpg",
-          desc: "Branding ambiental y diseño de aviso exterior comercial.",
+          desc: language === 'es'
+            ? "Branding ambiental y diseño de aviso exterior comercial."
+            : "Environmental branding and commercial exterior sign design.",
         },
       ],
     },
     {
-      title: "Diseño de Etiquetas y Empaques",
+      title: language === 'es' ? "Diseño de Etiquetas y Empaques" : "Label and Packaging Design",
       items: [
         {
-          name: "Etiqueta Juana",
-          category: "Packaging Artesanal",
+          name: language === 'es' ? "Etiqueta Juana" : "Juana Label",
+          category: language === 'es' ? "Packaging Artesanal" : "Artisanal Packaging",
           image: "/images/portfolio/etiqueta-juana.jpg",
-          desc: "Diseño de etiqueta para botella y producto premium.",
+          desc: language === 'es'
+            ? "Diseño de etiqueta para botella y producto premium."
+            : "Label design for bottle and premium product.",
         },
         {
-          name: "Etiqueta Maja",
-          category: "Packaging Comercial",
+          name: language === 'es' ? "Etiqueta Maja" : "Maja Label",
+          category: language === 'es' ? "Packaging Comercial" : "Commercial Packaging",
           image: "/images/portfolio/etiqueta-maja.jpg",
-          desc: "Desarrollo tipográfico y gráfico para empaque comercial.",
+          desc: language === 'es'
+            ? "Desarrollo tipográfico y gráfico para empaque comercial."
+            : "Typographic and graphic development for commercial packaging.",
         },
       ],
     },
@@ -174,7 +200,7 @@ export default function Portfolio() {
 
   return (
     <>
-    <section id="portafolio" className="scroll-mt-28 pt-16 pb-0 bg-gradient-to-b from-[#071B33] to-[#050B14] relative">
+    <section id="portafolio" className="scroll-mt-28 py-24 md:py-32 bg-gradient-to-b from-[#071B33] to-[#050B14] relative">
       {/* Elegant Separator - More presence */}
       <SectionSeparator className="absolute top-0" />
       
@@ -196,7 +222,7 @@ export default function Portfolio() {
             </p>
           </div>
           {/* Filters */}
-          <div className="flex flex-nowrap overflow-x-auto gap-3 pb-4 scrollbar-hide">
+          <div className="flex flex-nowrap overflow-x-auto gap-3 pb-4 scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 after:content-[''] after:w-2 after:flex-shrink-0 md:after:hidden">
             {categories.map((cat) => (
               <button
                 key={cat.id}
@@ -292,7 +318,13 @@ export default function Portfolio() {
         
         {/* Secondary CTA (Full Portfolio) */}
         <div className="mt-8 flex justify-center relative z-10">
-          <button className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-[1.5px] border-white/20 bg-white/5 backdrop-blur-sm text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.15em] hover:bg-white hover:text-[#050B14] transition-all duration-300">
+          <button 
+            onClick={() => {
+              setActiveFilter("todos");
+              document.getElementById("portafolio")?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="inline-flex items-center gap-2 px-8 py-3 rounded-full border-[1.5px] border-white/20 bg-white/5 backdrop-blur-sm text-white font-bold text-[10px] sm:text-[11px] uppercase tracking-[0.15em] hover:bg-white hover:text-[#050B14] transition-all duration-300"
+          >
             {t("portfolio.viewAll")}
           </button>
         </div>

@@ -78,7 +78,7 @@ export default function Faq() {
   ];
 
   return (
-    <section id="faq" className="scroll-mt-28 pt-20 md:pt-24 pb-24 md:pb-32 bg-gradient-to-b from-[#071B33] to-[#050B14] relative">
+    <section id="faq" className="scroll-mt-28 py-24 md:py-32 bg-gradient-to-b from-[#071B33] to-[#050B14] relative">
       <SectionSeparator className="absolute top-0" />
       <div className="max-w-4xl mx-auto px-6 relative z-10">
         {/* Header */}

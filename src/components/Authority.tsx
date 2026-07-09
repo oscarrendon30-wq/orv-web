@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Award, Globe, MapPin, Zap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import SectionSeparator from "@/components/ui/SectionSeparator";
 
 export default function Authority() {
   const { t } = useLanguage();
@@ -28,7 +29,8 @@ export default function Authority() {
   ];
 
   return (
-    <section className="pt-24 pb-16 lg:pb-20 border-t border-[#071B33]/80 bg-gradient-to-b from-[#050B14] to-[#071B33] relative overflow-hidden">
+    <section className="py-24 md:py-32 bg-gradient-to-b from-[#050B14] to-[#071B33] relative overflow-hidden">
+      <SectionSeparator className="absolute top-0" />
       
       {/* BRAND GRAPHIC SYSTEM - AUTHORITY (Discreet) */}
       <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">

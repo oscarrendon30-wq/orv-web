@@ -8,52 +8,60 @@ import ProjectNavigation from "@/components/ProjectNavigation";
 
 import { useLanguage } from "@/context/LanguageContext";
 
-export default function CompuTiendaPortfolioPage() {
+export default function EditorialPortfolioPage() {
   const { t, language, setLanguage } = useLanguage();
 
   const content = {
     eyebrow: {
-      es: "TECNOLOGÍA & RETAIL",
-      en: "TECHNOLOGY & RETAIL"
+      es: "DISEÑO EDITORIAL & PUBLICACIONES",
+      en: "EDITORIAL DESIGN & PUBLICATIONS"
     },
     desc: {
-      es: "Desarrollo de identidad visual, piezas comerciales y aplicaciones gráficas para una marca de tecnología y retail.",
-      en: "Development of visual identity, commercial pieces, and graphic applications for a technology and retail brand."
+      es: "Diagramación, composición visual y desarrollo de piezas editoriales para medios, marcas e instituciones.",
+      en: "Layout design, visual composition and editorial pieces for media, brands and institutions."
     },
     tags: {
-      es: ["Branding", "Comunicación visual", "Piezas comerciales", "Retail"],
-      en: ["Branding", "Visual Communication", "Commercial Pieces", "Retail"]
+      es: ["Diseño editorial", "Diagramación", "Publicaciones", "Composición visual"],
+      en: ["Editorial Design", "Layout", "Publications", "Visual Composition"]
     },
     sheet: {
-      client: { es: "CompuTienda", en: "CompuTienda" },
-      category: { es: "Tecnología & Retail", en: "Technology & Retail" },
-      services: { es: "Identidad visual, piezas comerciales y aplicaciones gráficas", en: "Visual identity, commercial pieces, and graphic applications" },
-      focus: { es: "Innovación, cercanía y soluciones tecnológicas", en: "Innovation, closeness, and technological solutions" },
-      year: { es: "2026", en: "2026" }
+      client: { es: "Múltiples clientes / Proyectos independientes", en: "Multiple clients / Independent projects" },
+      category: { es: "Diseño editorial", en: "Editorial Design" },
+      services: { es: "Diagramación, composición visual y piezas editoriales", en: "Layout, visual composition, and editorial pieces" },
+      focus: { es: "Organización de contenido, jerarquización y legibilidad", en: "Content organization, hierarchy, and readability" },
+      year: { es: "Varios", en: "Various" }
     },
     summary: {
-      es: "Desarrollo de identidad visual y comunicación para CompuTienda, enfocándonos en proyectar innovación, confiabilidad y cercanía mediante un sistema visual moderno para el sector tecnológico y de retail.",
-      en: "Development of visual identity and communication for CompuTienda, focusing on projecting innovation, reliability, and closeness through a modern visual system for the technology and retail sector."
+      es: "Este caso reúne diferentes proyectos editoriales desarrollados para publicaciones, medios regionales, piezas informativas y material comercial. El objetivo fue organizar contenido, jerarquizar información y construir composiciones visuales claras, legibles y profesionales.",
+      en: "This case brings together several editorial projects developed for publications, regional media, informational pieces and commercial materials. The goal was to organize content, create clear information hierarchy and build professional, readable visual compositions."
     },
-    devTitle: { es: "Piezas desarrolladas", en: "Developed Pieces" },
+    devTitle: { es: "Selección de Trabajos", en: "Selected Works" },
     blocks: [
       {
-        title: { es: "Identidad y Enfoque Visual", en: "Identity and Visual Focus" },
-        desc: { es: "Creación del logotipo y universo visual orientado a transmitir modernidad, tecnología y solidez, logrando una identidad memorable y armónica.", en: "Creation of the logo and visual universe oriented to convey modernity, technology, and solidity, achieving a memorable and harmonious identity." }
+        title: { es: "Diseño de Libros y Portadas", en: "Book and Cover Design" },
+        desc: { es: "Diagramación y diseño de portadas para publicaciones independientes y libros conmemorativos, asegurando impacto visual y legibilidad.", en: "Layout and cover design for independent publications and commemorative books, ensuring visual impact and readability." }
       },
       {
-        title: { es: "Piezas comerciales y Papelería", en: "Commercial pieces and Stationery" },
-        desc: { es: "Desarrollo de formatos de cotización, portadas de agenda y piezas de soporte diseñadas para mantener la coherencia gráfica en las operaciones diarias.", en: "Development of quote formats, agenda covers, and support pieces designed to maintain graphic coherence in daily operations." }
+        title: { es: "Revistas Institucionales y Deportivas", en: "Institutional and Sports Magazines" },
+        desc: { es: "Maquetación de revistas corporativas y deportivas con un alto sentido de jerarquía, manejando grandes volúmenes de texto e imágenes.", en: "Layout of corporate and sports magazines with a high sense of hierarchy, managing large volumes of text and images." }
       },
       {
-        title: { es: "Aplicaciones Retail", en: "Retail Applications" },
-        desc: { es: "Aplicación de la identidad visual en la fachada y entorno retail, consolidando una presencia física llamativa y alineada con los valores de la marca.", en: "Application of visual identity on the storefront and retail environment, consolidating a striking physical presence aligned with the brand's values." }
+        title: { es: "Periódicos y Tabloides Regionales", en: "Regional Newspapers and Tabloids" },
+        desc: { es: "Diagramación de periódicos y medios impresos regionales, gestionando cuadrículas editoriales rigurosas para una lectura fluida.", en: "Layout of regional newspapers and print media, managing rigorous editorial grids for smooth reading." }
+      },
+      {
+        title: { es: "Publicaciones de Entretenimiento", en: "Entertainment Publications" },
+        desc: { es: "Desarrollo de piezas de entretenimiento como revistas de crucigramas, combinando funcionalidad y atractivo visual.", en: "Development of entertainment pieces such as crossword magazines, combining functionality and visual appeal." }
+      },
+      {
+        title: { es: "Piezas Impresas Comerciales", en: "Commercial Print Pieces" },
+        desc: { es: "Diseño de menús, catálogos, etiquetas y papelería comercial estructurando la información de forma clara y premium.", en: "Design of menus, catalogs, labels, and commercial stationery, structuring information in a clear and premium way." }
       }
     ],
-    resultTitle: { es: "Identidad sólida y moderna", en: "Solid and modern identity" },
+    resultTitle: { es: "Solidez visual y legibilidad", en: "Visual solidity and readability" },
     result: {
-      es: "El resultado es una marca tecnológica confiable y altamente reconocible, con un sistema de comunicación visual que se adapta perfectamente tanto a piezas impresas como a su entorno físico en retail.",
-      en: "The result is a highly recognizable and reliable technology brand, with a visual communication system that adapts perfectly to both printed pieces and its physical retail environment."
+      es: "El resultado es un portafolio de piezas editoriales que cumplen su función comunicativa con éxito: atraen al lector, organizan la información de manera eficiente y transmiten profesionalismo.",
+      en: "The result is a portfolio of editorial pieces that successfully fulfill their communicative function: they attract the reader, organize information efficiently, and convey professionalism."
     }
   };
 
@@ -121,10 +129,10 @@ export default function CompuTiendaPortfolioPage() {
         <div className="absolute inset-0 z-0">
           <div className="absolute top-0 right-0 w-full h-[65vh] md:h-[70vh] lg:h-full lg:w-[65vw] z-10 flex items-center justify-center p-0 lg:p-0">
              <ZoomableImage
-                src="/images/portfolio/computienda/compu-tienda_hero.webp"
-                alt="Proyecto CompuTienda"
+                src="/images/portfolio/editorial/hero.webp"
+                alt="Proyecto Diseño Editorial"
                 fill
-                className="object-cover object-[80%_center] lg:object-[80%_center] [mask-image:linear-gradient(to_top,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_15%)] opacity-85"
+                className="object-cover object-[50%_top] lg:object-[50%_top] [mask-image:linear-gradient(to_top,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_15%)] opacity-85"
                 priority
              />
           </div>
@@ -136,7 +144,7 @@ export default function CompuTiendaPortfolioPage() {
               {content.eyebrow[language]}
             </p>
             <h1 className="font-sans text-5xl md:text-6xl lg:text-7xl xl:text-[6.5rem] font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-md">
-              CompuTienda
+              {content.sheet.category[language]}
             </h1>
             <p className="font-sans text-zinc-300 font-light text-lg md:text-xl leading-relaxed mb-12 max-w-lg">
               {content.desc[language]}
@@ -218,13 +226,18 @@ export default function CompuTiendaPortfolioPage() {
           </h2>
           <div className="relative w-full max-w-5xl mx-auto">
             
-            {/* 01 Enfoque visual y Logo */}
+            {/* 01 Diseño de Libros */}
             <div className="relative mb-12 lg:mb-16 group">
               <div className="relative flex flex-col lg:flex-row items-center gap-6 lg:gap-8 bg-white/60 backdrop-blur-md shadow-[0_15px_40px_-15px_rgba(7,27,51,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(7,27,51,0.08)] rounded-[32px] p-4 lg:p-6 transition-all duration-500 overflow-hidden">
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-[#00A3FF]/15 group-hover:bg-[#00A3FF] group-hover:h-[80%] transition-all duration-700 ease-out rounded-r-full hidden lg:block" />
 
-                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-[#F8FAFC] border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2">
-                  <ZoomableImage src="/images/portfolio/computienda/compu-tienda_logo-principal.webp" alt="Logo e Identidad Visual" fill className="object-contain p-4 md:p-8 group-hover:scale-105 transition-transform duration-700 ease-out opacity-100" />
+                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-[#F8FAFC] border border-[#071B33]/5 grid grid-cols-2 gap-2 p-1 md:p-2">
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img">
+                    <ZoomableImage src="/images/portfolio/editorial/herederos-pasion-portada.webp" alt="Herederos" fill className="object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img">
+                    <ZoomableImage src="/images/portfolio/editorial/libro-deportivo-pereira.webp" alt="Libro Deportivo" fill className="object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 lg:px-8 py-6 lg:py-8">
                   <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
@@ -238,7 +251,7 @@ export default function CompuTiendaPortfolioPage() {
               </div>
             </div>
 
-            {/* 02 Lista de precios y papelería */}
+            {/* 02 Revistas Institucionales y Deportivas */}
             <div className="relative mb-12 lg:mb-16 group">
               <div className="relative flex flex-col lg:flex-row items-center gap-6 lg:gap-8 bg-[#F8FAFC]/50 backdrop-blur-md shadow-[0_15px_40px_-15px_rgba(7,27,51,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(7,27,51,0.08)] rounded-[32px] p-4 lg:p-6 transition-all duration-500 overflow-hidden">
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-[#00A3FF]/15 group-hover:bg-[#00A3FF] group-hover:h-[80%] transition-all duration-700 ease-out rounded-r-full hidden lg:block" />
@@ -252,19 +265,29 @@ export default function CompuTiendaPortfolioPage() {
                     {content.blocks[1].desc[language]}
                   </p>
                 </div>
-                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-white border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2 order-1 lg:order-2">
-                  <ZoomableImage src="/images/portfolio/computienda/compu-tienda_cotizacion.webp" alt="Cotización y Piezas Comerciales CompuTienda" fill className="object-contain p-4 md:p-6 group-hover:scale-105 transition-transform duration-700 ease-out" />
+                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-white border border-[#071B33]/5 grid grid-cols-2 gap-2 p-1 md:p-2 order-1 lg:order-2">
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img">
+                    <ZoomableImage src="/images/portfolio/editorial/revista-megazin.webp" alt="Revista Megazin" fill className="object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img">
+                    <ZoomableImage src="/images/portfolio/editorial/revista-integra.webp" alt="Revista Integra" fill className="object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* 03 Exteriores y Retail */}
+            {/* 03 Periódicos y Tabloides Regionales */}
             <div className="relative mb-12 lg:mb-16 group">
               <div className="relative flex flex-col lg:flex-row items-center gap-6 lg:gap-8 bg-white/60 backdrop-blur-md shadow-[0_15px_40px_-15px_rgba(7,27,51,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(7,27,51,0.08)] rounded-[32px] p-4 lg:p-6 transition-all duration-500 overflow-hidden">
                 <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-[#00A3FF]/15 group-hover:bg-[#00A3FF] group-hover:h-[80%] transition-all duration-700 ease-out rounded-r-full hidden lg:block" />
 
-                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-[#F8FAFC] border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2">
-                  <ZoomableImage src="/images/portfolio/computienda/compu-tienda_aviso-fachada.webp" alt="Exteriores y Retail CompuTienda" fill className="object-contain p-4 md:p-8 group-hover:scale-105 transition-transform duration-700 ease-out opacity-90" />
+                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-[#F8FAFC] border border-[#071B33]/5 grid grid-cols-2 gap-2 p-1 md:p-2">
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img">
+                    <ZoomableImage src="/images/portfolio/editorial/periodico-gente.webp" alt="Periódico Gente" fill className="object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img">
+                    <ZoomableImage src="/images/portfolio/editorial/periodico-perspectiva.webp" alt="Periódico Perspectiva" fill className="object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
                 </div>
                 <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 lg:px-8 py-6 lg:py-8">
                   <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
@@ -273,6 +296,50 @@ export default function CompuTiendaPortfolioPage() {
                   <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">{content.blocks[2].title[language]}</h3>
                   <p className="font-sans text-[#071B33]/70 font-light text-base md:text-lg leading-[1.8] mb-6">
                     {content.blocks[2].desc[language]}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* 04 Publicaciones de Entretenimiento */}
+            <div className="relative mb-12 lg:mb-16 group">
+              <div className="relative flex flex-col lg:flex-row items-center gap-6 lg:gap-8 bg-[#F8FAFC]/50 backdrop-blur-md shadow-[0_15px_40px_-15px_rgba(7,27,51,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(7,27,51,0.08)] rounded-[32px] p-4 lg:p-6 transition-all duration-500 overflow-hidden">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-[#00A3FF]/15 group-hover:bg-[#00A3FF] group-hover:h-[80%] transition-all duration-700 ease-out rounded-r-full hidden lg:block" />
+
+                <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 lg:px-8 py-6 lg:py-8 order-2 lg:order-1">
+                  <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+                    <span className="w-6 h-[1px] bg-[#00A3FF]/40 hidden lg:block" /> 04
+                  </span>
+                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">{content.blocks[3].title[language]}</h3>
+                  <p className="font-sans text-[#071B33]/70 font-light text-base md:text-lg leading-[1.8]">
+                    {content.blocks[3].desc[language]}
+                  </p>
+                </div>
+                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-white border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2 order-1 lg:order-2">
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img">
+                    <ZoomableImage src="/images/portfolio/editorial/crucigramax-megazin.webp" alt="Crucigramax Megazin" fill className="object-cover group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* 05 Piezas Impresas Comerciales */}
+            <div className="relative mb-12 lg:mb-16 group">
+              <div className="relative flex flex-col lg:flex-row items-center gap-6 lg:gap-8 bg-white/60 backdrop-blur-md shadow-[0_15px_40px_-15px_rgba(7,27,51,0.03)] hover:shadow-[0_20px_50px_-15px_rgba(7,27,51,0.08)] rounded-[32px] p-4 lg:p-6 transition-all duration-500 overflow-hidden">
+                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-[60%] w-[3px] bg-[#00A3FF]/15 group-hover:bg-[#00A3FF] group-hover:h-[80%] transition-all duration-700 ease-out rounded-r-full hidden lg:block" />
+
+                <div className="w-full lg:w-1/2 relative aspect-[4/3] rounded-[24px] overflow-hidden bg-white border border-[#071B33]/5 flex items-center justify-center p-1 md:p-2">
+                  <div className="relative w-full h-full rounded-[20px] overflow-hidden group/img bg-[#F8FAFC]">
+                    <ZoomableImage src="/images/portfolio/editorial/carta-templo-cafe.webp" alt="Carta Templo Café" fill className="object-cover object-center group-hover/img:scale-105 transition-transform duration-700 ease-out" />
+                  </div>
+                </div>
+                <div className="w-full lg:w-1/2 flex flex-col justify-center px-4 lg:px-8 py-6 lg:py-8">
+                  <span className="font-sans text-[#00A3FF] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-4 flex items-center gap-3">
+                    <span className="w-6 h-[1px] bg-[#00A3FF]/40 hidden lg:block" /> 05
+                  </span>
+                  <h3 className="font-sans font-bold text-2xl md:text-3xl lg:text-4xl text-[#0a1e3f] tracking-tight mb-5">{content.blocks[4].title[language]}</h3>
+                  <p className="font-sans text-[#071B33]/70 font-light text-base md:text-lg leading-[1.8]">
+                    {content.blocks[4].desc[language]}
                   </p>
                 </div>
               </div>
@@ -324,7 +391,7 @@ export default function CompuTiendaPortfolioPage() {
           </Link>
 
           {/* Navegación del Portafolio */}
-          <ProjectNavigation currentProject="computienda" />
+          <ProjectNavigation currentProject="editorial" />
         </div>
       </div>
     </main>
