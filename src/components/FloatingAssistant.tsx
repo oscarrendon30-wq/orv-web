@@ -11,10 +11,15 @@ export default function FloatingAssistant() {
   const { t } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [showMobileHelper, setShowMobileHelper] = useState(true);
   const phoneNumber = "573004382654";
 
   useEffect(() => {
     setIsMounted(true);
+    const timer = setTimeout(() => {
+      setShowMobileHelper(false);
+    }, 4000);
+    return () => clearTimeout(timer);
   }, []);
 
   const togglePanel = () => setIsOpen(!isOpen);
@@ -156,9 +161,9 @@ export default function FloatingAssistant() {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ delay: 0.5 }}
-              className="absolute right-full top-1/2 -translate-y-1/2 mr-4 hidden md:flex items-center"
+              className={`absolute right-full top-1/2 -translate-y-1/2 mr-3 md:mr-4 items-center md:flex ${showMobileHelper ? 'flex' : 'hidden'}`}
             >
-              <div className="bg-white text-[#0c2446] font-sans text-sm font-bold px-4 py-2 rounded-2xl shadow-[0_10px_25px_-5px_rgba(12,36,70,0.15)] whitespace-nowrap border border-[#071B33]/5 pointer-events-none relative">
+              <div className="bg-white text-[#0c2446] font-sans text-[11px] md:text-sm font-bold px-3 py-1.5 md:px-4 md:py-2 rounded-[14px] md:rounded-2xl shadow-[0_10px_25px_-5px_rgba(12,36,70,0.15)] whitespace-nowrap border border-[#071B33]/5 pointer-events-none relative">
                 {t("assistant.helperText")}
                 {/* Tail arrow */}
                 <div className="absolute top-1/2 -right-1.5 -translate-y-1/2 w-3 h-3 bg-white rotate-45 border-t border-r border-[#071B33]/5" />

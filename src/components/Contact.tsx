@@ -94,6 +94,24 @@ export default function Contact() {
               </a>
 
               <a
+                href="mailto:contacto@oscarrendonvisual.com"
+                className="flex items-center gap-6 group cursor-pointer relative z-10"
+              >
+                <div className="w-12 h-12 rounded-[12px] bg-[#0c2446] border border-white/10 flex items-center justify-center text-[#00A3FF] group-hover:border-[#00A3FF]/40 transition-colors flex-shrink-0">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <div className="space-y-1">
+                  <h4 className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-500">
+                    {t("contact.email")}
+                  </h4>
+                  <p className="font-sans text-sm font-bold text-white group-hover:text-[#00A3FF] transition-colors">
+                    contacto@oscarrendonvisual.com
+                  </p>
+                </div>
+              </a>
+              <a
                 href="https://web.facebook.com/oscarrendondisenografico"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -208,6 +226,18 @@ export default function Contact() {
                     placeholder={t("contact.formDetailsPlaceholder")}
                     className="w-full bg-[#F8FAFC] border border-transparent focus:border-[#00A3FF]/50 focus:bg-white focus:outline-none p-3.5 text-sm font-sans text-zinc-900 rounded-[12px] transition-colors shadow-inner resize-none placeholder:text-zinc-400"
                   />
+                </div>
+
+                <div className="flex items-start gap-3 mt-4">
+                  <input
+                    type="checkbox"
+                    required
+                    id="consent"
+                    className="mt-1 w-4 h-4 rounded border-zinc-300 text-[#00A3FF] focus:ring-[#00A3FF]"
+                  />
+                  <label htmlFor="consent" className="text-xs font-sans text-zinc-400 leading-tight">
+                    {t("legal.consent")} <a href="/privacy" className="text-[#00A3FF] hover:underline" target="_blank">{t("legal.privacy")}</a>
+                  </label>
                 </div>
 
                 <button

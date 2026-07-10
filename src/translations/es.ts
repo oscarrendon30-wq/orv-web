@@ -23,7 +23,7 @@ export const es = {
   services: {
     tagline: "Servicios y Especialidades",
     title: "¿Qué necesita tu marca hoy?",
-    subtitle: "Selecciona un servicio y te muestro cómo puedo ayudarte a construir una presencia visual estratégica, sólida y rentable.",
+    subtitle: "Selecciona un servicio y te muestro cómo construir una presencia visual estratégica, sólida y rentable.",
     viewDetail: "Ver detalle",
     selectedService: "Servicio Seleccionado",
     idealFor: "Ideal Para",
@@ -33,43 +33,43 @@ export const es = {
     items: {
       branding: {
         title: "Branding e identidad visual",
-        short: "Creamos identidades sólidas, coherentes y memorables.",
-        detail: "El branding va más allá de un logotipo. Diseñamos un sistema visual completo y consistente, incluyendo paleta cromática, manual de identidad, tipografía corporativa y aplicaciones comerciales que posicionan tu marca en un nivel premium de forma coherente en todos sus puntos de contacto.",
+        short: "Creación de identidades sólidas, coherentes y memorables.",
+        detail: "El branding va más allá de un logotipo. Desde Oscar Rendón Visual se diseña un sistema visual completo y consistente, incluyendo paleta cromática, manual de identidad, tipografía corporativa y aplicaciones comerciales que posicionan cada marca en un nivel premium de forma coherente en todos sus puntos de contacto.",
         benefits: ["Identidad visual coherente", "Paleta cromática y estilo gráfico", "Aplicaciones comerciales de marca"],
         ideal: "marcas que necesitan verse más sólidas, coherentes y profesionales."
       },
       redes: {
         title: "Diseño para redes sociales",
         short: "Contenido visual que conecta y genera impacto.",
-        detail: "Desarrollamos feeds estructurados estratégicamente para plataformas clave como Instagram y LinkedIn. Diseñamos plantillas personalizadas, portadas destacadas y piezas promocionales que transmiten limpieza gráfica, autoridad visual y enganchan a tu audiencia ideal rápidamente.",
+        detail: "Se desarrollan feeds estructurados estratégicamente para plataformas clave como Instagram y LinkedIn. Se diseñan plantillas personalizadas, portadas destacadas y piezas promocionales que transmiten limpieza gráfica, autoridad visual y enganchan a la audiencia ideal rápidamente.",
         benefits: ["Piezas para feed e historias", "Línea visual para campañas", "Contenido listo para publicar"],
         ideal: "negocios que necesitan publicar con orden, estilo y estrategia."
       },
       editorial: {
         title: "Diseño editorial",
         short: "Piezas editoriales con diseño que informa y emociona.",
-        detail: "Diagramamos y maquetamos libros de autor, revistas comerciales, catálogos e informes de gestión. Cuidamos rigurosamente cada detalle de la mancha tipográfica, los márgenes, las retículas y la jerarquía de lectura para lograr un acabado impreso impecable y verdaderamente editorial.",
+        detail: "Se diagraman y maquetan libros de autor, revistas comerciales, catálogos e informes de gestión. Se cuida rigurosamente cada detalle de la mancha tipográfica, los márgenes, las retículas y la jerarquía de lectura para lograr un acabado impreso impecable y verdaderamente editorial.",
         benefits: ["Diagramación profesional", "Jerarquía visual clara", "Piezas listas para impresión o digital"],
         ideal: "empresas, medios o proyectos que necesitan organizar información con claridad y jerarquía visual."
       },
       presentaciones: {
         title: "Presentaciones corporativas",
         short: "Presentaciones claras, profesionales y persuasivas.",
-        detail: "Diseñamos láminas visuales corporativas para informes de gestión, pitches de ventas, propuestas comerciales y conferencias corporativas. Estructuramos la información densa de forma visualmente atractiva, digerible y altamente persuasiva para mantener la atención total del espectador.",
+        detail: "Se diseñan láminas visuales corporativas para informes de gestión, pitches de ventas, propuestas comerciales y conferencias corporativas. Se estructura la información densa de forma visualmente atractiva, digerible y altamente persuasiva para mantener la atención total del espectador.",
         benefits: ["Láminas claras y persuasivas", "Diseño para informes y propuestas", "Mejor lectura de información compleja"],
         ideal: "propuestas, reuniones y exposiciones donde la claridad visual puede marcar la diferencia."
       },
       web: {
         title: "Diseño web",
         short: "Sitios web funcionales, elegantes y estratégicos.",
-        detail: "Diseñamos interfaces web y landing pages minimalistas, rápidas y totalmente responsivas (UI/UX). Estructuramos el flujo del usuario para maximizar conversiones y facilitar la navegación, manteniendo una estética corporativa de alta recordación adaptada a todos los dispositivos.",
+        detail: "Se diseñan interfaces web y landing pages minimalistas, rápidas y totalmente responsivas (UI/UX). Se estructura el flujo del usuario para maximizar conversiones y facilitar la navegación, manteniendo una estética corporativa de alta recordación adaptada a todos los dispositivos.",
         benefits: ["Diseño moderno y funcional", "Estructura clara de navegación", "Presencia digital profesional"],
         ideal: "marcas que necesitan una presencia digital moderna, clara y confiable."
       },
       empaques: {
         title: "Empaques y piezas publicitarias",
         short: "Diseño que destaca tu producto en cada detalle.",
-        detail: "Diseñamos empaques comerciales, bolsas de retail, etiquetas de productos artesanales, marquillas textiles y stickers. Aseguramos que la presentación física del producto refuerce de forma memorable el valor percibido del unboxing y conecte emocionalmente con tu cliente final.",
+        detail: "Se diseñan empaques comerciales, bolsas de retail, etiquetas de productos artesanales, marquillas textiles y stickers. Se asegura que la presentación física del producto refuerce de forma memorable el valor percibido del unboxing y conecte emocionalmente con el cliente final.",
         benefits: ["Diseño aplicado a producto", "Etiquetas y piezas comerciales", "Presentación visual más atractiva"],
         ideal: "productos que necesitan verse mejor presentados y generar mayor valor percibido."
       }
@@ -93,11 +93,11 @@ export const es = {
     },
     cta: {
       title: "¿Quieres que tu marca también se vea así de profesional?",
-      subtitle: "Construyamos una presencia visual clara, coherente y lista para vender.",
-      btn: "Hablemos de tu proyecto"
+      subtitle: "Es momento de construir una presencia visual clara, coherente y lista para vender.",
+      btn: "Contactar para un proyecto"
     },
     projectLayout: {
-      back_to_projects: "Volver a proyectos",
+      back_to_home: "Volver al inicio",
       project: "Proyecto",
       developed_by: "Desarrollado por",
       technical_sheet: "Ficha Técnica",
@@ -181,15 +181,15 @@ export const es = {
     location: "Pereira, Colombia — Desde 1996",
     tagline: "Sobre Mí",
     name: "Oscar Rendón Visual",
-    p1_1: "Soy diseñador gráfico senior en",
+    p1_1: "Oscar Rendón Visual es un estudio de diseño gráfico en",
     p1_bold1: "Pereira, Colombia",
     p1_2: ", con más de",
     p1_bold2: "30 años de experiencia",
     p1_3: ", dedicado a estructurar y dar valor a la presencia visual de marcas, medios y empresas.",
-    p2: "A lo largo de mi trayectoria, me he especializado en decodificar las necesidades de comunicación de mis clientes para transformarlas en piezas de diseño sofisticadas y funcionales. Mi enfoque combina la pulcritud editorial tradicional con la versatilidad y dinamismo que exigen los canales digitales modernos.",
-    p3_1: "Ofrezco un servicio de diseño altamente personalizado bajo la modalidad de",
+    p2: "A lo largo de 30 años de trayectoria, la especialidad se ha centrado en decodificar las necesidades de comunicación de los clientes para transformarlas en piezas de diseño sofisticadas y funcionales. El enfoque de Oscar Rendón Visual combina la pulcritud editorial tradicional con la versatilidad y dinamismo que exigen los canales digitales modernos.",
+    p3_1: "Se ofrece un servicio de diseño altamente personalizado bajo la modalidad de",
     p3_bold: "trabajo remoto",
-    p3_2: ", lo que me permite colaborar estrechamente con marcas locales y empresas internacionales con flujos de entrega ágiles y profesionales.",
+    p3_2: ", lo que permite colaborar estrechamente con marcas locales y empresas internacionales con flujos de entrega ágiles y profesionales.",
     specialtiesTagline: "Especialidades de Práctica Técnica",
     specialties: [
       "Branding y sistemas de identidad visual",
@@ -206,27 +206,27 @@ export const es = {
     items: [
       {
         question: "¿Cómo se inicia un proyecto?",
-        answer: "Iniciamos con una sesión de diagnóstico (por llamada de WhatsApp o Google Meet) para entender tus objetivos, necesidades y presupuesto. A partir de allí, elaboro una propuesta de trabajo estructurada detallando los alcances, plazos de entrega y costos. Una vez aprobado y realizado el abono inicial, comenzamos la fase de conceptualización."
+        answer: "Cada proyecto inicia con una sesión de diagnóstico (por llamada de WhatsApp o Google Meet) para entender objetivos, necesidades y presupuesto. A partir de allí, se elabora una propuesta de trabajo estructurada detallando los alcances, plazos de entrega y costos. Una vez aprobado y realizado el abono inicial, comienza la fase de conceptualización."
       },
       {
         question: "¿Trabajas de forma remota?",
-        answer: "Sí, el 100% de mis proyectos se gestionan de forma remota. Trabajo desde Pereira, Colombia, y colaboro sin inconvenientes con marcas y empresas de cualquier lugar del mundo a través de canales de comunicación digital fluidos y eficientes."
+        answer: "Sí, el 100% de los proyectos se gestionan de forma remota. Desde Pereira, Colombia, se colabora sin inconvenientes con marcas y empresas de cualquier lugar del mundo a través de canales de comunicación digital fluidos y eficientes."
       },
       {
         question: "¿Qué tipo de archivos entregas?",
-        answer: "Entrego todos los archivos finales listos para su uso: archivos vectoriales originales en formato editable (Adobe Illustrator, EPS o PDF editable) para impresión a gran formato, y archivos listos para web/pantallas (PNG, JPG y archivos de diseño profesional si aplica para proyectos web). Todo ordenado y documentado."
+        answer: "Se entregan todos los archivos finales listos para su uso: archivos vectoriales originales en formato editable (Adobe Illustrator, EPS o PDF editable) para impresión a gran formato, y archivos listos para web/pantallas (PNG, JPG y archivos de diseño profesional si aplica para proyectos web). Todo ordenado y documentado."
       },
       {
         question: "¿Ofreces soporte después de la entrega?",
-        answer: "Sí, todos mis proyectos incluyen una ventana de soporte de 15 días posteriores a la entrega final para resolver dudas técnicas de imprenta, guiar al desarrollador en piezas web o ayudar con la implementación de archivos en redes sociales."
+        answer: "Sí, todos los proyectos incluyen una ventana de soporte de 15 días posteriores a la entrega final para resolver dudas técnicas de imprenta, guiar al desarrollador en piezas web o ayudar con la implementación de archivos en redes sociales."
       },
       {
         question: "¿Diseñas piezas para impresión y redes sociales?",
-        answer: "Sí, diseño para ambos mundos. Cuento con una profunda experiencia técnica en diseño editorial para pre-prensa e imprenta, y al mismo tiempo estructuro y diseño feeds profesionales y campañas visuales adaptadas a las plataformas digitales e Instagram."
+        answer: "Sí, el diseño abarca ambos mundos. Se cuenta con una profunda experiencia técnica en diseño editorial para pre-prensa e imprenta, y al mismo tiempo se estructuran y diseñan feeds profesionales y campañas visuales adaptadas a las plataformas digitales e Instagram."
       },
       {
         question: "¿Puedo contratar una sola pieza o un paquete fijo de diseños?",
-        answer: "Sí. Puedes contratar una pieza puntual, un proyecto completo o un paquete fijo según la cantidad de diseños que necesites. Si tu marca requiere piezas de forma recurrente, podemos definir paquetes mensuales o por número de piezas, con un valor previamente acordado para organizar mejor el presupuesto."
+        answer: "Sí. Se puede contratar una pieza puntual, un proyecto completo o un paquete fijo según la cantidad de diseños requeridos. Si tu marca requiere piezas de forma recurrente, se definen paquetes mensuales o por número de piezas, con un valor previamente acordado para organizar mejor el presupuesto."
       }
     ]
   },
@@ -285,7 +285,7 @@ export const es = {
   authority: {
     tagline: "Trayectoria Profesional",
     title: "Diseño visual estratégico para marcas, medios y empresas.",
-    subtitle: "Desde Pereira, Colombia, combino diseño de autor, criterio editorial y visión comercial para construir piezas visuales claras, profesionales y listas para conectar con diferentes audiencias.",
+    subtitle: "Desde Pereira, Colombia, Oscar Rendón Visual combina diseño de autor, criterio editorial y visión comercial para construir piezas visuales claras, profesionales y listas para conectar con diferentes audiencias.",
     location: "Basado en Pereira, Colombia — Conectado al mundo.",
     stats: [
       {
@@ -310,6 +310,7 @@ export const es = {
     title: "Construyamos presencia visual.",
     subtitle: "¿Tienes una marca en mente, un libro por publicar, etiquetas por desarrollar o redes por optimizar? Ponte en contacto y hablemos sobre cómo llevar tu visión gráfica al siguiente nivel.",
     whatsapp: "WhatsApp Directo",
+    email: "Correo Electrónico",
     instagram: "Instagram Profesional",
     facebook: "Facebook Profesional",
     location: "Ubicación Física",
@@ -349,6 +350,7 @@ export const es = {
     ],
     contactTitle: "Contacto rápido",
     whatsapp: "WhatsApp Directo",
+    email: "Correo Electrónico",
     instagram: "Instagram Profesional",
     facebook: "Facebook Profesional",
     cta: "Hablemos de tu proyecto",
@@ -383,9 +385,29 @@ export const es = {
     ],
     directMessage: "Hola Oscar, vi tus proyectos y quiero hablar contigo sobre un proyecto de diseño.",
     directButton: "Hablar directamente",
-    helperText: "¿Te ayudo?",
+    helperText: "¿Necesitas ayuda?",
     ariaClose: "Cerrar asistente",
     ariaOpen: "Abrir asistente de contacto",
     altAvatar: "Avatar Oscar Rendón"
   },
+
+  legal: {
+    privacy: "Política de Privacidad",
+    cookies: "Política de Cookies",
+    terms: "Aviso Legal",
+    consent: "He leído y acepto la política de privacidad y el tratamiento de mis datos personales.",
+    privacyTitle: "Política de Privacidad",
+    cookiesTitle: "Política de Cookies",
+    termsTitle: "Aviso Legal"
+  },
+
+  cookieBanner: {
+    message: "Utilizamos cookies para garantizar la mejor experiencia en nuestro sitio web. Al continuar, aceptas nuestra ",
+    privacyLink: "Política de Privacidad",
+    and: " y ",
+    cookieLink: "Política de Cookies",
+    accept: "Aceptar",
+    reject: "Rechazar",
+    manage: "Configurar"
+  }
 };

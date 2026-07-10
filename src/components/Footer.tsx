@@ -72,6 +72,12 @@ export default function Footer() {
                 <MessageSquare className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="font-sans text-sm font-semibold">{t("footer.whatsapp")}</span>
               </a>
+              <a href="mailto:contacto@oscarrendonvisual.com" className="flex items-center justify-center md:justify-start gap-3 text-zinc-400 hover:text-[#00A3FF] transition-colors group">
+                <svg className="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <span className="font-sans text-sm font-semibold">{t("footer.email")}</span>
+              </a>
               <a href="https://www.instagram.com/oscar_rendonvisual" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-zinc-400 hover:text-[#00A3FF] transition-colors group">
                 <Instagram className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="font-sans text-sm font-semibold">{t("footer.instagram")}</span>
@@ -93,14 +99,22 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar: Legal */}
-        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="font-sans text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] text-zinc-500 text-center sm:text-left">
+        <div className="pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+          <p className="font-sans text-[10px] sm:text-xs font-bold uppercase tracking-[0.1em] text-zinc-500 text-center md:text-left">
             {t("footer.rights").replace("{year}", currentYear.toString())}
           </p>
           
+          <div className="flex flex-wrap justify-center gap-4 text-[10px] sm:text-xs font-sans font-bold uppercase tracking-[0.1em] text-zinc-500">
+            <a href="/privacy" className="hover:text-[#00A3FF] transition-colors">{t("legal.privacy")}</a>
+            <span className="text-zinc-700">|</span>
+            <a href="/cookies" className="hover:text-[#00A3FF] transition-colors">{t("legal.cookies")}</a>
+            <span className="text-zinc-700">|</span>
+            <a href="/terms" className="hover:text-[#00A3FF] transition-colors">{t("legal.terms")}</a>
+          </div>
+
           <button
             onClick={handleScrollTop}
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0c2446] border border-white/10 text-zinc-400 hover:text-[#00A3FF] hover:border-[#00A3FF]/40 transition-colors"
+            className="flex items-center justify-center w-10 h-10 rounded-full bg-[#0c2446] border border-white/10 text-zinc-400 hover:text-[#00A3FF] hover:border-[#00A3FF]/40 transition-colors shrink-0"
             aria-label={t("footer.backToTop")}
           >
             <ArrowUp className="w-4 h-4" />

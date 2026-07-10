@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import FloatingAssistant from "@/components/FloatingAssistant";
+import CookieBanner from "@/components/CookieBanner";
 import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
@@ -60,6 +61,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
           <FloatingAssistant />
+          <CookieBanner />
         </LanguageProvider>
       </body>
     </html>

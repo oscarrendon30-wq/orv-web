@@ -42,9 +42,8 @@ export default function Portfolio() {
       id: "be-good",
       name: "Be Good",
       category: "empaques",
-      tags: [<span translate="no" className="notranslate" key="branding">Branding</span>, t("portfolio.projects.beGood.tags.0"), t("portfolio.projects.beGood.tags.1")],
+      tags: ["Marca de moda sostenible", "Branding", "Identidad visual"],
       type: t("portfolio.projects.beGood.type"),
-      status: t("portfolio.status.enConstruccion"),
       description: t("portfolio.projects.beGood.desc"),
       image: "/images/portfolio/be-good/be-good-showcase.webp",
       logo: "/images/portfolio/be-good-logo.jpg",
@@ -222,12 +221,12 @@ export default function Portfolio() {
             </p>
           </div>
           {/* Filters */}
-          <div className="flex flex-nowrap overflow-x-auto gap-3 pb-4 scrollbar-hide -mx-6 px-6 md:mx-0 md:px-0 after:content-[''] after:w-2 after:flex-shrink-0 md:after:hidden">
+          <div className="flex flex-wrap md:flex-nowrap md:overflow-x-auto gap-2 sm:gap-3 pb-2 md:pb-4 scrollbar-hide">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setActiveFilter(cat.id)}
-                className={`flex-shrink-0 px-5 py-2.5 text-[10px] sm:text-[11px] font-bold uppercase tracking-[0.15em] rounded-full transition-all duration-300 border-[1.5px] ${
+                className={`flex-shrink-0 px-3 sm:px-5 py-2 sm:py-2.5 text-[9px] sm:text-[11px] font-bold uppercase tracking-[0.1em] sm:tracking-[0.15em] rounded-full transition-all duration-300 border-[1.5px] ${
                   activeFilter === cat.id
                     ? "bg-[#00A3FF] text-white border-[#00A3FF] shadow-[0_0_15px_rgba(0,163,255,0.4)]"
                     : "bg-transparent text-zinc-400 border-white/20 hover:border-white/40 hover:bg-white/5 hover:text-white"

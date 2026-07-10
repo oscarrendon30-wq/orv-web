@@ -1,7 +1,7 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -19,12 +19,12 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: t("header.inicio"), href: "#inicio" },
-    { name: t("header.servicios"), href: "#servicios" },
-    { name: t("header.portafolio"), href: "#portafolio" },
-    { name: t("header.proceso"), href: "#proceso" },
-    { name: t("header.sobreMi"), href: "#sobre-mi" },
-    { name: t("header.contacto"), href: "#contacto" },
+    { name: t("header.inicio"), href: "/#inicio" },
+    { name: t("header.servicios"), href: "/#servicios" },
+    { name: t("header.portafolio"), href: "/#portafolio" },
+    { name: t("header.proceso"), href: "/#proceso" },
+    { name: t("header.sobreMi"), href: "/#sobre-mi" },
+    { name: t("header.contacto"), href: "/#contacto" },
   ];
 
   const whatsappUrl = "https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20dise%C3%B1o%20gr%C3%A1fico.";
@@ -40,7 +40,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         {/* Brand Logo Container */}
-        <a href="#inicio" className="group flex items-center">
+        <Link href="/#inicio" className="group flex items-center">
           <div className="transition-transform duration-300 group-hover:scale-[1.01]">
             <Image
               src="/images/brand/logo-horizontal-transparent.png"
@@ -51,14 +51,14 @@ export default function Header() {
               className="object-contain h-auto w-[145px] md:w-[170px]"
             />
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-9">
           {navLinks.map((link) => {
             const isActive = link.name === t("header.inicio");
             return (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
                 className={`text-[15px] tracking-wide font-medium transition-colors relative pb-1 ${
@@ -68,7 +68,7 @@ export default function Header() {
                 }`}
               >
                 {link.name}
-              </a>
+              </Link>
             );
           })}
         </nav>
@@ -146,19 +146,19 @@ export default function Header() {
       {/* Mobile Navigation Dropdown */}
       <div
         className={`md:hidden absolute inset-x-0 top-full h-[100vh] z-[100] bg-white border-t border-zinc-100 transition-transform duration-300 ease-in-out overflow-y-auto ${
-          isOpen ? "translate-x-0" : "translate-x-full"
+          isOpen ? "translate-x-0 pointer-events-auto" : "translate-x-full pointer-events-none"
         }`}
       >
         <div className="flex flex-col p-8 gap-6">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
               className="text-lg font-medium text-zinc-700 hover:text-brand-royal transition-colors border-b border-zinc-100 pb-3"
             >
               {link.name}
-            </a>
+            </Link>
           ))}
           
           {/* Mobile Social Icons & Language Toggle */}

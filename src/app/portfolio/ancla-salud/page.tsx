@@ -86,11 +86,11 @@ export default function AnclaSaludPortfolioPage() {
         {/* Top Header ORV Branding */}
         <div className="mb-10 md:mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6 border-b border-[#050B14]/10 pb-5">
           <Link
-            href="/#portafolio"
+            href="/"
             className="inline-flex items-center gap-2 text-[#071B33]/50 hover:text-[#071B33] transition-colors font-sans text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase"
           >
             <ArrowLeft className="w-4 h-4" />
-            {t("portfolio.projectLayout.back_to_projects")}
+            {t("portfolio.projectLayout.back_to_home")}
           </Link>
           <div className="flex flex-wrap items-center gap-4 opacity-100">
             {/* Language Switcher */}
@@ -326,12 +326,16 @@ export default function AnclaSaludPortfolioPage() {
           <p className="font-sans text-zinc-400 text-base md:text-lg mb-10 max-w-lg">
             {t("portfolio.projectLayout.lets_talk_desc")}
           </p>
-          <Link
-            href="#contacto"
-            className="inline-flex items-center justify-center bg-white text-[#0a1e3f] font-sans font-bold text-sm uppercase tracking-[0.15em] px-10 py-4 rounded-full hover:bg-[#00A3FF] hover:text-white transition-colors duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_10px_30px_rgba(0,163,255,0.3)] mb-12 md:mb-16"
-          >
-            {t("portfolio.projectLayout.lets_talk_btn")}
-          </Link>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6 mb-12 md:mb-16">
+            <a
+              href="https://wa.me/573004382654"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-white text-[#0c2446] font-sans font-bold text-sm uppercase tracking-[0.15em] px-8 md:px-10 py-3.5 md:py-4 rounded-full hover:bg-[#00A3FF] hover:text-white transition-colors duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_10px_30px_rgba(0,163,255,0.3)] w-full sm:w-auto text-center"
+            >
+              {t("portfolio.projectLayout.lets_talk_btn")}
+            </a>
+          </div>
 
           {/* Navegación del Portafolio */}
           <ProjectNavigation currentProject="ancla-salud" />

@@ -23,7 +23,7 @@ export const en = {
   services: {
     tagline: "Services and Specialties",
     title: "What does your brand need today?",
-    subtitle: "Select a service and I'll show you how I can help you build a strategic, solid, and profitable visual presence.",
+    subtitle: "Select a service and discover how to build a strategic, solid, and profitable visual presence.",
     viewDetail: "View detail",
     selectedService: "Selected Service",
     idealFor: "Ideal For",
@@ -33,43 +33,43 @@ export const en = {
     items: {
       branding: {
         title: "Branding and Visual Identity",
-        short: "We create solid, coherent, and memorable identities.",
-        detail: "Branding goes beyond a logo. We design a complete and consistent visual system, including color palette, identity manual, corporate typography, and commercial applications that position your brand at a premium level consistently across all touchpoints.",
+        short: "Creation of solid, coherent, and memorable identities.",
+        detail: "Branding goes beyond a logo. Oscar Rendón Visual designs a complete and consistent visual system, including color palette, identity manual, corporate typography, and commercial applications that position each brand at a premium level consistently across all touchpoints.",
         benefits: ["Coherent visual identity", "Color palette and graphic style", "Commercial brand applications"],
         ideal: "brands that need to look more solid, coherent, and professional."
       },
       redes: {
         title: "Social Media Design",
         short: "Visual content that connects and generates impact.",
-        detail: "We develop strategically structured feeds for key platforms like Instagram and LinkedIn. We design custom templates, highlighted covers, and promotional pieces that convey graphic cleanliness, visual authority, and quickly engage your ideal audience.",
+        detail: "Strategically structured feeds are developed structured feeds for key platforms like Instagram and LinkedIn. Custom templates are designed templates, highlighted covers, and promotional pieces that convey graphic cleanliness, visual authority, and quickly engage the ideal audience.",
         benefits: ["Feed and stories content", "Visual line for campaigns", "Ready-to-publish content"],
         ideal: "businesses that need to publish with order, style, and strategy."
       },
       editorial: {
         title: "Editorial Design",
         short: "Editorial pieces with design that informs and excites.",
-        detail: "We layout and format author books, commercial magazines, catalogs, and management reports. We rigorously take care of every detail of the typographic spot, margins, grids, and reading hierarchy to achieve a flawless and truly editorial printed finish.",
+        detail: "Layout and formatting of author books, commercial magazines, catalogs, and management reports. Rigorous care is taken of every detail of the typographic spot, margins, grids, and reading hierarchy to achieve a flawless and truly editorial printed finish.",
         benefits: ["Professional layout", "Clear visual hierarchy", "Print or digital ready pieces"],
         ideal: "companies, media, or projects that need to organize information with clarity and visual hierarchy."
       },
       presentaciones: {
         title: "Corporate Presentations",
         short: "Clear, professional, and persuasive presentations.",
-        detail: "We design corporate visual slides for management reports, sales pitches, commercial proposals, and high-level corporate conferences. We structure dense information in a visually attractive, digestible, and highly persuasive way to maintain the viewer's total attention.",
+        detail: "Corporate visual slides are designed visual slides for management reports, sales pitches, commercial proposals, and high-level corporate conferences. Dense information is structured information in a visually attractive, digestible, and highly persuasive way to maintain the viewer's total attention.",
         benefits: ["Clear and persuasive slides", "Design for reports and proposals", "Better reading of complex information"],
         ideal: "proposals, meetings, and exhibitions where visual clarity can make the difference."
       },
       web: {
         title: "Web Design",
         short: "Functional, elegant, and strategic websites.",
-        detail: "We design minimalist, fast, and fully responsive web interfaces and landing pages (UI/UX). We structure the user flow to maximize conversions and facilitate navigation, maintaining a highly memorable corporate aesthetic adapted to all devices.",
+        detail: "Minimalist interfaces are designed, fast, and fully responsive web interfaces and landing pages (UI/UX). User flow is structured to maximize conversions and facilitate navigation, maintaining a highly memorable corporate aesthetic adapted to all devices.",
         benefits: ["Modern and functional design", "Clear navigation structure", "Professional digital presence"],
         ideal: "brands that need a modern, clear, and reliable digital presence."
       },
       empaques: {
         title: "Packaging and Advertising",
         short: "Design that highlights your product in every detail.",
-        detail: "We design commercial packaging, retail bags, craft product labels, textile tags, and stickers. We ensure that the physical presentation of the product memorably reinforces the perceived value of the unboxing and connects emotionally with your end customer.",
+        detail: "Commercial packaging is designed, retail bags, craft product labels, textile tags, and stickers. It is ensured that the physical presentation of the product memorably reinforces the perceived value of the unboxing and connects emotionally with the end customer.",
         benefits: ["Product applied design", "Labels and commercial pieces", "More attractive visual presentation"],
         ideal: "products that need to look better presented and generate higher perceived value."
       }
@@ -93,8 +93,8 @@ export const en = {
     },
     cta: {
       title: "Do you want your brand to look this professional too?",
-      subtitle: "Let's build a clear, coherent visual presence that's ready to sell.",
-      btn: "Let's talk about your project"
+      subtitle: "It is time to build a clear, coherent visual presence that's ready to sell.",
+      btn: "Contact for a project"
     },
     projectLayout: {
       back_to_projects: "Back to Projects",
@@ -181,15 +181,15 @@ export const en = {
     location: "Pereira, Colombia — Since 1996",
     tagline: "About Me",
     name: "Oscar Rendón Visual",
-    p1_1: "I am a senior graphic designer in",
+    p1_1: "Oscar Rendón Visual is a senior graphic design studio in",
     p1_bold1: "Pereira, Colombia",
     p1_2: ", with more than",
     p1_bold2: "30 years of experience",
     p1_3: ", dedicated to structuring and adding value to the visual presence of brands, media, and companies.",
-    p2: "Throughout my career, I have specialized in decoding my clients' communication needs to transform them into sophisticated and functional design pieces. My approach combines traditional editorial neatness with the versatility and dynamism required by modern digital channels.",
-    p3_1: "I offer a highly personalized design service under the modality of",
+    p2: "Throughout 30 years of experience, the specialty has been centered on decoding the clients' communication needs to transform them into sophisticated and functional design pieces. The approach of Oscar Rendón Visual combines traditional editorial neatness with the versatility and dynamism required by modern digital channels.",
+    p3_1: "A highly personalized design service is offered under the modality of",
     p3_bold: "remote work",
-    p3_2: ", which allows me to collaborate closely with local brands and international companies with agile and professional delivery flows.",
+    p3_2: ", which allows collaborating closely with local brands and international companies with agile and professional delivery flows.",
     specialtiesTagline: "Technical Practice Specialties",
     specialties: [
       "Branding and visual identity systems",
@@ -206,27 +206,27 @@ export const en = {
     items: [
       {
         question: "How do we start a project?",
-        answer: "We start with a diagnostic session (via WhatsApp or Google Meet call) to understand your objectives, needs, and budget. From there, I prepare a structured work proposal detailing the scope, delivery times, and costs. Once approved and the initial payment is made, we begin the conceptualization phase."
+        answer: "Each project starts with a diagnostic session (via WhatsApp or Google Meet call) to understand objectives, needs, and budget. From there, a structured work proposal is prepared detailing the scope, delivery times, and costs. Once approved and the initial payment is made, the conceptualization phase begins."
       },
       {
         question: "Do you work remotely?",
-        answer: "Yes, 100% of my projects are managed remotely. I work from Pereira, Colombia, and collaborate seamlessly with brands and companies from anywhere in the world through fluid and efficient digital communication channels."
+        answer: "Yes, 100% of the projects are managed remotely. From Pereira, Colombia, seamless collaboration is done with brands and companies from anywhere in the world through fluid and efficient digital communication channels."
       },
       {
         question: "What type of files do you deliver?",
-        answer: "I deliver all final files ready for use: original vector files in editable format (Adobe Illustrator, EPS, or editable PDF) for large format printing, and files ready for web/screens (PNG, JPG, and professional design files if applicable for web projects). Everything ordered and documented."
+        answer: "All final files are delivered ready for use: original vector files in editable format (Adobe Illustrator, EPS, or editable PDF) for large format printing, and files ready for web/screens (PNG, JPG, and professional design files if applicable for web projects). Everything ordered and documented."
       },
       {
         question: "Do you offer support after delivery?",
-        answer: "Yes, all my projects include a 15-day support window after final delivery to resolve technical printing doubts, guide the developer on web pieces, or help with the implementation of files on social networks."
+        answer: "Yes, all projects include a 15-day support window after final delivery to resolve technical printing doubts, guide the developer on web pieces, or help with the implementation of files on social networks."
       },
       {
         question: "Do you design pieces for print and social media?",
-        answer: "Yes, I design for both worlds. I have deep technical experience in editorial design for pre-press and printing, and at the same time I structure and design professional feeds and visual campaigns adapted to digital platforms and Instagram."
+        answer: "Yes, the design covers both worlds. There is deep technical experience in editorial design for pre-press and printing, and at the same time professional feeds are structured and designed and visual campaigns adapted to digital platforms and Instagram."
       },
       {
         question: "Can I hire a single design or a fixed design package?",
-        answer: "Yes. You can hire a single piece, a complete project, or a fixed package based on the number of designs you need. If your brand requires recurring visual content, we can define monthly packages or packages by number of pieces, with a fee agreed in advance to better organize your budget."
+        answer: "Yes. A single piece can be hired, a complete project, or a fixed package based on the number of designs required. If the brand requires recurring visual content, monthly packages are defined or packages by number of pieces, with a fee agreed in advance to better organize the budget."
       }
     ]
   },
@@ -285,7 +285,7 @@ export const en = {
   authority: {
     tagline: "Professional Trajectory",
     title: "Strategic visual design for brands, media, and companies.",
-    subtitle: "From Pereira, Colombia, I combine author design, editorial criteria, and commercial vision to build clear, professional visual pieces ready to connect with different audiences.",
+    subtitle: "From Pereira, Colombia, Oscar Rendón Visual combines author design, editorial criteria, and commercial vision to build clear, professional visual pieces ready to connect with different audiences.",
     location: "Based in Pereira, Colombia — Connected to the world.",
     stats: [
       {
@@ -310,6 +310,7 @@ export const en = {
     title: "Let's build visual presence.",
     subtitle: "Do you have a brand in mind, a book to publish, labels to develop, or social media to optimize? Get in touch and let's talk about taking your graphic vision to the next level.",
     whatsapp: "Direct WhatsApp",
+    email: "Email Address",
     instagram: "Professional Instagram",
     facebook: "Professional Facebook",
     location: "Physical Location",
@@ -349,6 +350,7 @@ export const en = {
     ],
     contactTitle: "Quick Contact",
     whatsapp: "Direct WhatsApp",
+    email: "Email Address",
     instagram: "Professional Instagram",
     facebook: "Professional Facebook",
     cta: "Let's talk about your project",
@@ -388,4 +390,24 @@ export const en = {
     ariaOpen: "Open contact assistant",
     altAvatar: "Avatar Oscar Rendón"
   },
+
+  legal: {
+    privacy: "Privacy Policy",
+    cookies: "Cookie Policy",
+    terms: "Legal Notice",
+    consent: "I have read and accept the privacy policy and the processing of my personal data.",
+    privacyTitle: "Privacy Policy",
+    cookiesTitle: "Cookie Policy",
+    termsTitle: "Legal Notice"
+  },
+
+  cookieBanner: {
+    message: "We use cookies to ensure the best experience on our website. By continuing, you accept our ",
+    privacyLink: "Privacy Policy",
+    and: " and ",
+    cookieLink: "Cookie Policy",
+    accept: "Accept",
+    reject: "Reject",
+    manage: "Manage"
+  }
 };
