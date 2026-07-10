@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://oscarrendon.visual/sitemap.xml
+Sitemap: https://www.oscarrendonvisual.com/sitemap.xml
