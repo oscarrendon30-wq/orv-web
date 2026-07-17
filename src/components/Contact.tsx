@@ -13,23 +13,60 @@ export default function Contact() {
     email: "",
     projectType: "branding",
     message: "",
+    website: "", // Honeypot
   });
+  const [formLoadTime] = useState(() => Date.now());
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const whatsappUrl = "https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20dise%C3%B1o%20gr%C3%A1fico.";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
+    setSubmitError(null);
+    setSubmitSuccess(false);
+
+    try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 seconds timeout
+
+      const apiUrl = process.env.NEXT_PUBLIC_CONTACT_API_URL || '/api/contact.php';
+      const response = await fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json; charset=UTF-8',
+        },
+        body: JSON.stringify({
+          ...formData,
+          formLoadTime
+        }),
+        signal: controller.signal
+      });
+
+      clearTimeout(timeoutId);
+
+      const data = await response.json().catch(() => ({ success: false, message: 'Invalid JSON response from server' }));
+
+      if (response.ok && data.success === true) {
+        setSubmitSuccess(true);
+        trackGenerateLead(); // Trigger GA4 event ONLY on success
+        setFormData({ name: "", email: "", projectType: "branding", message: "", website: "" });
+        setTimeout(() => setSubmitSuccess(false), 5000);
+      } else {
+        // Validation error, too many requests, or server error
+        setSubmitError(data.message || 'Ocurrió un error al enviar tu mensaje.');
+      }
+    } catch (error: any) {
+      if (error.name === 'AbortError') {
+        setSubmitError('El tiempo de espera se agotó. Revisa tu conexión a internet e intenta de nuevo.');
+      } else {
+        setSubmitError('Ocurrió un error de red. Por favor intenta de nuevo.');
+      }
+    } finally {
       setIsSubmitting(false);
-      setSubmitSuccess(true);
-      trackGenerateLead(); // Trigger GA4 event
-      setFormData({ name: "", email: "", projectType: "branding", message: "" });
-      setTimeout(() => setSubmitSuccess(false), 5000);
-    }, 1500);
+    }
   };
 
   return (
@@ -243,6 +280,19 @@ export default function Contact() {
                   </label>
                 </div>
 
+                <div className="absolute opacity-0 -left-[9999px] pointer-events-none" aria-hidden="true">
+                  <label htmlFor="website">Website</label>
+                  <input
+                    type="text"
+                    id="website"
+                    name="website"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.website}
+                    onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  />
+                </div>
+
                 <button
                   type="submit"
                   disabled={isSubmitting}
@@ -261,6 +311,11 @@ export default function Contact() {
                 {submitSuccess && (
                   <div className="p-4 bg-emerald-950/20 border border-emerald-800 text-emerald-400 text-xs font-semibold rounded-sm text-center">
                     {t("contact.formSuccess")}
+                  </div>
+                )}
+                {submitError && (
+                  <div className="p-4 bg-red-950/20 border border-red-800 text-red-400 text-xs font-semibold rounded-sm text-center">
+                    {submitError}
                   </div>
                 )}
               </form>

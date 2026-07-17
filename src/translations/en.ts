@@ -334,7 +334,7 @@ export const en = {
     formDetailsPlaceholder: "Describe your visual design needs generally...",
     formSubmit: "Send request",
     formSubmitting: "Sending...",
-    formSuccess: "Simulated message successfully sent! We will contact you shortly.",
+    formSuccess: "Message successfully sent! We will contact you shortly.",
   },
   footer: {
     tagline: "More than design, visual presence.",
