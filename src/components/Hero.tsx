@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { User, MapPin, Star, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackClickWhatsApp, trackCtaClick } from "@/utils/analytics";
 
 export default function Hero() {
   const { t, language } = useLanguage();
@@ -115,6 +116,7 @@ export default function Hero() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackClickWhatsApp("Hero")}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full bg-brand-royal text-white font-bold text-[14px] md:text-[15px] hover:bg-[#00A3FF] transition-all duration-300 shadow-lg hover:shadow-brand-royal/20 group uppercase tracking-wide"
             >
               {/* WhatsApp Icon */}
@@ -129,6 +131,7 @@ export default function Hero() {
             </a>
             <a
               href="#portafolio"
+              onClick={() => trackCtaClick("Ver Proyectos", "Hero")}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 md:px-10 md:py-5 rounded-full border border-white/30 text-white font-bold text-[14px] md:text-[15px] hover:bg-white/5 hover:border-white transition-all duration-300 group uppercase tracking-wide"
             >
               {t("hero.ctaPrimary")}

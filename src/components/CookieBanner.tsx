@@ -20,13 +20,13 @@ export default function CookieBanner() {
   const handleAccept = () => {
     localStorage.setItem("cookie-consent", "accepted");
     setIsVisible(false);
-    // Future: Enable analytics scripts here
+    window.dispatchEvent(new Event("cookieConsentChanged"));
   };
 
   const handleReject = () => {
     localStorage.setItem("cookie-consent", "rejected");
     setIsVisible(false);
-    // Future: Ensure no analytics scripts are loaded
+    window.dispatchEvent(new Event("cookieConsentChanged"));
   };
 
   return (

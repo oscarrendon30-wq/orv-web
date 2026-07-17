@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, MessageSquare, Instagram, Facebook, MapPin, Globe } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackGenerateLead, trackClickWhatsApp, trackEvent } from "@/utils/analytics";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -25,6 +26,7 @@ export default function Contact() {
     setTimeout(() => {
       setIsSubmitting(false);
       setSubmitSuccess(true);
+      trackGenerateLead(); // Trigger GA4 event
       setFormData({ name: "", email: "", projectType: "branding", message: "" });
       setTimeout(() => setSubmitSuccess(false), 5000);
     }, 1500);
@@ -59,6 +61,7 @@ export default function Contact() {
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackClickWhatsApp("Contact Section")}
                 className="flex items-center gap-6 group cursor-pointer relative z-10"
               >
                 <div className="w-12 h-12 rounded-[12px] bg-[#0c2446] border border-white/10 flex items-center justify-center text-[#00A3FF] group-hover:border-[#00A3FF]/40 transition-colors flex-shrink-0">

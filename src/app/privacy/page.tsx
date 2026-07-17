@@ -4,6 +4,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 export default function PrivacyPage() {
   const { language } = useLanguage();
@@ -31,6 +32,7 @@ export default function PrivacyPage() {
                 <div>
                   <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">1. Información que recopilamos</h2>
                   <p>A través de nuestro formulario de contacto o mediante comunicación directa por WhatsApp, podemos recopilar la siguiente información: nombre, dirección de correo electrónico, número de teléfono y detalles específicos sobre los requerimientos de tu proyecto de diseño.</p>
+                  <p className="mt-2">Adicionalmente, si nos das tu consentimiento explícito, utilizamos Google Analytics 4 para recopilar datos estadísticos anónimos sobre tu navegación (páginas visitadas, tiempo en el sitio, clics en enlaces) para mejorar la experiencia de usuario.</p>
                 </div>
                 
                 <div>
@@ -38,8 +40,8 @@ export default function PrivacyPage() {
                   <p>La información recopilada se utiliza exclusivamente para:</p>
                   <ul className="list-disc pl-5 mt-2 space-y-2">
                     <li>Responder a tus consultas y proporcionar presupuestos de diseño gráfico.</li>
-                    <li>Gestionar la comunicación durante el desarrollo de tu proyecto (branding, diseño editorial, web, etc.).</li>
-                    <li>Mejorar nuestro servicio de atención al cliente.</li>
+                    <li>Gestionar la comunicación durante el desarrollo de tu proyecto.</li>
+                    <li>Analizar el tráfico del sitio web con fines estadísticos (solo si aceptaste las cookies analíticas).</li>
                   </ul>
                   <p className="mt-2">Oscar Rendón Visual no vende, alquila ni comparte tus datos personales con terceros para fines de marketing.</p>
                 </div>
@@ -50,8 +52,9 @@ export default function PrivacyPage() {
                 </div>
 
                 <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">4. Tus derechos</h2>
-                  <p>Tienes derecho a solicitar el acceso, rectificación o eliminación de tus datos personales en cualquier momento. Para ejercer estos derechos, puedes contactarnos directamente a través de nuestro formulario, WhatsApp o al correo <a href="mailto:contacto@oscarrendonvisual.com" className="text-[#00A3FF] hover:underline">contacto@oscarrendonvisual.com</a>.</p>
+                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">4. Tus derechos y revocación de consentimiento</h2>
+                  <p>Tienes derecho a solicitar el acceso, rectificación o eliminación de tus datos personales en cualquier momento contactándonos a <a href="mailto:contacto@oscarrendonvisual.com" className="text-[#00A3FF] hover:underline">contacto@oscarrendonvisual.com</a>.</p>
+                  <p className="mt-2">Si deseas revocar tu consentimiento para el uso de cookies analíticas, puedes hacerlo desde nuestra <Link href="/cookies" className="text-[#00A3FF] hover:underline">Política de Cookies</Link>.</p>
                 </div>
               </>
             ) : (
@@ -63,6 +66,7 @@ export default function PrivacyPage() {
                 <div>
                   <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">1. Information We Collect</h2>
                   <p>Through our contact form or direct communication via WhatsApp, we may collect the following information: name, email address, phone number, and specific details about your design project requirements.</p>
+                  <p className="mt-2">Additionally, if you give us your explicit consent, we use Google Analytics 4 to collect anonymous statistical data about your browsing (pages visited, time on site, link clicks) to improve the user experience.</p>
                 </div>
                 
                 <div>
@@ -70,8 +74,8 @@ export default function PrivacyPage() {
                   <p>The collected information is used exclusively to:</p>
                   <ul className="list-disc pl-5 mt-2 space-y-2">
                     <li>Respond to your inquiries and provide graphic design quotes.</li>
-                    <li>Manage communication during the development of your project (branding, editorial design, web, etc.).</li>
-                    <li>Improve our customer service.</li>
+                    <li>Manage communication during the development of your project.</li>
+                    <li>Analyze website traffic for statistical purposes (only if you accepted analytical cookies).</li>
                   </ul>
                   <p className="mt-2">Oscar Rendón Visual does not sell, rent, or share your personal data with third parties for marketing purposes.</p>
                 </div>
@@ -82,8 +86,9 @@ export default function PrivacyPage() {
                 </div>
 
                 <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">4. Your Rights</h2>
-                  <p>You have the right to request access to, rectification, or deletion of your personal data at any time. To exercise these rights, you can contact us directly through our form, WhatsApp, or at the email <a href="mailto:contacto@oscarrendonvisual.com" className="text-[#00A3FF] hover:underline">contacto@oscarrendonvisual.com</a>.</p>
+                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">4. Your Rights and Consent Revocation</h2>
+                  <p>You have the right to request access to, rectification, or deletion of your personal data at any time by contacting us at <a href="mailto:contacto@oscarrendonvisual.com" className="text-[#00A3FF] hover:underline">contacto@oscarrendonvisual.com</a>.</p>
+                  <p className="mt-2">If you wish to revoke your consent for the use of analytical cookies, you can do so from our <Link href="/cookies" className="text-[#00A3FF] hover:underline">Cookie Policy</Link>.</p>
                 </div>
               </>
             )}

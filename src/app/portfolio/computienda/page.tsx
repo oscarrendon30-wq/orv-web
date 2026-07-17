@@ -5,6 +5,7 @@ import ZoomableImage from "@/components/ui/ZoomableImage";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
 import ProjectNavigation from "@/components/ProjectNavigation";
+import { trackClickWhatsApp } from "@/utils/analytics";
 
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -321,6 +322,7 @@ export default function CompuTiendaPortfolioPage() {
               href="https://wa.me/573004382654"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackClickWhatsApp("Project CTA - Computienda")}
               className="inline-flex items-center justify-center bg-white text-[#0c2446] font-sans font-bold text-sm uppercase tracking-[0.15em] px-8 md:px-10 py-3.5 md:py-4 rounded-full hover:bg-[#00A3FF] hover:text-white transition-colors duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.1)] hover:shadow-[0_10px_30px_rgba(0,163,255,0.3)] w-full sm:w-auto text-center"
             >
               {t("portfolio.projectLayout.lets_talk_btn")}

@@ -6,6 +6,7 @@ import Image from "next/image";
 import { X, MessageCircle, ChevronRight, Briefcase, Paintbrush, Monitor, LayoutTemplate, Package, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackClickWhatsApp } from "@/utils/analytics";
 
 export default function FloatingAssistant() {
   const { t } = useLanguage();
@@ -119,7 +120,10 @@ export default function FloatingAssistant() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="group flex items-center gap-3 p-3 rounded-xl hover:bg-[#F8FAFC] transition-colors border border-transparent hover:border-[#071B33]/5"
-                      onClick={closePanel}
+                      onClick={() => {
+                        closePanel();
+                        trackClickWhatsApp("Floating Assistant - " + opt.label);
+                      }}
                     >
                       <div className="w-8 h-8 rounded-full bg-[#EAF1F8] text-[#00A3FF] flex items-center justify-center shrink-0 group-hover:scale-110 group-hover:bg-[#00A3FF] group-hover:text-white transition-all duration-300">
                         <Icon className="w-4 h-4" />
@@ -140,7 +144,10 @@ export default function FloatingAssistant() {
                 href={getWaLink(t("assistant.directMessage"))}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={closePanel}
+                onClick={() => {
+                  closePanel();
+                  trackClickWhatsApp("Floating Assistant - Direct Message");
+                }}
                 className="w-full flex items-center justify-center gap-2 bg-[#0c2446] hover:bg-[#00A3FF] text-white font-sans text-xs font-bold uppercase tracking-[0.1em] py-3.5 rounded-full transition-colors shadow-lg hover:shadow-[#00A3FF]/30"
               >
                 <MessageCircle className="w-4 h-4" />

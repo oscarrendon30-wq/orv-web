@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Outfit, Playfair_Display } from "next/font/google";
 import FloatingAssistant from "@/components/FloatingAssistant";
 import CookieBanner from "@/components/CookieBanner";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 import { LanguageProvider } from "@/context/LanguageContext";
 import "./globals.css";
 
@@ -59,6 +60,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-brand-deep text-brand-text-primary selection:bg-brand-gold/20 selection:text-brand-text-primary overflow-x-hidden">
         <LanguageProvider>
+          <GoogleAnalytics />
           {children}
           <FloatingAssistant />
           <CookieBanner />

@@ -5,7 +5,12 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function CookiesPage() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
+
+  const handleRevoke = () => {
+    localStorage.removeItem("cookie-consent");
+    window.dispatchEvent(new Event("cookieConsentChanged"));
+  };
 
   return (
     <main className="min-h-screen bg-[#0a192f] text-white">
@@ -33,23 +38,23 @@ export default function CookiesPage() {
                 </div>
                 
                 <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Cookies que utilizamos actualmente</h2>
-                  <p>En este momento, nuestro sitio web únicamente utiliza <strong>cookies técnicas y estrictamente necesarias</strong>. Estas cookies son esenciales para:</p>
+                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Cookies que utilizamos</h2>
+                  <p>Nuestro sitio web utiliza dos tipos de cookies:</p>
                   <ul className="list-disc pl-5 mt-2 space-y-2">
-                    <li>Recordar tus preferencias de idioma (Español / Inglés).</li>
-                    <li>Garantizar la seguridad y el correcto rendimiento de la página.</li>
+                    <li><strong>Cookies técnicas necesarias:</strong> Son esenciales para recordar tus preferencias de idioma (Español / Inglés) y garantizar el correcto rendimiento de la página.</li>
+                    <li><strong>Cookies analíticas (Google Analytics 4):</strong> Solo se activan si nos das tu consentimiento explícito. Nos ayudan a medir de forma agregada las visitas y las interacciones para mejorar la experiencia de usuario con fines estadísticos.</li>
                   </ul>
-                  <p className="mt-2">No utilizamos cookies de seguimiento, Google Analytics, ni píxeles publicitarios de terceros que recaben información personal sin tu consentimiento explícito.</p>
                 </div>
 
                 <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Futuras herramientas de medición</h2>
-                  <p>Si en el futuro Oscar Rendón Visual decide implementar herramientas de analítica o marketing, actualizaremos esta política y requeriremos tu aviso y consentimiento previo mediante un banner de cookies visible.</p>
-                </div>
-
-                <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Gestión de cookies</h2>
-                  <p>Puedes configurar tu navegador para rechazar todas o algunas de las cookies. Sin embargo, ten en cuenta que deshabilitar las cookies técnicas puede afectar el funcionamiento de algunas características del sitio web, como el guardado del idioma.</p>
+                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Gestión y revocación de cookies</h2>
+                  <p>Puedes cambiar tu preferencia sobre las cookies analíticas en cualquier momento utilizando el botón a continuación. Al revocar tu consentimiento, los scripts de medición se detendrán y tu preferencia quedará registrada.</p>
+                  <button 
+                    onClick={handleRevoke}
+                    className="mt-4 bg-zinc-100 text-[#071B33] font-sans font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl hover:bg-zinc-200 transition-colors"
+                  >
+                    {t('cookieBanner.revoke')}
+                  </button>
                 </div>
               </>
             ) : (
@@ -64,23 +69,23 @@ export default function CookiesPage() {
                 </div>
                 
                 <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Cookies we currently use</h2>
-                  <p>At this time, our website only uses <strong>technical and strictly necessary cookies</strong>. These cookies are essential to:</p>
+                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Cookies we use</h2>
+                  <p>Our website uses two types of cookies:</p>
                   <ul className="list-disc pl-5 mt-2 space-y-2">
-                    <li>Remember your language preferences (Spanish / English).</li>
-                    <li>Ensure the security and proper performance of the page.</li>
+                    <li><strong>Strictly necessary cookies:</strong> These are essential to remember your language preferences (Spanish / English) and ensure the proper performance of the page.</li>
+                    <li><strong>Analytical cookies (Google Analytics 4):</strong> These are only activated if you give us your explicit consent. They help us anonymously measure visits and interactions to improve the user experience for statistical purposes.</li>
                   </ul>
-                  <p className="mt-2">We do not use tracking cookies, Google Analytics, or third-party advertising pixels that collect personal information without your explicit consent.</p>
                 </div>
 
                 <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Future measurement tools</h2>
-                  <p>If Oscar Rendón Visual decides to implement analytics or marketing tools in the future, we will update this policy and require your prior notice and consent through a visible cookie banner.</p>
-                </div>
-
-                <div>
-                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Cookie management</h2>
-                  <p>You can configure your browser to reject all or some cookies. However, please note that disabling technical cookies may affect the functionality of some website features, such as language saving.</p>
+                  <h2 className="font-sans text-xl md:text-2xl font-bold text-white mb-4 tracking-tight">Cookie management and revocation</h2>
+                  <p>You can change your preference regarding analytical cookies at any time using the button below. By revoking your consent, tracking scripts will stop and your preference will be saved.</p>
+                  <button 
+                    onClick={handleRevoke}
+                    className="mt-4 bg-zinc-100 text-[#071B33] font-sans font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-xl hover:bg-zinc-200 transition-colors"
+                  >
+                    {t('cookieBanner.revoke')}
+                  </button>
                 </div>
               </>
             )}

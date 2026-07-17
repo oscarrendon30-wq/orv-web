@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import { ExternalLink, Tag } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackClickWhatsApp } from "@/utils/analytics";
 
 interface Project {
   id: string;
@@ -363,6 +364,7 @@ export default function Portfolio() {
               href="https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20tus%20servicios%20de%20dise%C3%B1o%20gr%C3%A1fico."
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackClickWhatsApp("Portfolio CTA")}
               className="inline-flex items-center justify-center gap-2 px-10 py-4 rounded-full bg-[#0c2446] text-white font-sans font-bold text-xs sm:text-sm uppercase tracking-[0.15em] hover:bg-[#00A3FF] hover:text-white transition-all duration-500 shadow-[0_10px_30px_rgba(12,36,70,0.15)] hover:shadow-[0_15px_40px_rgba(0,163,255,0.3)] relative z-10"
             >
               {t("portfolio.cta.btn")}

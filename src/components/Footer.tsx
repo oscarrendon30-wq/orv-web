@@ -3,6 +3,7 @@
 import { Instagram, Facebook, MessageSquare, ArrowUp, Zap } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackClickWhatsApp, trackCtaClick } from "@/utils/analytics";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -68,7 +69,7 @@ export default function Footer() {
             </h4>
             
             <div className="flex flex-col gap-4 mb-8">
-              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-3 text-zinc-400 hover:text-[#00A3FF] transition-colors group">
+              <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" onClick={() => trackClickWhatsApp("Footer")} className="flex items-center justify-center md:justify-start gap-3 text-zinc-400 hover:text-[#00A3FF] transition-colors group">
                 <MessageSquare className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 <span className="font-sans text-sm font-semibold">{t("footer.whatsapp")}</span>
               </a>
@@ -90,6 +91,7 @@ export default function Footer() {
 
             <a
               href="#contacto"
+              onClick={() => trackCtaClick("Hablemos de tu proyecto", "Footer")}
               className="inline-block w-full sm:w-auto text-center font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#00A3FF] hover:text-white border border-[#00A3FF] hover:bg-[#00A3FF] px-8 py-3.5 rounded-[12px] transition-all"
             >
               {t("footer.cta")}

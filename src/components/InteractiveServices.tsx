@@ -5,6 +5,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import Image from "next/image";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackClickWhatsApp, trackCtaClick } from "@/utils/analytics";
 
 interface Service {
   id: string;
@@ -211,6 +212,7 @@ export default function InteractiveServices() {
               href={`https://wa.me/573004382654?text=Hola%20Oscar%2C%20quiero%20informaci%C3%B3n%20sobre%20el%20servicio%20de%20${encodeURIComponent(service.title)}.`}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackClickWhatsApp(`Services - ${service.title}`)}
               className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-zinc-900 text-white font-semibold text-sm hover:bg-[#00A3FF] transition-all duration-300 shadow-md hover:shadow-lg w-full sm:w-auto"
             >
               {t("services.ctaPrimary")}
@@ -218,6 +220,7 @@ export default function InteractiveServices() {
             </a>
             <a 
               href="#portafolio" 
+              onClick={() => trackCtaClick("Ver Portafolio", "Services Panel")}
               className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
             >
               {t("services.ctaSecondary")}

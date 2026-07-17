@@ -408,6 +408,8 @@ export const en = {
     cookieLink: "Cookie Policy",
     accept: "Accept",
     reject: "Reject",
-    manage: "Manage"
+    manage: "Manage",
+    revoke: "Revoke analytical cookie consent",
+    analyticsNotice: "We use Google Analytics 4 for statistical purposes."
   }
 };

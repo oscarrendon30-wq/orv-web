@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import { trackClickWhatsApp } from "@/utils/analytics";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -119,6 +120,7 @@ export default function Header() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackClickWhatsApp("Header Desktop")}
             className="inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#0a2540] text-white text-[13px] font-bold tracking-wider uppercase hover:bg-brand-royal transition-all duration-300 shadow-md hover:shadow-brand-royal/10 group"
           >
             {/* WhatsApp Custom Inline SVG */}
@@ -209,7 +211,10 @@ export default function Header() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setIsOpen(false)}
+            onClick={() => {
+              setIsOpen(false);
+              trackClickWhatsApp("Header Mobile");
+            }}
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-[#0a2540] text-white text-base font-bold tracking-wider uppercase hover:bg-brand-royal transition-all mt-2"
           >
             {t("header.hablemos")}
