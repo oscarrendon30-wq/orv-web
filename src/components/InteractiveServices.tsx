@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import SectionSeparator from "@/components/ui/SectionSeparator";
 import Image from "next/image";
+import Link from "next/link";
 import { useLanguage } from "@/context/LanguageContext";
 import { trackClickWhatsApp, trackCtaClick } from "@/utils/analytics";
 
@@ -218,13 +219,33 @@ export default function InteractiveServices() {
               {t("services.ctaPrimary")}
               <ArrowRight className="w-4 h-4" />
             </a>
-            <a 
-              href="#portafolio" 
-              onClick={() => trackCtaClick("Ver Portafolio", "Services Panel")}
-              className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
-            >
-              {t("services.ctaSecondary")}
-            </a>
+            {service.id === "branding" ? (
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <Link
+                  href="/servicios/branding-identidad-visual/"
+                  onClick={() => trackCtaClick("Ver Servicio Branding", "Services Panel")}
+                  className="inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-[#00A3FF] hover:text-[#008fe0] transition-colors underline underline-offset-4 decoration-[#00A3FF]/40 hover:decoration-[#00A3FF] text-center sm:text-left"
+                >
+                  {language === "es" ? "Conocer más del servicio" : "Learn more about service"}
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <a
+                  href="#portafolio"
+                  onClick={() => trackCtaClick("Ver Portafolio", "Services Panel")}
+                  className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
+                >
+                  {t("services.ctaSecondary")}
+                </a>
+              </div>
+            ) : (
+              <a
+                href="#portafolio"
+                onClick={() => trackCtaClick("Ver Portafolio", "Services Panel")}
+                className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
+              >
+                {t("services.ctaSecondary")}
+              </a>
+            )}
           </div>
           
           {/* Authority microcopy */}
