@@ -33,7 +33,7 @@ export default function Hero() {
             src="/images/home/hero-oscar-rendon-home.webp"
             alt="Oscar Rendón - Diseñador Gráfico Senior"
             fill
-            sizes="(max-w-1024px) 100vw, 65vw"
+            sizes="(max-width: 1024px) 100vw, 65vw"
             priority
             className="object-cover object-[60%_top] lg:object-[right_top] [mask-image:linear-gradient(to_top,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_35%)]"
           />

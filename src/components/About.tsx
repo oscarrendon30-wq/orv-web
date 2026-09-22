@@ -28,7 +28,7 @@ export default function About() {
               <div className="absolute top-0 right-0 w-[200px] h-[200px] bg-[#00A3FF] opacity-[0.03] blur-[40px] rounded-full translate-x-1/2 -translate-y-1/2 pointer-events-none" />
               
               <Image
-                src="/images/brand/logo-stacked.jpg"
+                src="/images/brand/logo-stacked.webp"
                 alt="Oscar Rendón Visual Sello"
                 width={280}
                 height={280}
@@ -36,7 +36,7 @@ export default function About() {
               />
               
               <div className="absolute bottom-6 text-center z-10">
-                <span className="font-sans text-[9px] font-bold uppercase tracking-[0.2em] text-[#0c2446]/50">
+                <span className="font-sans text-[9px] font-bold uppercase tracking-[0.2em] text-[#0c2446]/80">
                   {t("about.location")}
                 </span>
               </div>

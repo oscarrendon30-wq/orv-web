@@ -322,7 +322,7 @@ export default function InteractiveServices() {
           
           {/* Authority microcopy */}
           <div className="w-full text-center sm:text-left">
-            <p className="text-[11px] text-zinc-400 font-medium tracking-wide">
+            <p className="text-[11px] text-zinc-600 font-medium tracking-wide">
               {t("services.authority")}
             </p>
           </div>
@@ -416,14 +416,14 @@ export default function InteractiveServices() {
 
                 {/* Bottom CTA Indicator */}
                 <div className={`flex items-center justify-center gap-2 mt-auto pt-5 border-t transition-colors duration-500 ${isSelected ? 'border-[#00A3FF]/10' : 'border-zinc-100/60 group-hover:border-[#00A3FF]/10'}`}>
-                  <span className={`text-[12px] font-semibold tracking-wider uppercase transition-all duration-300 ${isSelected ? "text-[#00A3FF]" : "text-zinc-400 group-hover:text-[#00A3FF]"}`}>
+                  <span className={`text-[12px] font-semibold tracking-wider uppercase transition-all duration-300 ${isSelected ? "text-[#00A3FF]" : "text-zinc-600 group-hover:text-[#00A3FF]"}`}>
                     {t("services.viewDetail")}
                   </span>
                   <ArrowRight
                     className={`w-3.5 h-3.5 transition-all duration-500 ${
                       isSelected
                         ? "text-[#00A3FF] translate-y-1 opacity-100 rotate-90"
-                        : "text-zinc-300 group-hover:text-[#00A3FF] group-hover:translate-x-1"
+                        : "text-zinc-400 group-hover:text-[#00A3FF] group-hover:translate-x-1"
                     }`}
                   />
                 </div>

@@ -11,7 +11,7 @@ export default function Cases() {
       id: "case-be-good",
       name: "Be Good",
       category: t("cases.items.beGood.category"),
-      logo: "/images/portfolio/be-good-logo.jpg",
+      logo: "/images/portfolio/be-good-logo.webp",
       image: "/images/portfolio/be-good/be-good-showcase.webp",
       details: [
         {
@@ -37,7 +37,7 @@ export default function Cases() {
       id: "case-mei",
       name: "MEI Uñas & Spa",
       category: t("cases.items.mei.category"),
-      logo: "/images/portfolio/mei-logo.jpg",
+      logo: "/images/portfolio/mei-logo.webp",
       image: "/images/portfolio/mei/mei-portada-caso.webp",
       imagePosition: "object-[20%_center]",
       details: [

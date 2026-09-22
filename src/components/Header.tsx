@@ -44,7 +44,7 @@ export default function Header() {
         <Link href="/#inicio" className="group flex items-center">
           <div className="transition-transform duration-300 group-hover:scale-[1.01]">
             <Image
-              src="/images/brand/logo-horizontal-transparent.png"
+              src="/images/brand/logo-horizontal-transparent.webp"
               alt="Oscar Rendón Visual"
               width={170}
               height={38}
@@ -78,14 +78,14 @@ export default function Header() {
         <div className="hidden md:flex items-center gap-6">
           {/* Social Icons & Language Toggle */}
           <div className="flex items-center gap-4">
-            <div className="flex items-center text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-400" aria-label="Toggle language">
+            <div className="flex items-center text-[11px] font-bold tracking-[0.2em] uppercase text-zinc-600" aria-label="Toggle language">
               <button 
                 onClick={() => setLanguage("es")}
                 className={`hover:text-brand-royal transition-colors ${language === 'es' ? "text-[#0a2540]" : ""}`}
               >
                 ES
               </button>
-              <span className="mx-1.5 opacity-30">/</span>
+              <span className="mx-1.5 opacity-40">/</span>
               <button 
                 onClick={() => setLanguage("en")}
                 className={`hover:text-brand-royal transition-colors ${language === 'en' ? "text-[#0a2540]" : ""}`}
@@ -166,14 +166,14 @@ export default function Header() {
           {/* Mobile Social Icons & Language Toggle */}
           <div className="flex flex-col gap-2 py-2 border-b border-zinc-100 pb-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center text-xs font-bold tracking-[0.2em] uppercase text-zinc-400">
+              <div className="flex items-center text-xs font-bold tracking-[0.2em] uppercase text-zinc-600">
                 <button 
                   onClick={() => setLanguage("es")}
                   className={language === 'es' ? "text-[#0a2540]" : ""}
                 >
                   ES
                 </button>
-                <span className="mx-2 opacity-30">/</span>
+                <span className="mx-2 opacity-40">/</span>
                 <button 
                   onClick={() => setLanguage("en")}
                   className={language === 'en' ? "text-[#0a2540]" : ""}

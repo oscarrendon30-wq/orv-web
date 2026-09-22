@@ -42,11 +42,11 @@ export default function CookieBanner() {
           <div className="p-5 md:p-6">
             <p className="font-sans text-sm text-[#071B33]/80 leading-relaxed mb-5">
               {t("cookieBanner.message")}
-              <Link href="/privacy" className="text-[#00A3FF] hover:underline font-semibold">
+              <Link href="/privacy" className="text-[#0066B3] hover:underline font-semibold">
                 {t("cookieBanner.privacyLink")}
               </Link>
               {t("cookieBanner.and")}
-              <Link href="/cookies" className="text-[#00A3FF] hover:underline font-semibold">
+              <Link href="/cookies" className="text-[#0066B3] hover:underline font-semibold">
                 {t("cookieBanner.cookieLink")}
               </Link>
               .
@@ -67,7 +67,7 @@ export default function CookieBanner() {
               <Link
                 href="/cookies"
                 onClick={() => setIsVisible(false)}
-                className="w-full sm:w-auto flex-1 text-center text-[#071B33]/60 hover:text-[#0c2446] font-sans font-bold text-xs uppercase tracking-wider px-2 py-3 transition-colors"
+                className="w-full sm:w-auto flex-1 text-center text-[#071B33]/85 hover:text-[#0c2446] font-sans font-bold text-xs uppercase tracking-wider px-2 py-3 transition-colors"
               >
                 {t("cookieBanner.manage")}
               </Link>

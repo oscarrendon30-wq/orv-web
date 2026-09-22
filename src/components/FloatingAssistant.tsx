@@ -86,11 +86,11 @@ export default function FloatingAssistant() {
 
               <div className="flex items-center gap-4 mb-1">
                 <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white/20 bg-white shadow-lg shrink-0">
-                   <Image 
-                     src="/images/home/oscar-avatar-assistant.png" 
-                     alt={t("assistant.altAvatar")} 
-                     fill 
-                     className="object-cover object-[center_top] scale-[1.65] translate-y-[15%]" 
+                   <Image
+                     src="/images/home/oscar-avatar-assistant.webp"
+                     alt={t("assistant.altAvatar")}
+                     fill
+                     className="object-cover object-[center_top] scale-[1.65] translate-y-[15%]"
                    />
                 </div>
                 <div>
@@ -187,11 +187,11 @@ export default function FloatingAssistant() {
           {isOpen ? (
             <X className="w-5 h-5 md:w-6 md:h-6 text-[#0c2446]" />
           ) : (
-            <Image 
-              src="/images/home/oscar-avatar-assistant.png" 
-              alt={t("assistant.altAvatar")} 
-              fill 
-              className="object-cover object-[center_top] scale-[1.65] translate-y-[15%]" 
+            <Image
+              src="/images/home/oscar-avatar-assistant.webp"
+              alt={t("assistant.altAvatar")}
+              fill
+              className="object-cover object-[center_top] scale-[1.65] translate-y-[15%]"
             />
           )}
         </button>

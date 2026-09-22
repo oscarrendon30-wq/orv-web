@@ -210,11 +210,13 @@ export default function Contact() {
               <form onSubmit={handleSubmit} className="space-y-6 relative z-10">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
+                    <label htmlFor="name" className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
                       {t("contact.formName")}
                     </label>
                     <input
                       type="text"
+                      id="name"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -223,11 +225,13 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
+                    <label htmlFor="email" className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
                       {t("contact.formEmail")}
                     </label>
                     <input
                       type="email"
+                      id="email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -238,10 +242,12 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
+                  <label htmlFor="projectType" className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
                     {t("contact.formProjectType")}
                   </label>
                   <select
+                    id="projectType"
+                    name="projectType"
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
                     className="w-full bg-[#F8FAFC] border border-transparent focus:border-[#00A3FF]/50 focus:bg-white focus:outline-none p-3.5 text-sm font-sans text-zinc-900 rounded-[12px] transition-colors shadow-inner"
@@ -255,10 +261,12 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-2">
-                  <label className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
+                  <label htmlFor="message" className="font-sans text-[10px] font-bold uppercase tracking-[0.2em] text-zinc-400">
                     {t("contact.formDetails")}
                   </label>
                   <textarea
+                    id="message"
+                    name="message"
                     required
                     rows={5}
                     value={formData.message}
