@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import Authority from "@/components/Authority";
@@ -10,6 +11,15 @@ import About from "@/components/About";
 import Faq from "@/components/Faq";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+
+export const metadata: Metadata = {
+  title: "Diseñador Gráfico en Pereira | Oscar Rendón Visual",
+  description:
+    "Diseño gráfico profesional en Pereira con 30 años de experiencia en branding, identidad visual, diseño editorial, redes sociales, empaques y diseño web.",
+  alternates: {
+    canonical: "https://www.oscarrendonvisual.com/",
+  },
+};
 
 export default function Home() {
   return (

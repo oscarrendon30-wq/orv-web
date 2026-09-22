@@ -19,6 +19,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.oscarrendonvisual.com"),
   title: "Oscar Rendón Visual | Diseño Gráfico Senior",
   description: "30 años creando presencia visual profesional para marcas, medios y empresas. Especializado en branding, diseño editorial, redes sociales, empaques y etiquetas. Desde Pereira, Colombia para el mundo.",
   keywords: [
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Oscar Rendón Visual | Diseño Gráfico Senior",
     description: "30 años creando presencia visual profesional para marcas, medios y empresas. Especializado en branding, diseño editorial, redes sociales, empaques y etiquetas.",
-    url: "https://oscarrendon.visual", // placeholder or domain
+    url: "https://www.oscarrendonvisual.com",
     siteName: "Oscar Rendón Visual",
     locale: "es_CO",
     type: "website",
