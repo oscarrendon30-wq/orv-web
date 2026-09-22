@@ -197,9 +197,12 @@ export default function DisenoEmpaquesEtiquetasClient() {
             Inicio
           </Link>
           <span className="text-zinc-600 text-xs">/</span>
-          <span className="font-sans text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#00A3FF]">
+          <Link
+            href="/servicios/"
+            className="font-sans text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-[#00A3FF] hover:text-white transition-colors"
+          >
             Servicios
-          </span>
+          </Link>
           <span className="text-zinc-600 text-xs">/</span>
           <span className="font-sans text-[11px] md:text-xs font-bold uppercase tracking-[0.2em] text-zinc-300">
             Empaques y Etiquetas
