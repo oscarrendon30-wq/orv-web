@@ -3,7 +3,13 @@
 import { useEffect, useState, Suspense, useRef } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
-import { GA_MEASUREMENT_ID, isTrackingAllowed, trackPageView } from "@/utils/analytics";
+import {
+  GA_MEASUREMENT_ID,
+  isTrackingAllowed,
+  isProductionDomain,
+  trackPageView,
+  captureInitialUtms,
+} from "@/utils/analytics";
 
 function AnalyticsTracker() {
   const pathname = usePathname();
@@ -11,6 +17,7 @@ function AnalyticsTracker() {
   const isFirstRender = useRef(true);
 
   useEffect(() => {
+    captureInitialUtms();
     if (isTrackingAllowed()) {
       const url = pathname + (searchParams.toString() ? `?${searchParams.toString()}` : "");
       trackPageView(url);
@@ -24,7 +31,13 @@ export default function GoogleAnalytics() {
   const [consentGranted, setConsentGranted] = useState(false);
 
   useEffect(() => {
-    // 1. Initial check
+    // 1. Capture initial UTM parameters during landing regardless of immediate consent state
+    captureInitialUtms();
+
+    // 2. Only initialize GA4 listeners and execution on authorized production domains
+    if (!isProductionDomain()) return;
+
+    // 3. Initial consent check
     setConsentGranted(isTrackingAllowed());
 
     // 2. Custom event listener for same-tab changes
