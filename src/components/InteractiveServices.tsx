@@ -255,6 +255,24 @@ export default function InteractiveServices() {
                   {t("services.ctaSecondary")}
                 </a>
               </div>
+            ) : service.id === "redes" ? (
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <Link
+                  href="/servicios/diseno-redes-sociales/"
+                  onClick={() => trackCtaClick("Ver Servicio Redes Sociales", "Services Panel")}
+                  className="inline-flex items-center justify-center gap-1.5 text-sm font-semibold text-[#00A3FF] hover:text-[#008fe0] transition-colors underline underline-offset-4 decoration-[#00A3FF]/40 hover:decoration-[#00A3FF] text-center sm:text-left"
+                >
+                  {language === "es" ? "Conocer más del servicio" : "Learn more about service"}
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
+                <a
+                  href="#portafolio"
+                  onClick={() => trackCtaClick("Ver Portafolio", "Services Panel")}
+                  className="text-sm font-medium text-zinc-500 hover:text-[#00A3FF] transition-colors underline underline-offset-4 decoration-zinc-200 hover:decoration-[#00A3FF]/40 text-center sm:text-left"
+                >
+                  {t("services.ctaSecondary")}
+                </a>
+              </div>
             ) : (
               <a
                 href="#portafolio"
