@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image";
 import { User, MapPin, Star, ArrowRight } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import { trackClickWhatsApp, trackCtaClick } from "@/utils/analytics";
@@ -29,14 +28,39 @@ export default function Hero() {
 
         {/* Photographic Bleed (Sangrado a la derecha) */}
         <div className="absolute top-0 right-0 w-full h-[60vh] md:h-[65vh] lg:h-full lg:w-[65vw] z-10 translate-y-16 lg:translate-y-12">
-          <Image
-            src="/images/home/hero-oscar-rendon-home.webp"
-            alt="Oscar Rendón - Diseñador Gráfico Senior"
-            fill
-            sizes="(max-width: 1024px) 100vw, 65vw"
-            priority
-            className="object-cover object-[60%_top] lg:object-[right_top] [mask-image:linear-gradient(to_top,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_35%)]"
+          <link
+            rel="preload"
+            as="image"
+            href="/images/home/hero-oscar-rendon-home-mobile.webp"
+            media="(max-width: 1024px)"
+            fetchPriority="high"
           />
+          <link
+            rel="preload"
+            as="image"
+            href="/images/home/hero-oscar-rendon-home.webp"
+            media="(min-width: 1025px)"
+            fetchPriority="high"
+          />
+          <picture className="w-full h-full">
+            <source
+              media="(max-width: 1024px)"
+              srcSet="/images/home/hero-oscar-rendon-home-mobile.webp"
+              type="image/webp"
+            />
+            <source
+              media="(min-width: 1025px)"
+              srcSet="/images/home/hero-oscar-rendon-home.webp"
+              type="image/webp"
+            />
+            <img
+              src="/images/home/hero-oscar-rendon-home.webp"
+              alt="Oscar Rendón - Diseñador Gráfico Senior"
+              fetchPriority="high"
+              decoding="async"
+              className="absolute inset-0 w-full h-full object-cover object-[60%_top] lg:object-[right_top] [mask-image:linear-gradient(to_top,transparent_0%,black_15%)] lg:[mask-image:linear-gradient(to_right,transparent_0%,black_35%)]"
+            />
+          </picture>
         </div>
         
         {/* Optional Gradient Overlay for guaranteed text legibility (fades from left) */}

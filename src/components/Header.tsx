@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { Menu, X, Instagram, Facebook } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
@@ -43,12 +42,14 @@ export default function Header() {
         {/* Brand Logo Container */}
         <Link href="/#inicio" className="group flex items-center">
           <div className="transition-transform duration-300 group-hover:scale-[1.01]">
-            <Image
+            <img
               src="/images/brand/logo-horizontal-transparent.webp"
               alt="Oscar Rendón Visual"
               width={170}
               height={38}
-              priority
+              loading="eager"
+              fetchPriority="low"
+              decoding="async"
               className="object-contain h-auto w-[145px] md:w-[170px]"
             />
           </div>
