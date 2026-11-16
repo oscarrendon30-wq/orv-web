@@ -53,7 +53,7 @@ export default function Footer() {
               {([0, 1, 2, 3, 4, 5] as const).map((i) => (
                 <a
                   key={i}
-                  href={`#${t(`footer.navItems.${i}.id`)}`}
+                  href={t(`footer.navItems.${i}.id`) === "servicios" ? "/servicios/" : `/#${t(`footer.navItems.${i}.id`)}`}
                   className="font-sans text-sm text-zinc-400 hover:text-[#00A3FF] transition-colors"
                 >
                   {t(`footer.navItems.${i}.label`)}
@@ -90,7 +90,7 @@ export default function Footer() {
             </div>
 
             <a
-              href="#contacto"
+              href="/#contacto"
               onClick={() => trackCtaClick("Hablemos de tu proyecto", "Footer")}
               className="inline-block w-full sm:w-auto text-center font-sans text-xs font-bold uppercase tracking-[0.15em] text-[#00A3FF] hover:text-white border border-[#00A3FF] hover:bg-[#00A3FF] px-8 py-3.5 rounded-[12px] transition-all"
             >
@@ -107,11 +107,11 @@ export default function Footer() {
           </p>
           
           <div className="flex flex-wrap justify-center gap-4 text-[10px] sm:text-xs font-sans font-bold uppercase tracking-[0.1em] text-zinc-500">
-            <a href="/privacy" className="hover:text-[#00A3FF] transition-colors">{t("legal.privacy")}</a>
+            <a href="/privacy/" className="hover:text-[#00A3FF] transition-colors">{t("legal.privacy")}</a>
             <span className="text-zinc-700">|</span>
-            <a href="/cookies" className="hover:text-[#00A3FF] transition-colors">{t("legal.cookies")}</a>
+            <a href="/cookies/" className="hover:text-[#00A3FF] transition-colors">{t("legal.cookies")}</a>
             <span className="text-zinc-700">|</span>
-            <a href="/terms" className="hover:text-[#00A3FF] transition-colors">{t("legal.terms")}</a>
+            <a href="/terms/" className="hover:text-[#00A3FF] transition-colors">{t("legal.terms")}</a>
           </div>
 
           <button
