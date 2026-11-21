@@ -6,6 +6,7 @@ import InteractiveServices from "@/components/InteractiveServices";
 import TransitionBand from "@/components/TransitionBand";
 import Portfolio from "@/components/Portfolio";
 import Cases from "@/components/Cases";
+import Reviews from "@/components/Reviews";
 import Process from "@/components/Process";
 import About from "@/components/About";
 import Faq from "@/components/Faq";
@@ -47,16 +48,19 @@ export default function Home() {
         {/* 5. Casos de Estudio Destacados */}
         <Cases />
 
-        {/* 6. Proceso de Trabajo / Metodología */}
+        {/* 6. Reseñas verificadas / Prueba Social */}
+        <Reviews />
+
+        {/* 7. Proceso de Trabajo / Metodología */}
         <Process />
 
-        {/* 7. Sobre Mí / Biografía */}
+        {/* 8. Sobre Mí / Biografía */}
         <About />
 
-        {/* 8. Preguntas Frecuentes (FAQ) */}
+        {/* 9. Preguntas Frecuentes (FAQ) */}
         <Faq />
 
-        {/* 9. Contacto y Formularios */}
+        {/* 10. Contacto y Formularios */}
         <Contact />
       </main>
 
