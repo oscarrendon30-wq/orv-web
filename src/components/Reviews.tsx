@@ -10,6 +10,13 @@ const GOOGLE_REVIEW =
 
 const reviews = [
   {
+    id: "AbFvOqk3INkGJIEPG5YeA1O6fJ7cvVjZ84rnOG10PxeHkCqzbQ41gEf_pcAJWbnQHxZ9X08ad_MpqA",
+    author: "Juana Andrea Valencia Cardenas",
+    rating: 5,
+    text: "Excelente profesional,  cumplido en su trabajo y responsable.  Nos apoyo mucho en nuestra tienda virtual.",
+    date: "21 nov 2026",
+  },
+  {
     id: "AbFvOqmcHyARR3jaUwdYpEP-QG6abadGFQAkFAHLNwcukGG9N2q66sy7faRv25Iw9senILOtpkKS",
     author: "Alejandro Cardona",
     rating: 5,
