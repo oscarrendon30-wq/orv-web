@@ -1,6 +1,6 @@
 "use client";
 
-import { ExternalLink, MessageSquareQuote, Star } from "lucide-react";
+import { ExternalLink, MessageSquareQuote } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const GOOGLE_PROFILE =
@@ -23,7 +23,7 @@ export default function Reviews() {
             "The Google review channel is now active. As new client reviews arrive, they will be added here without changing their meaning or wording.",
           profile: "View Google profile",
           review: "Leave a Google review",
-          verified: "Verified on Google",
+          verified: "Official Google review channel",
         }
       : {
           eyebrow: "OPINIONES DE CLIENTES",
@@ -35,7 +35,7 @@ export default function Reviews() {
             "El canal de reseñas de Google ya está activo. A medida que lleguen nuevas opiniones de clientes, las incorporaremos aquí respetando su sentido y redacción.",
           profile: "Ver perfil en Google",
           review: "Dejar una reseña en Google",
-          verified: "Verificado en Google",
+          verified: "Canal oficial de reseñas de Google",
         };
 
   return (
@@ -73,15 +73,8 @@ export default function Reviews() {
                   <MessageSquareQuote className="h-6 w-6 text-[#00A3FF]" />
                 </div>
                 <div>
-                  <div className="flex items-center gap-1 mb-3" aria-hidden="true">
-                    {[0, 1, 2, 3, 4].map((item) => (
-                      <Star
-                        key={item}
-                        className="h-4 w-4 text-[#00A3FF]"
-                        strokeWidth={1.8}
-                      />
-                    ))}
-                    <span className="ml-2 text-[10px] font-bold uppercase tracking-[0.16em] text-zinc-500">
+                  <div className="mb-3">
+                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#00A3FF]">
                       {copy.verified}
                     </span>
                   </div>
